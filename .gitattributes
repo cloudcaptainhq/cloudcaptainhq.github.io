@@ -1,0 +1,16 @@
+* text eol=lf
+
+*.ico binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.bmml binary
+*.jar binary
+*.mp4 binary
+*.ogv binary
+*.pptx binary
+*.otf binary
+*.ttf binary
+*.woff binary
+*.woff2 binary

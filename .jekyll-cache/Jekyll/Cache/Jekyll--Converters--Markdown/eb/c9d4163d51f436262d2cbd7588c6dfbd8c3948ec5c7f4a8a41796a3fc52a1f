@@ -1,0 +1,31 @@
+I"<p>Boxfuse lets you test your images rapidly and with great fidelity by allowing you to run them unchanged both locally and
+on AWS. To run your images locally Boxfuse supports VirtualBox. It’s easy to install and it’s available for Windows,
+macOS and Linux.</p>
+
+<p>Windows 10 Pro however already ships with its own built-in hypervisor: Hyper-V. This is a great feature. It is however
+only available on the Pro edition of Windows 10 (Home edition is not supported)
+Not only that, but once it is active no other hypervisors are allowed to run. This effectively means you need to disable Hyper-V (and reboot your machine)
+every time you want to use VirtualBox.</p>
+
+<p>No more! Starting today, <strong>Boxfuse now also comes with first-class <a href="/docs/hyperv">Hyper-V support</a> on Windows 10 Pro</strong>.</p>
+
+<p><img src="/assets/img/hyperv.png" alt="Hyper-V" /></p>
+
+<h3 id="how-it-works">How it works</h3>
+
+<p>When running on Windows, by default Boxfuse will autodetect whether you are using Windows 10 Pro and whether Hyper-V is
+active. If that’s the case, Boxfuse will automatically select Hyper-V for running instances in the local dev environment.</p>
+
+<p>Otherwise it will simply use VirtualBox as it always has.</p>
+
+<p>You can also explicitly influence this behavior by setting the new <code class="language-plaintext highlighter-rouge">platform</code> configuration property to either
+<code class="language-plaintext highlighter-rouge">hyperv</code> to force Hyper-V usage or <code class="language-plaintext highlighter-rouge">virtualbox</code> to force VirtualBox usage.</p>
+
+<h2 id="available-today">Available today</h2>
+
+<p>The Boxfuse support for <strong>Hyper-V</strong> is available today for all Windows 10 Pro users. Enjoy!</p>
+
+<p>So if you haven’t already,
+<a href="https://console.boxfuse.com"><strong>sign up for your Boxfuse account</strong></a> now (simply log in with your GitHub id, it’s free),
+start deploying your application effortlessly to AWS today and have it running locally on Hyper-V in minutes.</p>
+:ET

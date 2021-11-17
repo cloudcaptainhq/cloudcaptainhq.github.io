@@ -1,0 +1,3 @@
+Sitemap: https://boxfuse.com/sitemap.xml
+User-agent: *
+Disallow:

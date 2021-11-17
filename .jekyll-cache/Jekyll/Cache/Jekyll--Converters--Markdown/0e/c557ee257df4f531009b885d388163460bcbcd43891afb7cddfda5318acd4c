@@ -1,0 +1,201 @@
+I"�-<p><img src="/assets/img/play.png" alt="Play" /></p>
+
+<p>This tutorial will get you started with Boxfuse and Play. Together we’ll create a new Play app, deploy it to AWS and
+update it with zero downtime. Altogether this should take you about <strong>5-10 minutes</strong> to complete.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Before you begin, ensure you have successfully:</p>
+
+<ol>
+  <li>created a <strong><a href="https://console.boxfuse.com">Boxfuse Account</a></strong> (simply log in with your GitHub account, it’s free)</li>
+  <li>downloaded and installed the latest <strong><a href="/getstarted/download">Boxfuse Client</a></strong></li>
+  <li>downloaded and installed the latest <strong><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK</a></strong> with <code class="language-plaintext highlighter-rouge">JAVA_HOME</code> set up correctly</li>
+  <li>downloaded and installed the latest version of <strong><a href="http://www.scala-sbt.org/">SBT</a></strong></li>
+  <li>downloaded and installed the latest version of <strong><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a></strong></li>
+</ol>
+
+<h2 id="creating-the-play-application">Creating the Play application</h2>
+
+<p>Start by creating a Play Scala application using SBT:</p>
+
+<pre class="console"><span>&gt;</span> sbt new playframework/play-scala-seed.g8</pre>
+
+<p>Set the name to <code class="language-plaintext highlighter-rouge">getstarted-play</code> and keep the default for all other settings.</p>
+
+<p>Once the generator completes, navigate to the newly created directory:</p>
+
+<pre class="console"><span>&gt;</span> cd getstarted-play</pre>
+
+<p>Then set the version in <code class="language-plaintext highlighter-rouge">build.sbt</code> to 1.0:</p>
+
+<pre class="prettyprint">version := "1.0"</pre>
+
+<p>Finally build a distribution zip:</p>
+
+<pre class="console"><span>getstarted-play&gt;</span> sbt dist</pre>
+
+<p>Great. Your Play application distribution zip is now available under <code class="language-plaintext highlighter-rouge">target/universal/getstarted-play-1.0.zip</code>.</p>
+
+<h2 id="fusing-a-boxfuse-image-and-running-it-locally-on-virtualbox">Fusing a Boxfuse image and running it locally on VirtualBox</h2>
+
+<p>Now it’s time to fuse your application into a Boxfuse image and launch an instance of it on VirtualBox:</p>
+
+<pre class="console"><span>getstarted-play&gt;</span> boxfuse run</pre>
+
+<p>This command will run for a few seconds. During this time, Boxfuse will find your application, detect its type,
+generating an image for it and launch it on VirtualBox. When it completes you should see a message like this:</p>
+
+<pre class="console"><strong class="success">Successfully started payload in 00:09.407s -&gt; http://127.0.0.1:9000</strong></pre>
+
+<p>Now open your browser and navigate to this address to see your new application up and running within the VirtualBox VM:</p>
+
+<p><img src="/assets/img/getstarted/play-virtualbox.png" alt="Play on VirtualBox" class="screenshot" /></p>
+
+<p>You can also see your newly created image:</p>
+
+<pre class="console" style="font-size: 89%"><span>getstarted-play&gt;</span> boxfuse ls
+
+Images available locally:
++----------------------------+-------------------------+-------+----------------------+--------------+---------+---------------------+
+| Image                      |         Payload         | Debug |       Runtime        |    Ports     |  Size   |    Generated at     |
++----------------------------+-------------------------+-------+----------------------+--------------+---------+---------------------+
+| myuser/getstarted-play:1.0 | getstarted-play-1.0.zip | false | Java 8.131.11 (Play) | http -&gt; 9000 | 78023 K | 2017-07-13 13:24:34 |
++----------------------------+-------------------------+-------+----------------------+--------------+---------+---------------------+
+Total: 1</pre>
+
+<p>As well as the instance that is running:</p>
+
+<pre class="console"><span>getstarted-play&gt;</span> boxfuse ps
+
+Running Instances on VirtualBox in the dev environment :
++-------------+----------------------------+---------------------+-----------------------+---------------------+
+|  Instance   |           Image            |        Type         |          URL          |     Launched at     |
++-------------+----------------------------+---------------------+-----------------------+---------------------+
+| vb-8e800f05 | myuser/getstarted-play:1.0 | 2 CPU / 1024 MB RAM | http://127.0.0.1:9000 | 2017-07-13 13:24:40 |
++-------------+----------------------------+---------------------+-----------------------+---------------------+
+Total: 1</pre>
+
+<div class="marketing-testimonial-stripe marketing-testimonial-stripe-docs"></div>
+
+<div class="marketing-testimonial marketing-testimonial-docs">
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10">
+            <div>
+                <blockquote>We’ve decided to deploy our Play application to AWS using Boxfuse
+                    which was perfect for this need. A super quick deployment of a Play
+                    application to an AWS instance (also requires an AWS account of
+                    course). Without the overhead of all the usual setup and
+                    configuration.
+                </blockquote>
+                <p>from <a href="http://blog.takipi.com/how-we-used-slack-scala-and-play-to-automate-our-lunch-order/">"How We Used Slack, Scala and Play to Automate Our Lunch
+                    Order"</a><br /> by <strong><a href="https://twitter.com/tzofias">Tzofia Shiftan</a></strong>, Full-stack team lead, Takipi</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2 id="deploying-your-application-to-aws">Deploying your application to AWS</h2>
+
+<p>Now let’s deploy the image to AWS. As Boxfuse works with your AWS account, it first needs the necessary permissions to do so.
+So if you haven’t already done so, go to the Boxfuse Console and <strong><a href="https://console.boxfuse.com/#/awsAccount">connect your AWS account</a></strong> now.</p>
+
+<p>Every new Boxfuse account comes with 3 environments: <code class="language-plaintext highlighter-rouge">dev</code>, <code class="language-plaintext highlighter-rouge">test</code> and <code class="language-plaintext highlighter-rouge">prod</code>.
+<code class="language-plaintext highlighter-rouge">dev</code> is your local VirtualBox environment and <code class="language-plaintext highlighter-rouge">test</code> and <code class="language-plaintext highlighter-rouge">prod</code> are on AWS.</p>
+
+<p>So let’s deploy our application to the <code class="language-plaintext highlighter-rouge">prod</code> environment on AWS:</p>
+
+<pre class="console"><span>getstarted-play&gt;</span> boxfuse run -env=prod
+
+Pushing myuser/getstarted-play:1.0 ...
+Verifying myuser/getstarted-play:1.0 ...
+Waiting for AWS to create an encrypted AMI for myuser/getstarted-play:1.0 in eu-central-1 (this may take up to 50 seconds) ...
+AMI created in 00:39.363s in eu-central-1 -&gt; ami-8b3794e4
+Creating security group boxsg-myuser-prod-getstarted-play ...
+Creating Log Stream boxfuse/prod &gt; myuser/getstarted-play ...
+Creating Elastic IP ...
+Creating security group boxsg-myuser-prod-getstarted-play-1.0 ...
+Launching t2.micro instance of myuser/getstarted-play:1.0 (ami-8b3794e4) in prod (eu-central-1) ...
+Instance launched in 00:18.803s -&gt; i-0cb10e26f54c87971
+Creating Cloud Watch Alarm for Instance auto-recovery -&gt; i-0cb10e26f54c87971-auto-recovery-alarm
+Waiting for AWS to boot Instance i-0cb10e26f54c87971 and Payload to start at http://35.158.117.251:9000/ ...
+Payload started in 00:09.544s -&gt; http://35.158.117.251:9000/
+Associating Elastic IP 52.58.243.45 with i-0cb10e26f54c87971 ...
+Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
+<strong class="success">Successfully running myuser/getstarted-play:1.0 in prod at http://getstartedplay-myuser.boxfuse.io:9000/</strong></pre>
+
+<p>Notice that we have now specified an image, as we want to reuse our image unchanged instead fusing a new one.</p>
+
+<p>With that one command Boxfuse has automatically pushed your image to the Boxfuse Vault as well as provisioned,
+configured and secured all necessary AWS resources. There is no manual work necessary on your behalf.</p>
+
+<p>All you need to do is simply navigate to your new domain to see your Play application in action on AWS:</p>
+
+<p><img src="/assets/img/getstarted/play-aws.png" alt="Play on AWS" class="screenshot" /></p>
+
+<h2 id="bonus-update-your-application-using-bluegreen-deployments">Bonus: update your application using blue/green deployments</h2>
+
+<p>Now let’s take things one step further and deploy an update of your application with <strong>zero downtime</strong>.</p>
+
+<p>Start by modifying <code class="language-plaintext highlighter-rouge">app/views/index.scala.html</code> with a simple change:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@()
+                         
+@main("Updated by Boxfuse with zero downtime") {
+  &lt;h1&gt;Updated by Boxfuse with zero downtime!&lt;/h1&gt;
+}
+</code></pre></div></div>
+
+<p>then bump the version in <code class="language-plaintext highlighter-rouge">build.sbt</code>:</p>
+
+<pre class="prettyprint">version := "1.1"</pre>
+
+<p>and rebuild the dist:</p>
+
+<pre class="console"><span>getstarted-play&gt;</span> sbt clean dist</pre>
+
+<p>Finally, deploy the new version of your application to AWS:</p>
+
+<pre class="console"><span>getstarted-play&gt;</span> boxfuse run -env=prod
+
+Fusing Image for getstarted-play-1.1.zip (Play) ...
+Image fused in 00:04.787s (78024 K) -&gt; myuser/getstarted-play:1.1
+Pushing myuser/getstarted-play:1.1 ...
+Verifying myuser/getstarted-play:1.1 ...
+Waiting for AWS to create an encrypted AMI for myuser/getstarted-play:1.1 in eu-central-1 (this may take up to 50 seconds) ...
+AMI created in 00:30.962s in eu-central-1 -&gt; ami-b73093d8
+Creating security group boxsg-myuser-prod-getstarted-play-1.1 ...
+Launching t2.micro instance of myuser/getstarted-play:1.1 (ami-b73093d8) in prod (eu-central-1) ...
+Instance launched in 00:28.872s -&gt; i-0a2461d56ca5060a3
+Creating Cloud Watch Alarm for Instance auto-recovery -&gt; i-0a2461d56ca5060a3-auto-recovery-alarm
+Waiting for AWS to boot Instance i-0a2461d56ca5060a3 and Payload to start at http://35.158.133.205:9000/ ...
+Payload started in 00:12.630s -&gt; http://35.158.133.205:9000/
+Reassociating Elastic IP 52.58.243.45 from i-0cb10e26f54c87971 to i-0a2461d56ca5060a3 ...
+Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
+Destroying Cloud Watch Alarm i-0cb10e26f54c87971-auto-recovery-alarm ...
+Terminating instance i-0cb10e26f54c87971 ...
+Destroying Security Group sg-7646171d (boxsg-myuser-prod-getstarted-play-1.0) ...
+<strong class="success">Successfully running myuser/getstarted-play:1.1 in prod at http://getstartedplay-myuser.boxfuse.io:9000/</strong></pre>
+
+<p>And there it is:</p>
+
+<p><img src="/assets/img/getstarted/play-aws-update.png" alt="Play on AWS updated" class="screenshot" /></p>
+
+<h2 id="summary">Summary</h2>
+
+<p>In this brief guide we have seen how to:</p>
+
+<ul>
+  <li>create a Play application</li>
+  <li>fuse it into a Boxfuse image</li>
+  <li>deploy the image locally on VirtualBox</li>
+  <li>deploy the image unchanged to AWS</li>
+  <li>update the application with zero downtime</li>
+</ul>
+
+<p>Now it’s your turn. Take your favorite Play application and deploy it with ease and pleasure.</p>
+
+<p class="next-steps"><a href="/docs/payloads/play" class="btn btn-primary">Boxfuse Play Documentation <i class="fa fa-arrow-right"></i></a></p>
+:ET
