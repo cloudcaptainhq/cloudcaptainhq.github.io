@@ -151,7 +151,7 @@ LOGGER.info("My log message ...");</pre>
 <h3>Log filtering</h3>
 
 <p>This however can produce a lot of output. To aid finding the needle in the haystack, CloudCaptain also supports powerful
-    <strong><a href="https://boxfuse.com/docs/commandline/logs#logs.filter">log filtering</a></strong>, both on existing logs as well as during live tailing of a log stream.</p>
+    <strong><a href="https://cloudcaptainhq.com/docs/commandline/logs#logs.filter">log filtering</a></strong>, both on existing logs as well as during live tailing of a log stream.</p>
 
 <p>You can make use of the attributes of the structured logs to filter them exactly the way you like. For example,
     to tail the logs live on the prod environment on AWS and only show the logs for a specific instance all you need to do is:</p>
@@ -163,7 +163,7 @@ LOGGER.info("My log message ...");</pre>
 <pre class="console"><span>&gt;</span> boxfuse logs myapp -env=prod -logs.tail <strong>-logs.filter.start=</strong>-60</pre>
 
 <p>This is a very powerful feature and there are <strong>many more filters which can all be combined</strong>. You can find all the details in the
-    <strong><a href="https://boxfuse.com/docs/commandline/logs#logs.filter">documentation</a></strong>.</p>
+    <strong><a href="https://cloudcaptainhq.com/docs/commandline/logs#logs.filter">documentation</a></strong>.</p>
 
 <h2>Available today</h2>
 
