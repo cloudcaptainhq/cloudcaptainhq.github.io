@@ -3,27 +3,27 @@ layout: blog
 subtitle: "Introducing load-balanced-https apps"
 permalink: /blog/load-balanced-https.html
 ---
-Boxfuse originally launched with two types of apps: `single-instance` for applications using Elastic IP addresses
+CloudCaptain originally launched with two types of apps: `single-instance` for applications using Elastic IP addresses
 and `load-balanced` for applications using Classic Elastic Load Balancers. Over time we have added support for additional
 types of applications such as [`workers apps`](/blog/worker) and [`one-off apps`](/blog/one-off) to support more diverse
 types of workloads.
 
-Today Boxfuse is expanding further with support for `load-balanced-https` apps using **AWS Application Load Balancers**,
+Today CloudCaptain is expanding further with support for `load-balanced-https` apps using **AWS Application Load Balancers**,
 together with Auto Scaling Groups and optionally custom domains and TLS (SSL) certificates.
 
 ![load-balanced-https](/assets/posts/load-balanced-https/load-balanced-https.png)
 
 ## How does it work?
 
-When you create a new `load-balanced-https` app using either the [Boxfuse Console](https://console.boxfuse.com)
+When you create a new `load-balanced-https` app using either the [CloudCaptain Console](https://console.boxfuse.com)
 
 ![create](/assets/posts/load-balanced-https/console.png){: .screenshot}
 
-or the [Boxfuse Client](/docs/commandline)
+or the [CloudCaptain Client](/docs/commandline)
 
 <pre class="console"><span>&gt;</span> boxfuse create my-app <strong>-app.type=load-balanced-https</strong></pre>
 
-Boxfuse will be set up to automatically provision and configure all necessary resources when the app is deployed.
+CloudCaptain will be set up to automatically provision and configure all necessary resources when the app is deployed.
 
 Just for the ALB this includes:
 - a new ALB (Application Load Balancer)
@@ -76,13 +76,13 @@ All deploys from here on are performed with zero downtime by simply launching a 
 ## BYOTG (Bring Your Own Target Group)
 
 Advanced users also have the option to configure their own ALB and Target Group. From there all that is needed is
-simply pointing Boxfuse at the name of the [desired Target Group](/docs/commandline/cfg#targetgroup) and Boxfuse will use
+simply pointing CloudCaptain at the name of the [desired Target Group](/docs/commandline/cfg#targetgroup) and CloudCaptain will use
 that one instead of the ALB and Target Group auto provisioning described above.
 
 ## Available today
 
-Support for `load-balanced-https` apps is available today at no additional charge on all paid Boxfuse plans. Enjoy!
+Support for `load-balanced-https` apps is available today at no additional charge on all paid CloudCaptain plans. Enjoy!
 
 So if you haven't already,
-[**sign up for your Boxfuse account**](https://console.boxfuse.com) now (simply log in with your GitHub id, it's free),
+[**sign up for your CloudCaptain account**](https://console.boxfuse.com) now (simply log in with your GitHub id, it's free),
 start deploying your application effortlessly to AWS today and have it running in minutes.

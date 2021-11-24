@@ -5,15 +5,15 @@ subtitle: 'Play'
 ---
 ![Play](/assets/img/play.png)
 
-Boxfuse supports **Play 2.3.x or newer** apps packaged as a **Play dist zip** using either **OpenJDK 7.x or 8.x**.
+CloudCaptain supports **Play 2.3.x or newer** apps packaged as a **Play dist zip** using either **OpenJDK 7.x or 8.x**.
 
 ## Get Started
 
-If you haven't already, start by following **[Play &amp; Boxfuse tutorial](/getstarted/play)** that will get you **up and running in 5-10 minutes**.
+If you haven't already, start by following **[Play &amp; CloudCaptain tutorial](/getstarted/play)** that will get you **up and running in 5-10 minutes**.
 
 ## Java Runtime Environment
 
-By default Boxfuse uses the **latest OpenJDK 8.x version** (headless JRE).
+By default CloudCaptain uses the **latest OpenJDK 8.x version** (headless JRE).
 
 ### OpenJDK version
 
@@ -21,7 +21,7 @@ If you want to switch to OpenJDK 7.x or simply an older version, you can do so u
 
 <pre class="console"><span>&gt;</span> boxfuse run my-app-1.0.jar <strong>-components.openjdk=</strong>7.80.32</pre>
 
-To find out which OpenJDK versions are available from the Boxfuse Inventory you can simply issue:
+To find out which OpenJDK versions are available from the CloudCaptain Inventory you can simply issue:
 
 <pre class="console"><span>&gt;</span> boxfuse inventory openjdk</pre>
 
@@ -54,22 +54,22 @@ This `/jre` folder should be put into the `conf` directory of your project:
 
 ## Configuration
 
-By default Boxfuse looks for an `application.conf` file *inside* the Play dist zip file.
+By default CloudCaptain looks for an `application.conf` file *inside* the Play dist zip file.
 You can find this file in the `/conf` directory of your project:
 
 <pre class="filetree"><i class="fa fa-folder-open"></i> my-play-app
   <i class="fa fa-folder-open"></i> conf
     <span><i class="fa fa-file-text"></i> application.conf</span></pre>
 
-Boxfuse parses **`application.conf`** and **automatically configures the http &amp; https ports, the payload path and the healthcheck path** based on the
+CloudCaptain parses **`application.conf`** and **automatically configures the http &amp; https ports, the payload path and the healthcheck path** based on the
 following config parameters: `play.server.http.port`, `play.server.https.port` and `play.http.context`.
 
 When both `play.server.http.port` and `play.server.https.port` are set, the https port takes precedence for the healthcheck.
-You can override this by explicitly passing the Boxfuse parameter `-healthcheck.port=http` when fusing the image.
+You can override this by explicitly passing the CloudCaptain parameter `-healthcheck.port=http` when fusing the image.
 
 ### Application secret
     
-As Boxfuse runs your application in *production mode* you must set your *application secret* either in `application.conf`
+As CloudCaptain runs your application in *production mode* you must set your *application secret* either in `application.conf`
 or pass it from the command-line. For example:
 
 {: .table .table-striped}
@@ -104,11 +104,11 @@ You can however tell play to use alternative config files by passing in a JVM sy
     <i class="fa fa-file-text"></i> application.conf
     <span><i class="fa fa-file-text"></i> other.conf</span></pre>
 
-You could then launch your Boxfuse instance with `-jvm.args=-Dconfig.file=other.conf` to load the
+You could then launch your CloudCaptain instance with `-jvm.args=-Dconfig.file=other.conf` to load the
 alternate Play config file called `other.conf` in the conf directory of your application.
 
 **Note:** these files must be present at the time you build the dist zip using `sbt dist`.
-Also keep in mind that [Boxfuse auto-configuration](#configuration) only works with the regular `application.conf` file.
+Also keep in mind that [CloudCaptain auto-configuration](#configuration) only works with the regular `application.conf` file.
 
 ## Overriding Play configuration
 
@@ -133,21 +133,21 @@ More info in the [official Play documentation](https://www.playframework.com/doc
 
 ### Database auto-provisioning
 
-If your app includes the PostgreSQL or MySQL JDBC driver, Boxfuse will automatically activate
+If your app includes the PostgreSQL or MySQL JDBC driver, CloudCaptain will automatically activate
 [database auto-provisioning support](/docs/databases) and provision the necessary PostgreSQL or MySQL database
 in each environment as well as auto-configure Play's DataSource. Alternatively you can also explicitly configure database auto-provisioning by passing in
-the correct `db.type` value when [creating your Boxfuse app](/docs/commandline/create#db.type).
+the correct `db.type` value when [creating your CloudCaptain app](/docs/commandline/create#db.type).
 
-When using database auto-provisioning, Boxfuse automatically configures Play's DataSource
+When using database auto-provisioning, CloudCaptain automatically configures Play's DataSource
 to use the correct driver class name, jdbc url, user and password. It does so by automatically supplying the
 `db.default.driver`, `db.default.url`, `db.default.username` and `db.default.password` with the
 correct value for the current environment to the JVM.
 
 ### Slick
 
-For Play 2.4 and newer apps that include the PostgreSQL or MySQL JDBC driver and use Slick instead of the regular Play database access, Boxfuse also automatically configures
+For Play 2.4 and newer apps that include the PostgreSQL or MySQL JDBC driver and use Slick instead of the regular Play database access, CloudCaptain also automatically configures
 Slick's driver, the jdbc driver class name, jdbc url, user and password. This can be disabled by setting
-`db.type` to `none` when [creating your Boxfuse app](/docs/commandline/create#db.type).
+`db.type` to `none` when [creating your CloudCaptain app](/docs/commandline/create#db.type).
 
 You can also override these auto-configured values by explicitly passing them as [JVM arguments](/docs/commandline/fuse#jvm.args). For example, to
 override the Slick driver you can do so like this:
@@ -156,7 +156,7 @@ override the Slick driver you can do so like this:
 
 ### Using an existing database
 
-To disable database auto-provisioning and use an existing database set `db.type` to `none` when [creating your Boxfuse app](/docs/commandline/create#db.type).
+To disable database auto-provisioning and use an existing database set `db.type` to `none` when [creating your CloudCaptain app](/docs/commandline/create#db.type).
 
 ### Evolutions
 
@@ -182,7 +182,7 @@ You can also manually force the correct configuration by adding these properties
 
 <pre class="prettyprint">play.server.https.port=443</pre>
 
-Boxfuse will automatically ensure that all network traffic between the load balancer and your instances will be encrypted as well.
+CloudCaptain will automatically ensure that all network traffic between the load balancer and your instances will be encrypted as well.
 
 ### Manual TLS (SSL) Certificate management
 
@@ -196,8 +196,8 @@ Both the keystore itself as well as the certificate should be secured with the p
   <i class="fa fa-folder-open"></i> conf
     <span><i class="fa fa-file"></i> boxfuse.jks</span></pre>
 
-f present, Boxfuse automatically configures your Play application to use it. All you need to do is set the `https`
-port to the one you want. This can be done either in your Boxfuse or in your Play config. Example:
+f present, CloudCaptain automatically configures your Play application to use it. All you need to do is set the `https`
+port to the one you want. This can be done either in your CloudCaptain or in your Play config. Example:
 
 <pre class="console"><span>&gt;</span> boxfuse run <strong>-ports.https</strong>=443</pre>
 
@@ -206,12 +206,12 @@ You can then also specify its password as usual in your `application.conf` file.
 
 ## Root Certificates
 
-By default, Boxfuse uses the **same root certificate bundle as the latest version of Firefox**.
-Additionally Boxfuse also includes the **root certificates for Amazon RDS**, so you can connect securely to RDS databases out of the box.
+By default, CloudCaptain uses the **same root certificate bundle as the latest version of Firefox**.
+Additionally CloudCaptain also includes the **root certificates for Amazon RDS**, so you can connect securely to RDS databases out of the box.
 
 You can, however, ship your own set of root certificates, by placing them in a KeyStore inside the Zip file as `/conf/cacerts`.
 If you use SBT or Typesafe Activator, this means your `cacerts` KeyStore file should be put into the `conf` directory.
-Boxfuse will then automatically configure the JRE to use these instead.
+CloudCaptain will then automatically configure the JRE to use these instead.
 
 <pre class="filetree"><i class="fa fa-folder-open"></i> my-play-app
   <i class="fa fa-folder-open"></i> conf
@@ -230,11 +230,11 @@ you have to add the following to your Play configuration:
 
 ## JCE unlimited strength cryptography
 
-### Using Boxfuse's default JRE
+### Using CloudCaptain's default JRE
 
 **This is already enabled by default (starting with OpenJDK 8.162.12) and no further action is required.**
 
-### Using an older Boxfuse JRE
+### Using an older CloudCaptain JRE
 
 To enable JCE unlimited cryptography (for AES-256, RSA-4096, ...), download the policy zip from the Oracle website
 for either [Java 7](http://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html)
@@ -242,7 +242,7 @@ or [Java 8](http://www.oracle.com/technetwork/java/javase/downloads/jce8-downloa
 
 Extract both `local_policy.jar` and `US_export_policy.jar` and place them inside the Zip file under `/conf`.
 If you use SBT, this means both policy jar files should be put into the `conf` directory.
-Boxfuse will then automatically configure the JRE to use these instead.
+CloudCaptain will then automatically configure the JRE to use these instead.
 
 <pre class="filetree"><i class="fa fa-folder-open"></i> my-play-app
   <i class="fa fa-folder-open"></i> conf
@@ -265,20 +265,20 @@ If you wish to launch the JRE with one or more Java Agents, simply place the Jav
   <i class="fa fa-file"></i> myjavaagent.jar
   <i class="fa fa-file-text"></i> myjavaagent.properties</span></pre>
 
-Boxfuse will then **automatically configure the JRE to use these Java Agents**.
+CloudCaptain will then **automatically configure the JRE to use these Java Agents**.
 
 ## JVM Memory
 
-By default Boxfuse will **dynamically configure your JVM heap to use 85% of the available memory** in the instance. All other settings
+By default CloudCaptain will **dynamically configure your JVM heap to use 85% of the available memory** in the instance. All other settings
 use the JVM defaults. You can override this by specifying the required JVM arguments like `-Xmx` via the
 `jvm.args` configuration setting.
 
 ## Temporary Files
 
-Boxfuse configures the JVM to use `/tmp` as the directory to store temporary files and provisions **1 GB of space by default**.
+CloudCaptain configures the JVM to use `/tmp` as the directory to store temporary files and provisions **1 GB of space by default**.
     
 To increase this (up to a maximum of 16 TB), simply set
-the `tmp` configuration setting to the number of GB of temp space you need. To prevent Boxfuse from
+the `tmp` configuration setting to the number of GB of temp space you need. To prevent CloudCaptain from
 provisioning any temp space set `tmp` to `0`.
 
 ## Debugging
@@ -293,11 +293,11 @@ Details and setup instructions on our [profiling page](/docs/profiling).
 
 ## Live Reloading
 
-Boxfuse supports [Live Reloading](/docs/live) of exploded Play zip files.
+CloudCaptain supports [Live Reloading](/docs/live) of exploded Play zip files.
 
 ## Time Zone
 
-By default all Boxfuse instance use the **`UTC` time zone**.
+By default all CloudCaptain instance use the **`UTC` time zone**.
 
 We **don't recommend changing this** as this greatly simplifies time zone issues in machine to machine communication
 and cleanly relegates all time zones related aspects to a pure presentation layer concern.
@@ -310,14 +310,14 @@ you would do so like this:
 
 ## Native binaries and libs
 
-Some JVM applications also depend on **native Linux x64 binaries and libs** to do their work. Boxfuse makes it easy to
+Some JVM applications also depend on **native Linux x64 binaries and libs** to do their work. CloudCaptain makes it easy to
 integrate them into your image.
 
-Simply place your binaries under `conf/native/bin` and Boxfuse
+Simply place your binaries under `conf/native/bin` and CloudCaptain
 will automatically add them to the `PATH` at runtime in your instances.
 
 If those binaries also depend on additional shared libraries beyond the C library, place the .so files of your libraries
-under `conf/native/lib` on the classpath and Boxfuse
+under `conf/native/lib` on the classpath and CloudCaptain
 will automatically add them to the `LD_LIBRARY_PATH` at runtime in your instances.
 
 <div class="alert alert-info"><p><strong>Tip</strong></p>
@@ -326,7 +326,7 @@ will automatically add them to the `LD_LIBRARY_PATH` at runtime in your instance
 </div>
 
 In a SBT or Typesafe Activator project, the `native` directory should be put under the `conf`
-directory. Boxfuse will then automatically configure the `PATH` and `LD_LIBRARY_PATH` to use it.
+directory. CloudCaptain will then automatically configure the `PATH` and `LD_LIBRARY_PATH` to use it.
 
 <pre class="filetree"><i class="fa fa-folder-open"></i> my-play-app
   <i class="fa fa-folder-open"></i> conf
@@ -345,17 +345,17 @@ You can then simply invoke them in your code using
 ## New Relic support
 
 To monitor your app using [New Relic](/docs/newrelic) simply pass in your New Relic license key when
-fusing your image and Boxfuse will automatically install and configure the New Relic Servers Linux x64 and New Relic Java agents for you.
+fusing your image and CloudCaptain will automatically install and configure the New Relic Servers Linux x64 and New Relic Java agents for you.
 
 <pre class="console"><span>&gt;</span> boxfuse fuse <strong>-newrelic.licensekey=</strong>0123456789abcdef0123456789abcdef01234567</pre>
 
-Alternatively you can also supply a `newrelic.yml` configuration file for the Java agent and Boxfuse will
-automatically use that instead. Boxfuse will then install the agent for you, but won't override any application name you may have configured.
-If you haven't configured a New Relic license key as described above, Boxfuse will use
+Alternatively you can also supply a `newrelic.yml` configuration file for the Java agent and CloudCaptain will
+automatically use that instead. CloudCaptain will then install the agent for you, but won't override any application name you may have configured.
+If you haven't configured a New Relic license key as described above, CloudCaptain will use
 the license key contained in your `newrelic.yml` configuration file instead.
 
 In a SBT or Typesafe Activator project, the `newrelic.yml` file should be put into the `conf` directory.
-Boxfuse will then automatically configure the New Relic Java agent to use it.
+CloudCaptain will then automatically configure the New Relic Java agent to use it.
 
 <pre class="filetree"><i class="fa fa-folder-open"></i> my-play-app
   <i class="fa fa-folder-open"></i> conf
@@ -412,7 +412,7 @@ You can then for example tune the maximum number of file descriptors by simply i
 
 <pre class="prettyprint">fs.file-max = 131072</pre>
 
-Boxfuse will then **automatically configure the Linux kernel to use these settings**.
+CloudCaptain will then **automatically configure the Linux kernel to use these settings**.
 
 {: .next-steps}
 [Tomcat <i class="fa fa-arrow-right"></i>](/docs/payloads/tomcat){: .btn .btn-primary}

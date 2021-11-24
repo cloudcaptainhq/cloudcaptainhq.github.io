@@ -3,7 +3,7 @@ layout: blog
 subtitle: "Shipping native Linux x64 binaries and libs with JVM apps"
 permalink: /blog/jvm-native-bin-libs.html
 ---
-<p>While Boxfuse makes it dead easy to run your JVM applications (<a href="/blog/spring-boot-ec2">Spring Boot</a>,
+<p>While CloudCaptain makes it dead easy to run your JVM applications (<a href="/blog/spring-boot-ec2">Spring Boot</a>,
     <a href="/getstarted/jhipster">JHipster</a>, <a href="/blog/grails-aws">Grails</a>,
     <a href="/blog/dropwizard-aws">Dropwizard</a>, <a href="/docs/payloads/tomcat">Tomcat</a>,
     <a href="/blog/javaee-aws">TomEE</a> or <a href="/getstarted/jar">executable jar</a>)
@@ -18,11 +18,11 @@ permalink: /blog/jvm-native-bin-libs.html
 
 <h2>How does it work?</h2>
 
-<p>Simply place your binaries under a special <code>native/bin</code> directory and Boxfuse
+<p>Simply place your binaries under a special <code>native/bin</code> directory and CloudCaptain
     will automatically add them to the <code>PATH</code> at runtime in your instances.</p>
 
 <p>If those binaries also depend on additional shared libraries beyond the C library, place the .so files of your libraries
-    under <code>native/lib</code> and Boxfuse
+    under <code>native/lib</code> and CloudCaptain
     will automatically add them to the <code>LD_LIBRARY_PATH</code> at runtime in your instances.</p>
 
 <p>And that's all!</p>
@@ -120,7 +120,7 @@ public class RemoteCowsayApplication {
 
 <pre class="console"><span>$ </span>mvnw package</pre>
 
-<p>And let Boxfuse create an image and launch an instance on VirtualBox:</p>
+<p>And let CloudCaptain create an image and launch an instance on VirtualBox:</p>
 
 <pre class="console"><span>$ </span>boxfuse run
 
@@ -150,11 +150,11 @@ execute permissions. And all we needed to do to invoke it was a simple one-liner
 
 <h2>Available today</h2>
 
-<p>The Boxfuse built-in support for <strong>shipping native Linux x64 binaries with your JVM apps</strong> is
+<p>The CloudCaptain built-in support for <strong>shipping native Linux x64 binaries with your JVM apps</strong> is
 available today at no charge to all customers. Enjoy!</p>
 
 <p>So if you haven't already,
     <a href="https://console.boxfuse.com"><strong>sign up for your
-        Boxfuse account</strong></a> now (simply log in with your GitHub id, it's free), start deploying
+        CloudCaptain account</strong></a> now (simply log in with your GitHub id, it's free), start deploying
     your application effortlessly to AWS today and enjoy the dead easy integration for shipping native binaries.
 </p>

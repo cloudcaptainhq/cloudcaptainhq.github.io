@@ -6,7 +6,7 @@ pill: convert
 
 <h2>boxfuse:convert</h2>
 
-<p>Converts this <em>Image</em> from the <em>Boxfuse Vault</em> into an AWS AMI..</p>
+<p>Converts this <em>Image</em> from the <em>CloudCaptain Vault</em> into an AWS AMI..</p>
 
 <p><strong>Usage: </strong> mvn boxfuse:convert -Dboxfuse.image=<em>image</em></p>
 
@@ -30,7 +30,7 @@ AMI created in 00:12.603s -> ami-74d4d369</pre>
         <td>user</td>
         <td>boxfuse.user</td>
         <td></td>
-        <td><strong>Required</strong> - Your Boxfuse Client user. Also configurable via the <code>BOXFUSE_USER</code>
+        <td><strong>Required</strong> - Your CloudCaptain Client user. Also configurable via the <code>BOXFUSE_USER</code>
             environment variable or the Maven settings.xml
         </td>
     </tr>
@@ -38,7 +38,7 @@ AMI created in 00:12.603s -> ami-74d4d369</pre>
         <td>secret</td>
         <td>boxfuse.secret</td>
         <td></td>
-        <td><strong>Required</strong> - Your Boxfuse Client secret. Also configurable via the <code>BOXFUSE_SECRET</code>
+        <td><strong>Required</strong> - Your CloudCaptain Client secret. Also configurable via the <code>BOXFUSE_SECRET</code>
             environment variable or the Maven settings.xml</td>
     </tr>
     <tr>
@@ -54,7 +54,7 @@ AMI created in 00:12.603s -> ami-74d4d369</pre>
         <td>env</td>
         <td>boxfuse.env</td>
         <td>prod</td>
-        <td>Use the AWS region of this Boxfuse <a href="/docs/environments">environment</a> to create the AMI</td>
+        <td>Use the AWS region of this CloudCaptain <a href="/docs/environments">environment</a> to create the AMI</td>
     </tr>
     <tr>
         <td>image</td>
@@ -74,7 +74,7 @@ AMI created in 00:12.603s -> ami-74d4d369</pre>
 
 <h3 id="dynamic-properties">Dynamically defined properties</h3>
 
-<p>After you execute convert, Boxfuse will automatically define the following Maven properties</p>
+<p>After you execute convert, CloudCaptain will automatically define the following Maven properties</p>
 
 <table class="table">
     <thead>

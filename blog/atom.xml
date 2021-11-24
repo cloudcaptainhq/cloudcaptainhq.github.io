@@ -3,13 +3,13 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title>Boxfuse</title>
+  <title>CloudCaptain</title>
   <link href="https://cloudcaptainhq.com/blog/"/>
   <link type="application/atom+xml" rel="self" href="/blog/atom.xml"/>
   <updated>{{ site.time | date_to_xmlschema }}</updated>
   <id>https://cloudcaptainhq.com/blog/</id>
   <author>
-    <name>Boxfuse</name>
+    <name>CloudCaptain</name>
   </author>
 
   {% for post in site.posts %}

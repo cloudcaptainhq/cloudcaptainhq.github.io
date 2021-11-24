@@ -1,19 +1,19 @@
 ---
 layout: getstarted
 menu: grails
-subtitle: 'Get Started with Boxfuse & Grails'
+subtitle: 'Get Started with CloudCaptain & Grails'
 ---
 <div id="grails">
     <p><img src="/assets/img/grails.png"></p>
     <p>&nbsp;</p>
 
-    <p>This tutorial will get you started with Boxfuse and Grails. It should take you about <strong>5-10 minutes</strong> to complete.</p>
+    <p>This tutorial will get you started with CloudCaptain and Grails. It should take you about <strong>5-10 minutes</strong> to complete.</p>
 
     <h2>Prerequisites</h2>
     <p>Before you begin, ensure you have successfully:</p>
     <ol>
-        <li>created a <strong><a href="https://console.boxfuse.com">Boxfuse Account</a></strong> (simply log in with your GitHub account, it's free)</li>
-        <li>downloaded and installed the latest <strong><a href="/getstarted/download">Boxfuse Client</a></strong></li>
+        <li>created a <strong><a href="https://console.boxfuse.com">CloudCaptain Account</a></strong> (simply log in with your GitHub account, it's free)</li>
+        <li>downloaded and installed the latest <strong><a href="/getstarted/download">CloudCaptain Client</a></strong></li>
         <li>downloaded and installed the latest version of <strong><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a></strong></li>
         <li>downloaded and installed the latest <strong><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK</a></strong> with <code>JAVA_HOME</code> set up correctly</li>
         <li>downloaded and installed the latest version of <strong><a href="https://grails.org/download.html">Grails</a></strong> with <code>GRAILS_HOME</code> set up correctly</li>
@@ -67,9 +67,9 @@ subtitle: 'Get Started with Boxfuse & Grails'
 
     <p>Great. Your Grails application is now available under <code>build/libs/getstarted-grails-0.1.jar</code>.</p>
 
-    <h2>Fusing a Boxfuse image and running it locally on VirtualBox</h2>
+    <h2>Fusing a CloudCaptain image and running it locally on VirtualBox</h2>
 
-    <p>Now it's time to fuse your application into a Boxfuse image and launch an instance of it on VirtualBox:</p>
+    <p>Now it's time to fuse your application into a CloudCaptain image and launch an instance of it on VirtualBox:</p>
 
     <pre class="console"><span>getstarted-grails&gt;</span> boxfuse run
 
@@ -81,7 +81,7 @@ Instance launched in 00:04.688s -> vb-9feb5d7c
 Waiting for Payload to start on Instance vb-9feb5d7c ...
 Payload started in 00:06.029s -> http://127.0.0.1:8080</pre>
 
-    <p>Boxfuse has automatically detected the Spring Boot Actuator and used the <code>/health</code> endpoint to check whether the instance came up correctly.</p>
+    <p>CloudCaptain has automatically detected the Spring Boot Actuator and used the <code>/health</code> endpoint to check whether the instance came up correctly.</p>
 
     <p>Open a browser at this address to see your new application up and running within the VirtualBox VM by simply executing:</p>
 
@@ -115,10 +115,10 @@ Total: 1</pre>
 
     <h2>Deploying your application to AWS</h2>
 
-    <p>Now let's deploy the image to AWS. As Boxfuse works with your AWS account, it first needs the necessary permissions to do so.
-        So if you haven't already done it, go to the Boxfuse Console and <strong><a href="https://console.boxfuse.com/#/awsAccount">connect your AWS account</a></strong> now.</p>
+    <p>Now let's deploy the image to AWS. As CloudCaptain works with your AWS account, it first needs the necessary permissions to do so.
+        So if you haven't already done it, go to the CloudCaptain Console and <strong><a href="https://console.boxfuse.com/#/awsAccount">connect your AWS account</a></strong> now.</p>
 
-    <p>Every new Boxfuse account comes with 3 environments: <code>dev</code>, <code>test</code> and <code>prod</code>.
+    <p>Every new CloudCaptain account comes with 3 environments: <code>dev</code>, <code>test</code> and <code>prod</code>.
         <code>dev</code> is your local VirtualBox environment and <code>test</code> and <code>prod</code> are on AWS.</p>
 
     <p>So let's deploy our application to the <code>prod</code> environment on AWS:</p>
@@ -141,9 +141,9 @@ Remapping Elastic IP 52.29.77.147 to i-2c1daf90 ...
 Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
 Deployment completed successfully. myuser/getstarted-grails:0.1 is up and running at http://getstartedgrails-myuser.boxfuse.io:8080/</div></pre>
 
-    <p>Notice that Boxfuse has reused your image unchanged instead fusing a new one.</p>
+    <p>Notice that CloudCaptain has reused your image unchanged instead fusing a new one.</p>
 
-    <p>With that one command Boxfuse has automatically pushed your image to the Boxfuse Vault as well as provisioned,
+    <p>With that one command CloudCaptain has automatically pushed your image to the CloudCaptain Vault as well as provisioned,
     configured and secured all necessary AWS resources. There is no manual work necessary on your behalf.</p>
 
     <p>All you need to do is simply navigate to your new domain to see your Spring Boot application in action on AWS:</p>
@@ -155,7 +155,7 @@ Deployment completed successfully. myuser/getstarted-grails:0.1 is up and runnin
     <p>Now let's take things one step further and deploy an update of your application with zero downtime using blue/green deployments.</p>
 
     <p>Start by modifying <code>grails-app/views/index.gsp</code> and change the title:</p>
-    <pre class="prettyprint">&lt;h1&gt;Welcome to Grails on Boxfuse!&lt;/h1&gt;</pre>
+    <pre class="prettyprint">&lt;h1&gt;Welcome to Grails on CloudCaptain!&lt;/h1&gt;</pre>
 
     <p>then bump the version in <code>build.gradle</code>:</p>
 
@@ -196,16 +196,16 @@ Deployment completed successfully. myuser/getstarted-grails:0.2 is up and runnin
     <p>In this brief guide we have seen how to:</p>
     <ul>
         <li>create a Grails application</li>
-        <li>fuse it into a Boxfuse image</li>
+        <li>fuse it into a CloudCaptain image</li>
         <li>deploy the image locally on VirtualBox</li>
         <li>deploy the image unchanged to AWS</li>
         <li>update the application with zero downtime</li>
     </ul>
 
     <p>Now it's your turn. Take your favorite Grails application and deploy it with ease and pleasure.</p>
-    <p>And don't forget, Boxfuse also comes with a <a href="/docs/gradle">Gradle</a> plugin to seamlessly integrate with your CI/CD workflow.</p>
+    <p>And don't forget, CloudCaptain also comes with a <a href="/docs/gradle">Gradle</a> plugin to seamlessly integrate with your CI/CD workflow.</p>
 
     <p class="next-steps">
-        <a class="btn btn-primary" href="/docs/payloads/grails">Boxfuse Grails Documentation <i class="fa fa-arrow-right"></i></a>
+        <a class="btn btn-primary" href="/docs/payloads/grails">CloudCaptain Grails Documentation <i class="fa fa-arrow-right"></i></a>
     </p>
 </div>

@@ -5,27 +5,27 @@ subtitle: 'Spring Boot'
 ---
 <p><img src="/assets/img/springboot.png"></p>
 
-<p>Boxfuse supports <strong>Spring Boot 1.x and 2.x</strong> apps packaged as either a <strong>Spring Boot Executable
+<p>CloudCaptain supports <strong>Spring Boot 1.x and 2.x</strong> apps packaged as either a <strong>Spring Boot Executable
     Jar</strong> or
     a <strong>Spring Boot Executable War</strong> using either <strong>OpenJDK 7.x or 8.x</strong>.</p>
 
 <h2>Get Started</h2>
 
-<p>If you haven't already, start by following <strong><a href="/getstarted/springboot">Spring Boot &amp; Boxfuse
+<p>If you haven't already, start by following <strong><a href="/getstarted/springboot">Spring Boot &amp; CloudCaptain
     tutorial</a></strong> that will get you <strong>up and running in 5-10 minutes</strong>.</p>
 
 <p>Also check out our <a href="/blog/spring-boot-ec2"><strong>blog post</strong></a> on how to
-    create a Spring Boot application and deploy it on EC2 using Boxfuse.</p>
+    create a Spring Boot application and deploy it on EC2 using CloudCaptain.</p>
 
 <p>For databases, check out our <a href="/blog/databases"><strong>blog post</strong></a> on how to build a Spring Boot
     microservice that
-    uses a Boxfuse-managed PostgreSQL database.</p>
+    uses a CloudCaptain-managed PostgreSQL database.</p>
 
-<p>Additionally here are also a <a href="/docs/articles#springboot">number of articles</a> on how to use Boxfuse with
+<p>Additionally here are also a <a href="/docs/articles#springboot">number of articles</a> on how to use CloudCaptain with
     Spring Boot.</p>
 
 <h2>Java Runtime Environment</h2>
-<p>By default Boxfuse uses the <strong>latest OpenJDK 8.x version</strong> (headless JRE).</p>
+<p>By default CloudCaptain uses the <strong>latest OpenJDK 8.x version</strong> (headless JRE).</p>
 
 <h3>OpenJDK version</h3>
 <p>If you want to switch to OpenJDK 7.x or simply an
@@ -33,7 +33,7 @@ subtitle: 'Spring Boot'
 
 <pre class="console"><span>&gt;</span> boxfuse run my-app-1.0.jar <strong>-components.openjdk=</strong>7.80.32</pre>
 
-<p>To find out which OpenJDK versions are available from the Boxfuse Inventory you can simply issue:</p>
+<p>To find out which OpenJDK versions are available from the CloudCaptain Inventory you can simply issue:</p>
 
 <pre class="console"><span>&gt;</span> boxfuse inventory openjdk</pre>
 
@@ -71,14 +71,14 @@ subtitle: 'Spring Boot'
 
 <h2 id="configuration">Configuration</h2>
 
-<p>By default Boxfuse looks for an <code>application-boxfuse.properties</code> file <em>inside</em> the Spring Boot jar
+<p>By default CloudCaptain looks for an <code>application-boxfuse.properties</code> file <em>inside</em> the Spring Boot jar
     file
     and <strong>runs your app with the Spring profile <code>boxfuse</code></strong> activated by default.</p>
 
 <p>If you use Maven or Gradle, this means the <code>application-boxfuse.properties</code> file should be put into the
     <code>src/main/resources</code> directory.
     When the Spring Boot Maven or Gradle plugin packages the executable jar, it will include it in the root of your
-    class path, where Boxfuse can see it.</p>
+    class path, where CloudCaptain can see it.</p>
 <pre class="filetree"><i class="fa fa-folder-open"></i> my-spring-boot-app
   <i class="fa fa-folder-open"></i> src
     <i class="fa fa-folder-open"></i> main
@@ -86,11 +86,11 @@ subtitle: 'Spring Boot'
       <i class="fa fa-folder-open"></i> resources
         <span><i class="fa fa-file-text"></i> application-boxfuse.properties</span></pre>
 
-<p>Boxfuse parses <strong><code>application-boxfuse.properties</code></strong> and <strong>automatically configures the
+<p>CloudCaptain parses <strong><code>application-boxfuse.properties</code></strong> and <strong>automatically configures the
     ports and the healthcheck</strong> based on the
     information it contains.</p>
 
-<p>If no <code>application-boxfuse.properties</code> is found in the jar file, Boxfuse will automatically
+<p>If no <code>application-boxfuse.properties</code> is found in the jar file, CloudCaptain will automatically
     look for the following configuration files both at the root of the classpath and in the <code>config</code> package:
 </p>
 <ul>
@@ -108,41 +108,41 @@ subtitle: 'Spring Boot'
 
 <h2 id="ports">Ports</h2>
 
-<p>Boxfuse will automatically configure your application ports to be either <code>http</code>
+<p>CloudCaptain will automatically configure your application ports to be either <code>http</code>
     or <code>https</code> based on the value of <code>server.ssl.enabled</code>. The actual port numbers are
     automatically
     configured according to the values of the <code>server.port</code> and <code>management.port</code> properties.</p>
 
 <h2 id="healthchecks">Healthchecks</h2>
 
-<p>Boxfuse will automatically configure the healthcheck port and path based on the discovered Spring Boot configuration.
-    If your application also includes the Spring Boot Actuator, Boxfuse will <strong>automatically configures its
+<p>CloudCaptain will automatically configure the healthcheck port and path based on the discovered Spring Boot configuration.
+    If your application also includes the Spring Boot Actuator, CloudCaptain will <strong>automatically configures its
         healthcheck
         to match the Spring Boot health endpoint</strong>.</p>
 
 <h2 id="profiles">Spring Profiles</h2>
 
-<p>By default Boxfuse activates a Spring Profile called <code>boxfuse</code>. You can however easily specify a different
+<p>By default CloudCaptain activates a Spring Profile called <code>boxfuse</code>. You can however easily specify a different
     profile by setting the <code>SPRING_PROFILES_ACTIVE</code> environment variable or the <code>spring.profiles.active</code>
     JVM system property to the value you need using the
     <a href="/docs/commandline/run#envvars">envvars</a> and <a href="/docs/commandline/run#jvm.args">jvm.args</a> arguments.</p>
 
-<p>To use a different Spring Profile for each <a href="/docs/environments">Boxfuse environment</a>,
+<p>To use a different Spring Profile for each <a href="/docs/environments">CloudCaptain environment</a>,
     set the Spring Boot profile to the value of the <code>BOXFUSE_ENV</code> environment variable which contains the
     name of the
     current <a href="/docs/environments">environment</a> (dev, test, prod): <code>-jvm.args=-Dspring.profiles.active=$BOXFUSE_ENV</code>
 </p>
 
 <div class="alert alert-info"><p><strong>Tip for Mac OSX and Linux users</strong></p>
-    <p>The <code>BOXFUSE_ENV</code> environment variable is only available within the Boxfuse instance, so
+    <p>The <code>BOXFUSE_ENV</code> environment variable is only available within the CloudCaptain instance, so
         you must prevent variable expansion by using single quotes:
         <code>'-jvm.args=-Dspring.profiles.active=$BOXFUSE_ENV'</code></p>
 </div>
 
-<p>Note that selecting a Spring Profile via an environment variables or any other means does not affect how Boxfuse
-    <a href="#configuration">configures ports and healthchecks</a>. Boxfuse will only read the files described in that
+<p>Note that selecting a Spring Profile via an environment variables or any other means does not affect how CloudCaptain
+    <a href="#configuration">configures ports and healthchecks</a>. CloudCaptain will only read the files described in that
     section to extract that information, regardless of which Spring profile gets selected at runtime. You can
-    override those auto-configured values by explicitly setting the port numbers and healthcheck paths using Boxfuse
+    override those auto-configured values by explicitly setting the port numbers and healthcheck paths using CloudCaptain
     parameters when fusing images or launching instances. At runtime those parameters will then override any other
     Spring Boot configuration.
 </p>
@@ -150,11 +150,11 @@ subtitle: 'Spring Boot'
 <h2 id="databases">Databases</h2>
 
 <h3>Database auto-provisioning</h3>
-<p>If your app includes the PostgreSQL or MySQL JDBC driver, Boxfuse will <a href="/docs/databases">automatically
+<p>If your app includes the PostgreSQL or MySQL JDBC driver, CloudCaptain will <a href="/docs/databases">automatically
     provision the necessary PostgreSQL or MySQL database</a>
     in each environment and <strong>auto-configure Spring Boot's DataSource</strong>.</p>
 
-<p>Boxfuse auto-configures Spring Boot's DataSource by setting the <code>SPRING_DATASOURCE_URL</code>,
+<p>CloudCaptain auto-configures Spring Boot's DataSource by setting the <code>SPRING_DATASOURCE_URL</code>,
     <code>SPRING_DATASOURCE_USERNAME</code> and <code>SPRING_DATASOURCE_PASSWORD</code> environment variables
     to the correct JDBC url, user and password for the current <a href="/docs/environments">environment</a>.
 </p>
@@ -197,7 +197,7 @@ server.ssl.key-store-password=boxfuse-selfsigned</pre>
 
 <p>If you use Maven or Gradle, this means your <code>.jks</code> or <code>.keystore</code> KeyStore file should be put
     into the <code>src/main/resources</code> directory.
-    When Maven or Gradle packages the jar, it will include it in the root of your Spring Boot jar file, where Boxfuse
+    When Maven or Gradle packages the jar, it will include it in the root of your Spring Boot jar file, where CloudCaptain
     can see it.</p>
 <pre class="filetree"><i class="fa fa-folder-open"></i> my-spring-boot-app
   <i class="fa fa-folder-open"></i> src
@@ -217,13 +217,13 @@ server.ssl.key-store-password=myS3cr3tPwd</pre>
 
 <h2 id="root-certificates">Root Certificates</h2>
 
-<p>By default, Boxfuse uses the <strong>same root certificate bundle as the latest version of Firefox</strong>.
-    Additionally Boxfuse also includes the <strong>root certificates for Amazon RDS</strong>, so you can connect
+<p>By default, CloudCaptain uses the <strong>same root certificate bundle as the latest version of Firefox</strong>.
+    Additionally CloudCaptain also includes the <strong>root certificates for Amazon RDS</strong>, so you can connect
     securely to RDS databases out of the box.</p>
 <p>You can, however, ship your own set of root certificates, by placing them in a KeyStore inside the Jar file as <code>/cacerts</code>.
     If you use Maven or Gradle, this means your <code>cacerts</code> KeyStore file should be put into the <code>src/main/resources</code>
     directory.
-    Boxfuse will then automatically configure the JRE to use these instead.
+    CloudCaptain will then automatically configure the JRE to use these instead.
 </p>
 
 <pre class="filetree"><i class="fa fa-folder-open"></i> my-spring-boot-app
@@ -241,11 +241,11 @@ server.ssl.trust-store-password=my0th3rPwd</pre>
 
 <h2 id="jce">JCE unlimited strength cryptography</h2>
 
-<h3>Using Boxfuse's default JRE</h3>
+<h3>Using CloudCaptain's default JRE</h3>
 
 <p><strong>This is already enabled by default (starting with OpenJDK 8.162.12) and no further action is required.</strong></p>
 
-<h3>Using an older Boxfuse JRE</h3>
+<h3>Using an older CloudCaptain JRE</h3>
 
 <p>To enable JCE unlimited cryptography (for AES-256, RSA-4096, ...), download the policy zip from the Oracle website
     for either <a href="http://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html">Java 7</a>
@@ -254,7 +254,7 @@ server.ssl.trust-store-password=my0th3rPwd</pre>
     Jar file.
     If you use Maven or Gradle, this means both policy jar files should be put into the <code>src/main/resources</code>
     directory.
-    Boxfuse will then automatically configure the JRE to use these instead.
+    CloudCaptain will then automatically configure the JRE to use these instead.
 </p>
 
 <pre class="filetree"><i class="fa fa-folder-open"></i> my-spring-boot-app
@@ -285,25 +285,25 @@ server.ssl.trust-store-password=my0th3rPwd</pre>
   <i class="fa fa-file"></i> myjavaagent.jar
   <i class="fa fa-file-text"></i> myjavaagent.properties</span></pre>
 
-<p>Boxfuse will then <strong>automatically configure the JRE to use these Java Agents</strong></p>
+<p>CloudCaptain will then <strong>automatically configure the JRE to use these Java Agents</strong></p>
 
 <h2 id="memory">JVM Memory</h2>
 
-<p>By default Boxfuse will <strong>dynamically configure your JVM heap to use 85% of the available memory</strong> in
+<p>By default CloudCaptain will <strong>dynamically configure your JVM heap to use 85% of the available memory</strong> in
     the instance. All other settings
     use the JVM defaults. You can override this by specifying the required JVM arguments like <code>-Xmx</code> via the
     <code>jvm.args</code> configuration setting.</p>
 
 <h2 id="tmp">Temporary Files</h2>
 
-<p>Boxfuse configures the JVM to use <code>/tmp</code> as the directory to store temporary files and provisions <strong>1
+<p>CloudCaptain configures the JVM to use <code>/tmp</code> as the directory to store temporary files and provisions <strong>1
     GB of space by default</strong>.</p>
 <p>To increase this (up to a maximum of 16 TB), simply set
-    the <code>tmp</code> configuration setting to the number of GB of temp space you need. To prevent Boxfuse from
+    the <code>tmp</code> configuration setting to the number of GB of temp space you need. To prevent CloudCaptain from
     provisioning any temp space set <code>tmp</code> to <code>0</code>.</p>
-<p>Boxfuse also automatically configures the Spring Boot Actuator disk space health check to monitor <code>/tmp</code>.
+<p>CloudCaptain also automatically configures the Spring Boot Actuator disk space health check to monitor <code>/tmp</code>.
     When you disable
-    the temp space (by setting <code>tmp</code> to <code>0</code>), Boxfuse will also automatically disable the Actuator
+    the temp space (by setting <code>tmp</code> to <code>0</code>), CloudCaptain will also automatically disable the Actuator
     disk space health check.</p>
 
 <h2 id="debugging">Debugging</h2>
@@ -315,7 +315,7 @@ server.ssl.trust-store-password=my0th3rPwd</pre>
     Details and setup instructions on our <a href="/docs/profiling">profiling page</a>.</p>
 
 <h2 id="live">Live Reloading</h2>
-<p>Boxfuse supports <a href="/docs/live">Live Reloading</a> of <em>exploded</em> Spring Boot jar and war files. However
+<p>CloudCaptain supports <a href="/docs/live">Live Reloading</a> of <em>exploded</em> Spring Boot jar and war files. However
     in most cases you're probably better off using Spring Boot's own solution, the <a href="#spring-boot-devtools">Spring
         Boot Dev Tools</a>,
     as they work great on both VirtualBox and AWS.</p>
@@ -323,7 +323,7 @@ server.ssl.trust-store-password=my0th3rPwd</pre>
 <p>Check out our <strong><a href="/blog/spring-boot-devtools-aws">blog post</a></strong> for details.</p>
 
 <h2 id="spring-boot-devtools">Spring Boot Dev Tools</h2>
-<p>Boxfuse supports the <a
+<p>CloudCaptain supports the <a
         href="http://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-devtools.html">Spring Boot Dev
     Tools</a>,
     including running as a <a
@@ -386,7 +386,7 @@ Payload started in 00:07.682s -> http://127.0.0.1:8080</pre>
 2016-07-07 17:04:41.432  INFO 5280 --- [           main] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
 2016-07-07 17:04:41.456  INFO 5280 --- [           main] o.s.b.devtools.RemoteSpringApplication   : Started RemoteSpringApplication in 0.684 seconds (JVM running for 0.981)</pre>
 
-<p>Any change you now make in your IDE (don't forget to save and build) will be reflected within your running Boxfuse
+<p>Any change you now make in your IDE (don't forget to save and build) will be reflected within your running CloudCaptain
     instance,
     regardless of whether it is on VirtualBox or AWS.</p>
 
@@ -394,7 +394,7 @@ Payload started in 00:07.682s -> http://127.0.0.1:8080</pre>
 
 <h2 id="timezone">Time Zone</h2>
 
-<p>By default all Boxfuse instance use the <strong><code>UTC</code> time zone</strong>.</p>
+<p>By default all CloudCaptain instance use the <strong><code>UTC</code> time zone</strong>.</p>
 
 <p>We <strong>don't recommend changing this</strong> as this greatly simplifies time zone issues in machine to machine communication
     and cleanly relegates all time zones related aspects to a pure presentation layer concern.</p>
@@ -407,13 +407,13 @@ Payload started in 00:07.682s -> http://127.0.0.1:8080</pre>
 
 <h2 id="native">Native binaries and libs</h2>
 
-<p>Some JVM applications also depend on <strong>native Linux x64 binaries and libs</strong> to do their work. Boxfuse makes it easy to
+<p>Some JVM applications also depend on <strong>native Linux x64 binaries and libs</strong> to do their work. CloudCaptain makes it easy to
     integrate them into your image.</p>
-<p>Simply place your binaries under <code>/native/bin</code> on the classpath and Boxfuse
+<p>Simply place your binaries under <code>/native/bin</code> on the classpath and CloudCaptain
 will automatically add them to the <code>PATH</code> at runtime in your instances.</p>
 
 <p>If those binaries also depend on additional shared libraries beyond the C library, place the .so files of your libraries
-under <code>/native/lib</code> on the classpath and Boxfuse
+under <code>/native/lib</code> on the classpath and CloudCaptain
     will automatically add them to the <code>LD_LIBRARY_PATH</code> at runtime in your instances.</p>
 
 <div class="alert alert-info"><p><strong>Tip</strong></p>
@@ -422,7 +422,7 @@ under <code>/native/lib</code> on the classpath and Boxfuse
 </div>
 
 <p>If you use Maven or Gradle, the <code>native</code> directory should be put into the <code>src/main/resources</code>
-    directory. Boxfuse will then automatically configure the <code>PATH</code> and <code>LD_LIBRARY_PATH</code> to use it.</p>
+    directory. CloudCaptain will then automatically configure the <code>PATH</code> and <code>LD_LIBRARY_PATH</code> to use it.</p>
 
 <pre class="filetree"><i class="fa fa-folder-open"></i> my-spring-boot-app
   <i class="fa fa-folder-open"></i> src
@@ -444,20 +444,20 @@ under <code>/native/lib</code> on the classpath and Boxfuse
 <h2 id="newrelic">New Relic support</h2>
 
 <p>To monitor your app using <a href="/docs/newrelic">New Relic</a> simply pass in your New Relic license key when
-    fusing your image and Boxfuse will automatically install and configure the New Relic Servers Linux x64 and New Relic
+    fusing your image and CloudCaptain will automatically install and configure the New Relic Servers Linux x64 and New Relic
     Java agents for you.</p>
 
 <pre class="console"><span>&gt;</span> boxfuse fuse <strong>-newrelic.licensekey=</strong>0123456789abcdef0123456789abcdef01234567</pre>
 
-<p>Alternatively you can also supply a <code>newrelic.yml</code> configuration file for the Java agent and Boxfuse will
-    automatically use that instead. Boxfuse will then install the agent for you, but won't override any application name
+<p>Alternatively you can also supply a <code>newrelic.yml</code> configuration file for the Java agent and CloudCaptain will
+    automatically use that instead. CloudCaptain will then install the agent for you, but won't override any application name
     you may have configured.
-    If you haven't configured a New Relic license key as described above, Boxfuse will use
+    If you haven't configured a New Relic license key as described above, CloudCaptain will use
     the license key contained in your <code>newrelic.yml</code> configuration file instead.</p>
 
 <p>If you use Maven or Gradle, the <code>newrelic.yml</code> file should be put into the <code>src/main/resources</code>
     directory.
-    Boxfuse will then automatically configure the New Relic Java agent to use it.</p>
+    CloudCaptain will then automatically configure the New Relic Java agent to use it.</p>
 
 <pre class="filetree"><i class="fa fa-folder-open"></i> my-spring-boot-app
   <i class="fa fa-folder-open"></i> src
@@ -487,7 +487,7 @@ under <code>/native/lib</code> on the classpath and Boxfuse
 <p>You can then for example tune the maximum number of file descriptors by simply including the following in <code>sysctl.conf</code>:</p>
 <pre class="prettyprint">fs.file-max = 131072</pre>
 
-<p>Boxfuse will then <strong>automatically configure the Linux kernel to use these settings</strong>.</p>
+<p>CloudCaptain will then <strong>automatically configure the Linux kernel to use these settings</strong>.</p>
 
 <p class="next-steps">
     <a class="btn btn-primary" href="/docs/payloads/jhipster">JHipster <i class="fa fa-arrow-right"></i></a>

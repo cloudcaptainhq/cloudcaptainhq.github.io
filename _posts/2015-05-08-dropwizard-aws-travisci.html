@@ -17,7 +17,7 @@ permalink: /blog/dropwizard-aws-travisci.html
         With every automated build, we fused an image, ran integration tests against it on VirtualBox and deployed it unchanged to EC2.</p>
 
     <p>Today in the final part of this series, we take this to its natural conclusion and create a full <strong>Continuous Deployment pipeline
-        for our unikernel</strong>. Every commit flows smoothly and automatically all the way <strong>from GitHub to AWS, using Travis CI, Maven and Boxfuse</strong>.</p>
+        for our unikernel</strong>. Every commit flows smoothly and automatically all the way <strong>from GitHub to AWS, using Travis CI, Maven and CloudCaptain</strong>.</p>
 
     <h2 class="blog-post-section">Prerequisites</h2>
 
@@ -26,7 +26,7 @@ permalink: /blog/dropwizard-aws-travisci.html
 
     <h2 class="blog-post-section">Step 1: Setting up GitHub and Travis CI</h2>
 
-    <p>Here at Boxfuse we are big fans of both <strong><a href="https://github.com">GitHub</a></strong> and
+    <p>Here at CloudCaptain we are big fans of both <strong><a href="https://github.com">GitHub</a></strong> and
         <strong><a href="https://travis-ci.org">Travis CI</a></strong>. Together they form a powerful combo of source
         control and continuous integration. We especially like the fact that Travis CI integrates really well with GitHub
         and lets you <strong>check the whole CI build job definition straight into source control</strong>. And best of all, they are both
@@ -51,12 +51,12 @@ permalink: /blog/dropwizard-aws-travisci.html
     </div>
 
     <p>Finally, go to your Travis CI repository settings and define two <strong>secure environment variables</strong>
-        for your <strong>Boxfuse credentials</strong> called
+        for your <strong>CloudCaptain credentials</strong> called
         <code>BOXFUSE_USER</code> and <code>BOXFUSE_SECRET</code>. Their values are the same as the ones you enterred in
         your <code>pom.xml</code> in <a href="/blog/dropwizard-aws-maven">part 2</a>.</p>
 
     <p>The big advantage is that they'll be securely stored at Travis CI and will not appear in neither your public
-    GitHub repository nor your Travis CI build logs, yet the Boxfuse Maven plugin will be able to use them.</p>
+    GitHub repository nor your Travis CI build logs, yet the CloudCaptain Maven plugin will be able to use them.</p>
 
     <div class="blog-post-image">
         <img src="/assets/posts/dropwizard-aws-travisci/envvars.png" alt="Secure environment variables">
@@ -69,13 +69,13 @@ permalink: /blog/dropwizard-aws-travisci.html
     <p>Before we can check in, some important changes must be made. This is both due to the nature of public repositories
     and the build environment for Travis CI.</p>
 
-    <p>The first and most important thing you must do is <strong>delete your Boxfuse credentials from the <code>pom.xml</code></strong>.
-        This is essential, because checking them in basically means giving the entire world access to your Boxfuse account!
+    <p>The first and most important thing you must do is <strong>delete your CloudCaptain credentials from the <code>pom.xml</code></strong>.
+        This is essential, because checking them in basically means giving the entire world access to your CloudCaptain account!
     </p>
 
     <p>The next thing we need to take into account is that Travis CI does not support VirtualBox. This is important
         for running our integration test. We will therefore
-    adjust the Boxfuse Maven plugin configuration to use a <strong><a href="/docs#environments">test environment on AWS</a></strong>
+    adjust the CloudCaptain Maven plugin configuration to use a <strong><a href="/docs#environments">test environment on AWS</a></strong>
         instead.</p>
 
     <p>This is what the end result in the <code>pom.xml</code> looks like:</p>
@@ -84,7 +84,7 @@ permalink: /blog/dropwizard-aws-travisci.html
     &lt;groupId&gt;com.boxfuse.client&lt;/groupId&gt;
     &lt;artifactId&gt;boxfuse-maven-plugin&lt;/artifactId&gt;
     &lt;version&gt;{{site.boxfuseVersion}}&lt;/version&gt;
-    &lt;!-- No more Boxfuse credentials in the POM. --&gt;
+    &lt;!-- No more CloudCaptain credentials in the POM. --&gt;
     &lt;!-- Instead the BOXFUSE_USER and BOXFUSE_SECRET secure environment variables will be used. --&gt;
     &lt;executions&gt;
         &lt;execution&gt;
@@ -183,12 +183,12 @@ script: mvn deploy</pre>
         <li>Travis CI will create a <strong>fresh build worker</strong>, check out the sources and start Maven</li>
         <li>Maven will run once to <strong>set the version</strong> to match the build number</li>
         <li>Maven will then run again to <strong>compile and package</strong> the code as an executable Jar</li>
-        <li>Boxfuse will fuse that Jar into a <strong>unikernel image</strong></li>
-        <li>Boxfuse will then launch an instance of that image in a <strong>test environment</strong> on AWS</li>
+        <li>CloudCaptain will fuse that Jar into a <strong>unikernel image</strong></li>
+        <li>CloudCaptain will then launch an instance of that image in a <strong>test environment</strong> on AWS</li>
         <li>Maven will execute <strong>integration tests</strong> against that instance</li>
-        <li>Boxfuse will terminate the instance</li>
+        <li>CloudCaptain will terminate the instance</li>
         <li>Maven will verify the test results</li>
-        <li>And finally if everything went well, Boxfuse will <strong>update our production environment</strong> on AWS with <strong>zero downtime</strong></li>
+        <li>And finally if everything went well, CloudCaptain will <strong>update our production environment</strong> on AWS with <strong>zero downtime</strong></li>
     </ul>
 
     <div class="blog-post-image">
@@ -199,7 +199,7 @@ script: mvn deploy</pre>
 
     <p>That includes spinning up
         a new Travis CI worker, Maven downloading the internet,
-        Boxfuse fusing the unikernel image, creating an AMI, launching 2 new instance on AWS, successfully
+        CloudCaptain fusing the unikernel image, creating an AMI, launching 2 new instance on AWS, successfully
         running integration tests against one of them AND performing a clean blue/green zero downtime update with the other.</p>
 
     <p>As you can see the entire process takes just <strong>5 minutes from GitHub commit to being live on AWS</strong>.</p>
@@ -218,7 +218,7 @@ script: mvn deploy</pre>
     <p>And best of all, it's <strong>completely free</strong>!</p>
 
     <p>So say goodbye to snowflake servers and unreliable infrastructure.<br>Create your
-        <strong><a href="https://console.boxfuse.com">Boxfuse account</a></strong> now to get started with fast and reliable
+        <strong><a href="https://console.boxfuse.com">CloudCaptain account</a></strong> now to get started with fast and reliable
         dropwizard unikernels on AWS.</p>
 
     <p>You can find the <strong><a href="https://github.com/boxfuse/dwunikernel">repository we used</a></strong> on <strong>GitHub</strong>
@@ -226,10 +226,10 @@ script: mvn deploy</pre>
 
     <p>Learn more:</p>
     <ul>
-        <li><a href="/docs">Boxfuse documentation</a></li>
-        <li><a href="/docs/payloads/dropwizard">Boxfuse Dropwizard support</a></li>
-        <li><a href="/docs/aws">Boxfuse AWS support</a></li>
+        <li><a href="/docs">CloudCaptain documentation</a></li>
+        <li><a href="/docs/payloads/dropwizard">CloudCaptain Dropwizard support</a></li>
+        <li><a href="/docs/aws">CloudCaptain AWS support</a></li>
     </ul>
 
-    <p>Stay tuned for much more exciting news, <strong>subscribe to this blog</strong> and <strong><a href="https://twitter.com/boxfuse">follow Boxfuse on Twitter</a></strong></p>
+    <p>Stay tuned for much more exciting news, <strong>subscribe to this blog</strong> and <strong><a href="https://twitter.com/boxfuse">follow CloudCaptain on Twitter</a></strong></p>
 </div>

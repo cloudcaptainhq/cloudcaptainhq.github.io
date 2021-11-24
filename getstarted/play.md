@@ -1,19 +1,19 @@
 ---
 layout: getstarted
 menu: play
-subtitle: 'Get Started with Boxfuse & Play'
+subtitle: 'Get Started with CloudCaptain & Play'
 ---
 ![Play](/assets/img/play.png)
 
-This tutorial will get you started with Boxfuse and Play. Together we'll create a new Play app, deploy it to AWS and
+This tutorial will get you started with CloudCaptain and Play. Together we'll create a new Play app, deploy it to AWS and
 update it with zero downtime. Altogether this should take you about **5-10 minutes** to complete.
 
 ## Prerequisites
 
 Before you begin, ensure you have successfully:
 
-1. created a <strong><a href="https://console.boxfuse.com">Boxfuse Account</a></strong> (simply log in with your GitHub account, it's free)
-2. downloaded and installed the latest <strong><a href="/getstarted/download">Boxfuse Client</a></strong>
+1. created a <strong><a href="https://console.boxfuse.com">CloudCaptain Account</a></strong> (simply log in with your GitHub account, it's free)
+2. downloaded and installed the latest <strong><a href="/getstarted/download">CloudCaptain Client</a></strong>
 3. downloaded and installed the latest <strong><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK</a></strong> with `JAVA_HOME` set up correctly
 4. downloaded and installed the latest version of <strong><a href="http://www.scala-sbt.org/">SBT</a></strong>
 5. downloaded and installed the latest version of <strong><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a></strong>
@@ -40,13 +40,13 @@ Finally build a distribution zip:
 
 Great. Your Play application distribution zip is now available under `target/universal/getstarted-play-1.0.zip`.
 
-## Fusing a Boxfuse image and running it locally on VirtualBox
+## Fusing a CloudCaptain image and running it locally on VirtualBox
 
-Now it's time to fuse your application into a Boxfuse image and launch an instance of it on VirtualBox:
+Now it's time to fuse your application into a CloudCaptain image and launch an instance of it on VirtualBox:
 
 <pre class="console"><span>getstarted-play&gt;</span> boxfuse run</pre>
 
-This command will run for a few seconds. During this time, Boxfuse will find your application, detect its type,
+This command will run for a few seconds. During this time, CloudCaptain will find your application, detect its type,
 generating an image for it and launch it on VirtualBox. When it completes you should see a message like this:
 
 <pre class="console"><strong class="success">Successfully started payload in 00:09.407s -> http://127.0.0.1:9000</strong></pre>
@@ -87,7 +87,7 @@ Total: 1</pre>
         </div>
         <div class="col-md-10">
             <div>
-                <blockquote>We’ve decided to deploy our Play application to AWS using Boxfuse
+                <blockquote>We’ve decided to deploy our Play application to AWS using CloudCaptain
                     which was perfect for this need. A super quick deployment of a Play
                     application to an AWS instance (also requires an AWS account of
                     course). Without the overhead of all the usual setup and
@@ -102,10 +102,10 @@ Total: 1</pre>
 
 ## Deploying your application to AWS
 
-Now let's deploy the image to AWS. As Boxfuse works with your AWS account, it first needs the necessary permissions to do so.
-So if you haven't already done so, go to the Boxfuse Console and **[connect your AWS account](https://console.boxfuse.com/#/awsAccount)** now.
+Now let's deploy the image to AWS. As CloudCaptain works with your AWS account, it first needs the necessary permissions to do so.
+So if you haven't already done so, go to the CloudCaptain Console and **[connect your AWS account](https://console.boxfuse.com/#/awsAccount)** now.
 
-Every new Boxfuse account comes with 3 environments: `dev`, `test` and `prod`.
+Every new CloudCaptain account comes with 3 environments: `dev`, `test` and `prod`.
 `dev` is your local VirtualBox environment and `test` and `prod` are on AWS.
 
 So let's deploy our application to the `prod` environment on AWS:
@@ -131,7 +131,7 @@ Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
 
 Notice that we have now specified an image, as we want to reuse our image unchanged instead fusing a new one.
 
-With that one command Boxfuse has automatically pushed your image to the Boxfuse Vault as well as provisioned,
+With that one command CloudCaptain has automatically pushed your image to the CloudCaptain Vault as well as provisioned,
 configured and secured all necessary AWS resources. There is no manual work necessary on your behalf.
 
 All you need to do is simply navigate to your new domain to see your Play application in action on AWS:
@@ -147,8 +147,8 @@ Start by modifying `app/views/index.scala.html` with a simple change:
 ```
 @()
                          
-@main("Updated by Boxfuse with zero downtime") {
-  <h1>Updated by Boxfuse with zero downtime!</h1>
+@main("Updated by CloudCaptain with zero downtime") {
+  <h1>Updated by CloudCaptain with zero downtime!</h1>
 }
 ```
 
@@ -192,7 +192,7 @@ And there it is:
 In this brief guide we have seen how to:
 
 - create a Play application
-- fuse it into a Boxfuse image
+- fuse it into a CloudCaptain image
 - deploy the image locally on VirtualBox
 - deploy the image unchanged to AWS
 - update the application with zero downtime
@@ -200,4 +200,4 @@ In this brief guide we have seen how to:
 Now it's your turn. Take your favorite Play application and deploy it with ease and pleasure.
 
 {: .next-steps}
-[Boxfuse Play Documentation <i class="fa fa-arrow-right"></i>](/docs/payloads/play){: .btn .btn-primary}
+[CloudCaptain Play Documentation <i class="fa fa-arrow-right"></i>](/docs/payloads/play){: .btn .btn-primary}

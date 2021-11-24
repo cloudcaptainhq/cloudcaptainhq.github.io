@@ -17,25 +17,25 @@ subtitle: 'New Relic'
 
 <h3>Installation (JVM apps only)</h3>
 
-<p>For JVM apps, when supplying your New Relic license key as described above, Boxfuse will also automatically
+<p>For JVM apps, when supplying your New Relic license key as described above, CloudCaptain will also automatically
 install and configure the <strong>New Relic Java agent</strong>.</p>
 
 <p>The application will then begin reporting to New Relic as <code>myapp (myenv)</code>.
     In case of an application named <code>hello</code> deployed in the <code>prod</code> <a href="/docs/environments">environment</a>
     this would then be <code>hello (prod)</code>.</p>
 
-<p>Alternatively you can also supply a <code>newrelic.yml</code> configuration file for the Java agent and Boxfuse will
-automatically use that instead. Boxfuse will then install the agent for you, but won't override any application name you may have configured.
-    If you haven't configured a New Relic license key as described above, Boxfuse will use
+<p>Alternatively you can also supply a <code>newrelic.yml</code> configuration file for the Java agent and CloudCaptain will
+automatically use that instead. CloudCaptain will then install the agent for you, but won't override any application name you may have configured.
+    If you haven't configured a New Relic license key as described above, CloudCaptain will use
 the license key contained in your <code>newrelic.yml</code> configuration file instead.</p>
 
 <h3>Java Agent version</h3>
-<p>By default Boxfuse installs the latest version of the New Relic Java agent. If you want to switch an
+<p>By default CloudCaptain installs the latest version of the New Relic Java agent. If you want to switch an
     older version, you can do so using the <code>-components.newrelic-java</code> configuration setting:</p>
 
 <pre class="console"><span>&gt;</span> boxfuse run my-app-1.0.jar <strong>-components.newrelic-java=</strong>3.32.0</pre>
 
-<p>To find out which New Relic Java agent versions are available from the Boxfuse Inventory you can simply issue:</p>
+<p>To find out which New Relic Java agent versions are available from the CloudCaptain Inventory you can simply issue:</p>
 
 <pre class="console"><span>&gt;</span> boxfuse inventory newrelic-java</pre>
 

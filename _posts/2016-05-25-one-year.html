@@ -1,13 +1,13 @@
 ---
 layout: blog
-subtitle: "One Year of Boxfuse"
+subtitle: "One Year of CloudCaptain"
 permalink: /blog/one-year.html
 ---
-<p>Last month marked one year since the <a href="/blog/welcome">initial version of Boxfuse was released</a>. We are now
-    many many features and over 100 Boxfuse Client releases further. And what a
+<p>Last month marked one year since the <a href="/blog/welcome">initial version of CloudCaptain was released</a>. We are now
+    many many features and over 100 CloudCaptain Client releases further. And what a
     ride it's been!</p>
 
-<p>Boxfuse set out to make the deployment of applications to the cloud absolutely effortless by leveraging its three
+<p>CloudCaptain set out to make the deployment of applications to the cloud absolutely effortless by leveraging its three
     core principles:</p>
 <table class="table">
     <tr>
@@ -56,14 +56,14 @@ permalink: /blog/one-year.html
 <p>We launched with support for testing locally on VirtualBox and performing blue/green deployments atomically on AWS with zero downtime updates.
 We introduced this both for single instance applications (using an Elastic IP) as well as load balanced applications (using an Elastic Load Balancer).</p>
 
-<p>We have always been strong proponents of Continuous Deployments and making Boxfuse a natural fit for this was a no-brainer.
-From day one we shipped both a cross-platform CLI (the <a href="/docs/commandline">Boxfuse Command-line Client</a>) as well
-as a build tool plugin (the <a href="/docs/maven">Boxfuse Maven plugin</a>) to make it trivial to automate
+<p>We have always been strong proponents of Continuous Deployments and making CloudCaptain a natural fit for this was a no-brainer.
+From day one we shipped both a cross-platform CLI (the <a href="/docs/commandline">CloudCaptain Command-line Client</a>) as well
+as a build tool plugin (the <a href="/docs/maven">CloudCaptain Maven plugin</a>) to make it trivial to automate
 your deployment workflows.</p>
 
 <h2>Expanding to more JVM frameworks</h2>
-<p>Building upon the foundation laid out with Dropwizard, Boxfuse successively added deep integration for most common modern JVM
-application frameworks. Over the course of this first year, Boxfuse added support for
+<p>Building upon the foundation laid out with Dropwizard, CloudCaptain successively added deep integration for most common modern JVM
+application frameworks. Over the course of this first year, CloudCaptain added support for
     <a href="/blog/springboot-ec2">Spring Boot</a>, <a href="/blog/playframework-aws">Play</a>,
     <a href="/blog/grails-aws">Grails</a>, <a href="/docs/payloads/jar">plain executable Jars</a>,
     <a href="/docs/payloads/tomcat">Tomcat</a> and even <a href="/blog/javaee-aws">TomEE</a> for JavaEE applications.</p>
@@ -76,21 +76,21 @@ application frameworks. Over the course of this first year, Boxfuse added suppor
     <img style="height: 60px; margin-right: 20px;" src="/assets/img/tomee.png">
 </div>
 
-<p>We also made sure it is easy for users of those frameworks to discover Boxfuse by contributing sections to the
+<p>We also made sure it is easy for users of those frameworks to discover CloudCaptain by contributing sections to the
 official documentation of both Spring Boot and the Play framework.</p>
 
-<p>And we introduced the <a href="/blog/gradle-plugin">Boxfuse Gradle Plugin</a> (available directly from
+<p>And we introduced the <a href="/blog/gradle-plugin">CloudCaptain Gradle Plugin</a> (available directly from
 the <a href="/blog/gradle-plugin-portal">Gradle Plugin Portal</a>) to make the integration even nicer.</p>
 
 <h2>Auto-scaling</h2>
-<p>Auto-scaling is one of those true innovations of the cloud and it fits Boxfuse's immutable minimal images like a glove.
+<p>Auto-scaling is one of those true innovations of the cloud and it fits CloudCaptain's immutable minimal images like a glove.
 So it was only natural that we added first-class support to <a href="/blog/auto-scaling">dynamically scale the capacity of your system</a> based on either
 CPU or network usage:</p>
 
 <div class="blog-post-image"><img style="height: 300px" src="/assets/img/auto-scaling-console.png"></div>
 
 <h2>Database auto-provisioning</h2>
-<p>As many users rely on relational databases to store their data, Boxfuse stepped in to make sure it became
+<p>As many users rely on relational databases to store their data, CloudCaptain stepped in to make sure it became
 absolutely trivial to <a href="/blog/databases">provision PostgreSQL and MySQL databases</a> reliably across all <a href="/docs/environments">environments</a> from dev on VirtualBox
 to test and prod on AWS.</p>
 
@@ -98,17 +98,17 @@ to test and prod on AWS.</p>
     <img style="height: 150px" src="/assets/img/rds.png">
 </div>
 
-<p>This also marked the introduction of the Boxfuse Dev VM on VirtualBox, providing you with fully
+<p>This also marked the introduction of the CloudCaptain Dev VM on VirtualBox, providing you with fully
 configured database instances ready to be used by your application, without the need to install those yourself on your machine.</p>
 
-<p>Wherever your framework of choices supports it, Boxfuse also automatically configures it to automatically use
+<p>Wherever your framework of choices supports it, CloudCaptain also automatically configures it to automatically use
 the correct database instance with the correct credentials in each environment.</p>
 
 <p>And of course to easily and reliably evolve your database schema over time, our database migration tool
     <a href="https://flywaydb.org">Flyway</a> is there to help you too.</p>
 
 <h2>Debugging and Profiling</h2>
-<p>To make it easier to see what's going on with your application, Boxfuse introduced
+<p>To make it easier to see what's going on with your application, CloudCaptain introduced
 first class support for <a href="/blog/debug">debugging and profiling</a>, both locally on VirtualBox
     and directly in the cloud for your instances running on AWS.</p>
 
@@ -116,7 +116,7 @@ first class support for <a href="/blog/debug">debugging and profiling</a>, both 
     <img style="height: 200px;" src="/assets/img/jvisualvm.png">
 </div>
 
-<p>As many of those protocols are insecure, Boxfuse automatically makes use of its support
+<p>As many of those protocols are insecure, CloudCaptain automatically makes use of its support
 for <a href="/blog/restricted-ports">restricted ports</a> to ensure that by default those
 interfaces are only accessible from your current IP.</p>
 
@@ -135,7 +135,7 @@ interfaces are only accessible from your current IP.</p>
 <p>To mark the beginning of our second year, we are kicking things off with a bang and have released
 support for three new features:</p>
 <ol>
-    <li><strong>Node.js LTS releases</strong>: you can now use all current Node.js releases with Boxfuse in addition to the latest one</li>
+    <li><strong>Node.js LTS releases</strong>: you can now use all current Node.js releases with CloudCaptain in addition to the latest one</li>
     <li><strong>Instance auto-recovery</strong>: all single instance applications now automatically recover to new hardware with no manual intervention required if the current underlying EC2 hardware becomes impaired</li>
     <li><strong>Subnets restrictions</strong>: load balanced applications can now restrict exactly which subnets they wish to use within a VPC</li>
 </ol>
@@ -146,5 +146,5 @@ support for three new features:</p>
 
 <p>So if you haven't already,
     <a href="https://console.boxfuse.com"><strong>sign up for your
-        Boxfuse account</strong></a> now (simply log in with your GitHub id, it's free) to start deploying
+        CloudCaptain account</strong></a> now (simply log in with your GitHub id, it's free) to start deploying
         your JVM and Node.js applications effortlessly on AWS in minutes.</p>

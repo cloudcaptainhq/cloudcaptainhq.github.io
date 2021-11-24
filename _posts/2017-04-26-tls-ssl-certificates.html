@@ -3,16 +3,16 @@ layout: blog
 subtitle: "Automatic TLS (SSL) Certificates"
 permalink: /blog/tls-ssl-certificates.html
 ---
-<p>This month Boxfuse turned 2 and it's come a long way since <a href="/blog/welcome">its humble beginnings</a>! In
+<p>This month CloudCaptain turned 2 and it's come a long way since <a href="/blog/welcome">its humble beginnings</a>! In
 fact only since <a href="/blog/one-year">last year's anniversary</a> we have added a lot of major new features including
 <a href="/blog/oracle-jre">custom JREs</a>, <a href="/blog/oracle-jre">kernel tuning</a>, <a href="/blog/live-reloading">live reloading</a>,
     <a href="/blog/worker">worker apps</a>, <a href="/blog/go-aws">Go and Revel support</a>, <a href="/blog/newrelic">New Relic integration</a>,
     <a href="/blog/cloudwatch-logs">CloudWatch Logs integration</a>, <a href="/blog/linux-x64">generic Linux x64 apps</a>,
     <a href="/blog/custom-domains">custom domains</a> and <a href="/blog/custom-elasticips">custom Elastic IPs</a>.
     And that's of course on top of the countless minor features and polish which have been integrated in the
-    <a href="/docs/releasenotes">62 Boxfuse Client updates</a> released in the past year alone!</p>
+    <a href="/docs/releasenotes">62 CloudCaptain Client updates</a> released in the past year alone!</p>
 
-<p>Today we are kicking of Boxfuse's third year with a very highly requested new feature: <strong>automatic TLS (SSL) certificate
+<p>Today we are kicking of CloudCaptain's third year with a very highly requested new feature: <strong>automatic TLS (SSL) certificate
     management</strong> and renewal.</p>
 
 <h2>How does it work?</h2>
@@ -20,7 +20,7 @@ fact only since <a href="/blog/one-year">last year's anniversary</a> we have add
 <p>Load balanced apps using a <a href="/blog/custom-domains">custom domains</a> can now be configured to automatically
 expose themselves via HTTPS with a TLS (SSL) certificate issued by the AWS Certificate Manager.</p>
 
-<p>Boxfuse configures the ELB to terminate the client-facing TLS connection with a valid TLS certificate and
+<p>CloudCaptain configures the ELB to terminate the client-facing TLS connection with a valid TLS certificate and
     forward the request to your backend instances using TLS connection with a self-signed certificate.</p>
 
 <p><img class="screenshot" width="300" src="/assets/posts/tls-ssl-certificates/http-green-lock.png"></p>
@@ -94,18 +94,18 @@ ELB: i-050ff206b0370cefe [InService]
 
 <p><img class="max-width-image screenshot" src="/assets/posts/tls-ssl-certificates/browser.png"></p>
 
-<p>And that's it! Boxfuse automatically created and configured the AMI, the security groups, the Elastic Load Balancer,
+<p>And that's it! CloudCaptain automatically created and configured the AMI, the security groups, the Elastic Load Balancer,
     the CloudWatch Logs stream, the Auto-Scaling group and the instances and everything is fully set up and secure.
     And best of all, our <strong>TLS (SSL) certificate will be automatically renewed</strong> and updated before it expires without any
     action required on our behalf.</p>
 
 <h2>Available today</h2>
 
-<p>The Boxfuse support for <strong>automatic TLS (SSL) certificate management and renewal</strong> for
+<p>The CloudCaptain support for <strong>automatic TLS (SSL) certificate management and renewal</strong> for
     <code>load-balanced</code> apps with custom domains is available today at no additional charge on all paid plans. Enjoy!</p>
 
 <p>So if you haven't already,
     <a href="https://console.boxfuse.com"><strong>sign up for your
-        Boxfuse account</strong></a> now (simply log in with your GitHub id, it's free), start deploying
+        CloudCaptain account</strong></a> now (simply log in with your GitHub id, it's free), start deploying
     your application effortlessly to AWS today and have it running online with SSL in minutes.
 </p>

@@ -4,7 +4,7 @@ subtitle: "Live Reloading"
 permalink: /blog/live-reloading.html
 ---
 <p>
-    At Boxfuse we strongly believe in optimizing for developer productivity. This means easy of use, robustness and performance.
+    At CloudCaptain we strongly believe in optimizing for developer productivity. This means easy of use, robustness and performance.
     This is the reason we worked tirelessly to bring you <a href="/blog/nodejs-aws">2 second image generation for Node.js apps</a>,
     <a href="/blog/debug">dead easy debugging and profiling</a> and more.
 </p>
@@ -29,11 +29,11 @@ permalink: /blog/live-reloading.html
     <li>adding a <strong>reloading agent</strong> to your instance to reload your application when needed</li>
 </ol>
 
-<p>For <strong>JVM apps</strong>, Boxfuse supports mounting exploded jars, exploded wars and exploded Play zips directly into your instance. Additionally Boxfuse automatically
+<p>For <strong>JVM apps</strong>, CloudCaptain supports mounting exploded jars, exploded wars and exploded Play zips directly into your instance. Additionally CloudCaptain automatically
     configures your JVM to use the <strong>Spring Loaded</strong> Java Agent for automatically reloading classes when the underlying class file changes.</p>
 
-<p>For <strong>Node.js apps</strong>, Boxfuse supports mounting your Node.js application directory (the one containing <code>package.json</code>) directly into your instance.
-    Additionally, Boxfuse automatically starts your Node.js app with <strong>node-supervisor</strong> to ensure it is properly restarted
+<p>For <strong>Node.js apps</strong>, CloudCaptain supports mounting your Node.js application directory (the one containing <code>package.json</code>) directly into your instance.
+    Additionally, CloudCaptain automatically starts your Node.js app with <strong>node-supervisor</strong> to ensure it is properly restarted
     whenever js files change.
 </p>
 
@@ -96,7 +96,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
   <del>res.render('index', { title: 'Express' });</del>
-  <strong>res.render('index', { title: 'Boxfuse Live Reloading' });</strong>
+  <strong>res.render('index', { title: 'CloudCaptain Live Reloading' });</strong>
 });
 
 module.exports = router;</pre>
@@ -116,7 +116,7 @@ vb-2656d939 => Starting child process with 'node ./bin/www'</pre>
 <p>With <strong>Live Reloading</strong> you can now have super fast roundtrips by making changes to your project directory and seeing them immediately
 within your instance. This is a huge boost for productivity in development and it is available now on Windows, Mac OSX and Linux.</p>
 
-<p>Existing Boxfuse users can simply update their client with <strong>boxfuse -u</strong> and enjoy!</p>
+<p>Existing CloudCaptain users can simply update their client with <strong>boxfuse -u</strong> and enjoy!</p>
 
 <p>And if you haven't signed up already, simply
     <a href="https://console.boxfuse.com">log in with your GitHub id</a> (it's free!) to start deploying

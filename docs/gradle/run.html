@@ -22,9 +22,9 @@ Waiting for Payload to start on Instance vb-ec717c5e ...
 Payload started in 00:08.786s -> http://127.0.0.1:8888</pre>
 
 <p><strong>Note:</strong>
-    When an image isn't specified, Boxfuse will automatically search for a
+    When an image isn't specified, CloudCaptain will automatically search for a
     compatible payload to fuse within the current directory. If the command is executed at the root of a Gradle project,
-    Boxfuse will also automatically look for the project's build artifact.
+    CloudCaptain will also automatically look for the project's build artifact.
 </p>
 
 <h3>Class name</h3><p><code>com.boxfuse.client.gradle.task.RunTask</code></p>
@@ -44,14 +44,14 @@ Payload started in 00:08.786s -> http://127.0.0.1:8888</pre>
         <td>user</td>
         <td>boxfuse.user</td>
         <td></td>
-        <td><strong>Required</strong> - Your Boxfuse Client user. Also configurable via the <code>BOXFUSE_USER</code>
+        <td><strong>Required</strong> - Your CloudCaptain Client user. Also configurable via the <code>BOXFUSE_USER</code>
             environment variable</td>
     </tr>
     <tr>
         <td>secret</td>
         <td>boxfuse.secret</td>
         <td></td>
-        <td><strong>Required</strong> - Your Boxfuse Client secret. Also configurable via the <code>BOXFUSE_SECRET</code>
+        <td><strong>Required</strong> - Your CloudCaptain Client secret. Also configurable via the <code>BOXFUSE_SECRET</code>
             environment variable</td>
     </tr>
     <tr id="capacity">
@@ -121,19 +121,19 @@ Payload started in 00:08.786s -> http://127.0.0.1:8888</pre>
         <td>boxfuse.domain</td>
         <td>auto</td>
         <td><p><i>AWS only</i></p>
-            The custom domain to use for this application in the specified environment. <code>auto</code> to let Boxfuse automatically create a new <code>boxfuse.io</code> subdomain for you.</td>
+            The custom domain to use for this application in the specified environment. <code>auto</code> to let CloudCaptain automatically create a new <code>boxfuse.io</code> subdomain for you.</td>
     </tr>
     <tr id="elasticip">
         <td>elasticip</td>
         <td>boxfuse.elasticip</td>
         <td>auto</td>
-        <td><p><i><code>single-instance</code> apps on AWS only</i></p>The <a href="/docs/aws#elasticips">AWS Elastic IP</a> to use when deploying this application in the specified environment. <code>auto</code> to let Boxfuse automatically create a new Elastic IP for you.</td>
+        <td><p><i><code>single-instance</code> apps on AWS only</i></p>The <a href="/docs/aws#elasticips">AWS Elastic IP</a> to use when deploying this application in the specified environment. <code>auto</code> to let CloudCaptain automatically create a new Elastic IP for you.</td>
     </tr>
     <tr id="elb">
         <td>elb</td>
         <td>boxfuse.elb</td>
         <td>auto</td>
-        <td><p><i><code>load-balanced</code> apps on AWS only</i></p>The name of the <a href="/docs/aws#elbs">AWS ELB</a> to use when deploying this application in the specified environment. <code>auto</code> to let Boxfuse automatically create a new ELB for you.</td>
+        <td><p><i><code>load-balanced</code> apps on AWS only</i></p>The name of the <a href="/docs/aws#elbs">AWS ELB</a> to use when deploying this application in the specified environment. <code>auto</code> to let CloudCaptain automatically create a new ELB for you.</td>
     </tr>
     <tr id="env">
         <td>env</td>
@@ -227,7 +227,7 @@ Payload started in 00:08.786s -> http://127.0.0.1:8888</pre>
         <td>live</td>
         <td>boxfuse.live</td>
         <td>false</td>
-        <td><p><i>When fusing new images only</i></p>Enable <a href="/docs/live">live reloading</a> of changes in dev for super fast round-trips. Note that images with live reloading cannot be pushed to the Boxfuse Vault.</td>
+        <td><p><i>When fusing new images only</i></p>Enable <a href="/docs/live">live reloading</a> of changes in dev for super fast round-trips. Note that images with live reloading cannot be pushed to the CloudCaptain Vault.</td>
     </tr>
     <tr id="logsAuto">
         <td>logsAuto</td>
@@ -267,12 +267,12 @@ Payload started in 00:08.786s -> http://127.0.0.1:8888</pre>
                 </tr>
                 <tr>
                     <td><code>image</code></td>
-                    <td>Only show logs for instances of this Boxfuse image</td>
+                    <td>Only show logs for instances of this CloudCaptain image</td>
                     <td>myuser/myapp:123</td>
                 </tr>
                 <tr>
                     <td><code>app</code></td>
-                    <td>Only show logs for instances of this Boxfuse app</td>
+                    <td>Only show logs for instances of this CloudCaptain app</td>
                     <td>myuser/myapp</td>
                 </tr>
                 <tr>
@@ -467,7 +467,7 @@ Payload started in 00:08.786s -> http://127.0.0.1:8888</pre>
         <td>boxfuse.portsmap.<em>NAME</em></td>
         <td><em>same as matching image port</em></td>
         <td><p><i>VirtualBox only</i></p>
-            <p>The local ports to map to the app inside the instance. By default Boxfuse will attempt to open the same port
+            <p>The local ports to map to the app inside the instance. By default CloudCaptain will attempt to open the same port
                 locally as has been opened in the VirtualBox VM. On Linux &amp; Mac privileged ports (&lt;1024) will be
                 opened at 10000
                 + the port number for non-root users.<br>
@@ -481,8 +481,8 @@ Payload started in 00:08.786s -> http://127.0.0.1:8888</pre>
                 <tr>
                     <td><code>http=80</code></td>
                     <td>
-                        <code>http=80</code> (Windows &amp; Mac/Linux when Boxfuse is running as root)<br>
-                        <code>http=10080</code> (Mac/Linux when Boxfuse is running as a regular user)
+                        <code>http=80</code> (Windows &amp; Mac/Linux when CloudCaptain is running as root)<br>
+                        <code>http=10080</code> (Mac/Linux when CloudCaptain is running as a regular user)
                     </td>
                 </tr>
                 <tr>
@@ -520,13 +520,13 @@ Payload started in 00:08.786s -> http://127.0.0.1:8888</pre>
         <td>tags</td>
         <td>boxfuse.tags.<em>key</em></td>
         <td></td>
-        <td><p><i>AWS only</i></p>The custom <a href="/docs/aws#tags">tags</a> to apply to AWS resources in addition to the default Boxfuse ones.</td>
+        <td><p><i>AWS only</i></p>The custom <a href="/docs/aws#tags">tags</a> to apply to AWS resources in addition to the default CloudCaptain ones.</td>
     </tr>
     <tr id="targetgroup">
         <td>targetgroup</td>
         <td>boxfuse.targetgroup</td>
         <td>auto</td>
-        <td><p><i><code>load-balanced-https</code> apps on AWS only</i></p>The name of the <a href="/docs/aws#target-groups">AWS Target Group</a> to use when deploying this application in the specified environment. <code>auto</code> to let Boxfuse automatically create a new ALB and Target Group for you.</td>
+        <td><p><i><code>load-balanced-https</code> apps on AWS only</i></p>The name of the <a href="/docs/aws#target-groups">AWS Target Group</a> to use when deploying this application in the specified environment. <code>auto</code> to let CloudCaptain automatically create a new ALB and Target Group for you.</td>
     </tr>
     <tr id="tmp">
         <td>tmp</td>
@@ -612,7 +612,7 @@ Payload started in 00:08.786s -> http://127.0.0.1:8888</pre>
 
 <h3 id="dynamic-properties">Dynamically defined properties</h3>
 
-<p>After you execute run, Boxfuse will automatically define the following Gradle properties</p>
+<p>After you execute run, CloudCaptain will automatically define the following Gradle properties</p>
 
 <table class="table">
     <thead>

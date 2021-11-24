@@ -6,7 +6,7 @@ pill: rm
 
 <h2>boxfuseRm</h2>
 
-<p>Removes this <em>Image</em> from your machine or the Boxfuse Vault. When removing an image from the Boxfuse Vault all corresponding AMIs are removed as well.</p>
+<p>Removes this <em>Image</em> from your machine or the CloudCaptain Vault. When removing an image from the CloudCaptain Vault all corresponding AMIs are removed as well.</p>
 
 <p><strong>Usage: </strong> gradle boxfuseRm -Dboxfuse.image=<em>image</em></p>
 
@@ -41,14 +41,14 @@ All locally available Images of axelfontaine/hello removed in 00:00.001s</pre>
         <td>user</td>
         <td>boxfuse.user</td>
         <td></td>
-        <td><strong>Required</strong> - Your Boxfuse Client user. Also configurable via the <code>BOXFUSE_USER</code>
+        <td><strong>Required</strong> - Your CloudCaptain Client user. Also configurable via the <code>BOXFUSE_USER</code>
             environment variable</td>
     </tr>
     <tr id="secret">
         <td>secret</td>
         <td>boxfuse.secret</td>
         <td></td>
-        <td><strong>Required</strong> - Your Boxfuse Client secret. Also configurable via the <code>BOXFUSE_SECRET</code>
+        <td><strong>Required</strong> - Your CloudCaptain Client secret. Also configurable via the <code>BOXFUSE_SECRET</code>
             environment variable</td>
     </tr>
     <tr id="image">
@@ -61,7 +61,7 @@ All locally available Images of axelfontaine/hello removed in 00:00.001s</pre>
         <td>vault</td>
         <td>boxfuse.vault</td>
         <td>false</td>
-        <td>Removes the Image from the Boxfuse Vault instead of your local machine. All corresponding AMIs will be removed as well.</td>
+        <td>Removes the Image from the CloudCaptain Vault instead of your local machine. All corresponding AMIs will be removed as well.</td>
     </tr>
 </table>
 

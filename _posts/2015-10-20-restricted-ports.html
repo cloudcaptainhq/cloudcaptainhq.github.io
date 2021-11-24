@@ -4,7 +4,7 @@ subtitle: "Introducing Restricted Ports"
 permalink: /blog/restricted-ports.html
 ---
 <div>
-    <p>At its core, Boxfuse <a href="/learn/how"><strong>analyses the payload you pass it</strong></a> (like a .jar or .war file) and generates a minimal immutable
+    <p>At its core, CloudCaptain <a href="/learn/how"><strong>analyses the payload you pass it</strong></a> (like a .jar or .war file) and generates a minimal immutable
         image for it. This image contains two main parts: a disk image and metadata.</p>
     <p>The metadata is what interests us here.
         It is built as part of the analysis phase and contains information about your app, such as the ports
@@ -12,8 +12,8 @@ permalink: /blog/restricted-ports.html
         <a href="/docs/payloads/dropwizard">Dropwizard</a> this info can even be automatically extracted for you from
         these frameworks' native configuration files.
     </p>
-    <p>Boxfuse then later uses this metadata when running instances of your images to correctly provision infrastructure.
-    In the case of <a href="/docs/aws">AWS</a>, Boxfuse will use the port and healthcheck info to automatically set up and configure Elastic Load Balancers,
+    <p>CloudCaptain then later uses this metadata when running instances of your images to correctly provision infrastructure.
+    In the case of <a href="/docs/aws">AWS</a>, CloudCaptain will use the port and healthcheck info to automatically set up and configure Elastic Load Balancers,
     Security Groups and more.</p>
 
     <p>However so far, unless you explicitly <a href="/docs/commandline/cfg">configured a custom security group</a>, any port you have opened was always open to the world:</p>
@@ -26,7 +26,7 @@ permalink: /blog/restricted-ports.html
 
     <h2 class="blog-post-section">Restricted Ports</h2>
 
-    <p>Today we are introducing a new Boxfuse feature called <strong>Restricted Ports</strong>. What this allows you, is
+    <p>Today we are introducing a new CloudCaptain feature called <strong>Restricted Ports</strong>. What this allows you, is
     to further constrain the access rights of a specific port down to a specific range of ip addresses.</p>
     <p>We have added
     support for <strong>fixed addresses</strong> like <code>12.34.56.78</code> as well as
@@ -77,8 +77,8 @@ permalink: /blog/restricted-ports.html
 
     <p>And if you haven't already,
         <a href="https://console.boxfuse.com"><strong>sign up for your
-        Boxfuse account</strong></a> now. All you need is a GitHub user
-        and you'll be up and running in no time. The <a href="/pricing">Boxfuse free plan</a> aligns
+        CloudCaptain account</strong></a> now. All you need is a GitHub user
+        and you'll be up and running in no time. The <a href="/pricing">CloudCaptain free plan</a> aligns
         perfectly with the AWS free tier, so you can deploy
         your JVM application to EC2 <strong>completely free</strong>.</p>
 </div>

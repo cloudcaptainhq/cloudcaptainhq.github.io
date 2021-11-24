@@ -2,7 +2,7 @@
 layout: commandline
 pill: Overview
 ---
-<p>The Boxfuse Command-line Client is the CLI tool to execute the various commands.</p>
+<p>The CloudCaptain Command-line Client is the CLI tool to execute the various commands.</p>
 
 <p><img src="/assets/img/learn/commandline.png" alt="Command-line"/></p>
 
@@ -17,7 +17,7 @@ pill: Overview
 <h2 id="prerequisites">Prerequisites</h2>
 
 <ul>
-    <li>Boxfuse Account</li>
+    <li>CloudCaptain Account</li>
     <li>VirtualBox installation (for VirtualBox deployments)</li>
     <li>AWS Account (for AWS deployments)</li>
 </ul>
@@ -25,7 +25,7 @@ pill: Overview
 <h2 id="installation">Installation</h2>
 
 <ul>
-    <li>Download the latest version of the Boxfuse Command-line client from the <a href="https://console.boxfuse.com/#/downloads">Boxfuse Console</a></li>
+    <li>Download the latest version of the CloudCaptain Command-line client from the <a href="https://console.boxfuse.com/#/downloads">CloudCaptain Console</a></li>
     <li>Extract it to the directory of your choice</li>
     <li>Add the root directory of the extracted archive to your PATH</li>
 </ul>
@@ -33,15 +33,15 @@ pill: Overview
 <h2 id="authentication">Authentication</h2>
 
 <p>By default, your <strong>download is personalized</strong> and already includes the necessary credentials to connect to your
-    Boxfuse Account.</p>
+    CloudCaptain Account.</p>
 
-<p>You also have the option to download an unpersonalized client via the Boxfuse Console. Credentials can then be
+<p>You also have the option to download an unpersonalized client via the CloudCaptain Console. Credentials can then be
 passed in via the <code>user</code> and <code>secret</code> configuration parameters or via the
 <code>BOXFUSE_USER</code> and <code>BOXFUSE_SECRET</code> environment variables.</p>
 
 <h2 id="configuration">Configuration</h2>
 
-<p>Boxfuse is opinionated, favors <strong>convention over configuration</strong> and comes with <strong>sensible
+<p>CloudCaptain is opinionated, favors <strong>convention over configuration</strong> and comes with <strong>sensible
     defaults</strong>.</p>
 
 <p>You can override these defaults using either configuration files or program arguments. The installation comes
@@ -95,7 +95,7 @@ passed in via the <code>user</code> and <code>secret</code> configuration parame
     </tr>
     <tr>
         <td>-u</td>
-        <td>Upgrade to the latest Boxfuse Client version</td>
+        <td>Upgrade to the latest CloudCaptain Client version</td>
     </tr>
     <tr>
         <td>-v</td>
@@ -104,25 +104,25 @@ passed in via the <code>user</code> and <code>secret</code> configuration parame
 </table>
 
 <h2 id="proxy">Proxy configuration</h2>
-<p>If your network requires you to use a proxy to connect to the outside world, you can tell Boxfuse to use a proxy via the <code>proxy</code> option:</p>
+<p>If your network requires you to use a proxy to connect to the outside world, you can tell CloudCaptain to use a proxy via the <code>proxy</code> option:</p>
 <pre class="console"><span>&gt;</span> boxfuse <strong>-proxy=</strong>https://myuser:mypwd@myproxyhost:1234</pre>
 <p>This can also be defined through any other configuration means described above.</p>
 
 <h2 id="insecure">Disabling TLS certificate validation</h2>
-<p>Boxfuse always communicates via TLS (SSL). If your corporate network modifies the certificate chain to inspect traffic,
-    you can tell Boxfuse not to verify TLS certificate chains via the <code>insecure</code> flag:</p>
+<p>CloudCaptain always communicates via TLS (SSL). If your corporate network modifies the certificate chain to inspect traffic,
+    you can tell CloudCaptain not to verify TLS certificate chains via the <code>insecure</code> flag:</p>
 <pre class="console"><span>&gt;</span> boxfuse <strong>-insecure</strong></pre>
 <p>This can also be defined through any other configuration means described above.</p>
 
 <h2 id="virtualbox-networking">VirtualBox Networking configuration</h2>
 
-<p>Boxfuse handles networking on <a href="/docs/virtualbox">VirtualBox</a> differently based on the version.</p>
+<p>CloudCaptain handles networking on <a href="/docs/virtualbox">VirtualBox</a> differently based on the version.</p>
 
-<p>By default, on VirtualBox 5.1 and above, Boxfuse creates a separate VirtualBox NAT Network.
-    On VirtualBox 5.0 Boxfuse uses regular VirtualBox NAT instead.</p>
+<p>By default, on VirtualBox 5.1 and above, CloudCaptain creates a separate VirtualBox NAT Network.
+    On VirtualBox 5.0 CloudCaptain uses regular VirtualBox NAT instead.</p>
 
-<p>VirtualBox 5.1+ users also have the possibility to force Boxfuse to use regular VirtualBox NAT instead of the NAT Network
-    by explicitly setting the <code>virtualbox.natnetwork</code> Boxfuse configuration property to <code>false</code>.</p>
+<p>VirtualBox 5.1+ users also have the possibility to force CloudCaptain to use regular VirtualBox NAT instead of the NAT Network
+    by explicitly setting the <code>virtualbox.natnetwork</code> CloudCaptain configuration property to <code>false</code>.</p>
 
 <p class="next-steps">
     <a class="btn btn-primary" href="/docs/commandline/create">create <i class="fa fa-arrow-right"></i></a>

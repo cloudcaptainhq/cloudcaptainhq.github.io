@@ -9,7 +9,7 @@ permalink: /blog/dropwizard-aws.html
         <img src="/assets/posts/dropwizard-aws/dropwizard-aws-sm.png" alt="Dropwizard to AWS">
     </div>
 
-    <p>Here at Boxfuse <a href="/blog/welcome">we strongly believe in keeping things simple</a>. We love
+    <p>Here at CloudCaptain <a href="/blog/welcome">we strongly believe in keeping things simple</a>. We love
         <strong>lightweight solutions</strong> that <strong>do away with cargo cult</strong> and <strong>just work.</strong></p>
 
     <p>It turns out that when creating REST microservices <strong><a href="http://www.dropwizard.io/">Dropwizard</a></strong> is a perfect match for this.</p>
@@ -31,12 +31,12 @@ permalink: /blog/dropwizard-aws.html
         Their free tier is great and will give you a free t2.micro (1 vCPU, 1 GB RAM) instance, a few GBs of S3 storage and much more for a whole year.
     </p>
 
-    <p>You will also need a <strong>Boxfuse Account</strong>. If you haven't got one already, create a free Boxfuse
-        account now by <a href="https://console.boxfuse.com">logging in the Boxfuse Console using your GitHub account</a>.
-        Once logged in, <a href="https://console.boxfuse.com/#/awsAccount">connect your AWS account with your Boxfuse account</a>.
+    <p>You will also need a <strong>CloudCaptain Account</strong>. If you haven't got one already, create a free CloudCaptain
+        account now by <a href="https://console.boxfuse.com">logging in the CloudCaptain Console using your GitHub account</a>.
+        Once logged in, <a href="https://console.boxfuse.com/#/awsAccount">connect your AWS account with your CloudCaptain account</a>.
     </p>
 
-    <p>Finally, ensure you have the Boxfuse Client, Java, Maven and VirtualBox installed on your machine.</p>
+    <p>Finally, ensure you have the CloudCaptain Client, Java, Maven and VirtualBox installed on your machine.</p>
 
     <p>This tutorial works with Windows, Mac OSX and Linux and should take about 10 minutes to complete.</p>
 
@@ -120,7 +120,7 @@ public void run(final DwUnikernelConfiguration configuration, final Environment 
 
     <h2 class="blog-post-section">Step 1: Fuse the Dropwizard app into a secure unikernel image</h2>
 
-    <p>Log in to the <a href="https://console.boxfuse.com">Boxfuse Console</a> and create a new application called
+    <p>Log in to the <a href="https://console.boxfuse.com">CloudCaptain Console</a> and create a new application called
         <code>dwunikernel</code>. Select the defaults of <em>Single Instance with Zero Downtime updates</em> (elastic IP) and the AWS eu-central-1 region:</p>
 
     <div class="blog-post-image">
@@ -131,14 +131,14 @@ public void run(final DwUnikernelConfiguration configuration, final Environment 
 
     <pre class="console">&gt; mvn package</pre>
 
-    <p>With that done you can now turn into it a secure unikernel using the Boxfuse Client:</p>
+    <p>With that done you can now turn into it a secure unikernel using the CloudCaptain Client:</p>
 
     <pre class="console">&gt; boxfuse fuse target/dwunikernel-1.0.jar
 
 Fusing Image for dwunikernel-1.0.jar ...
 Image fused in 00:07.073s (54017 K) -> axelfontaine/dwunikernel:1.0</pre>
 
-    <p>In just over 7 seconds, Boxfuse <strong>analysed the application</strong>, determined it was a Dropwizard application running on the JVM
+    <p>In just over 7 seconds, CloudCaptain <strong>analysed the application</strong>, determined it was a Dropwizard application running on the JVM
         and automatically <strong>created the smallest possible image</strong> to run it. It also automatically set
         the ports and the healthcheck <strong>configuration
         to match that of Dropwizard</strong>.</p>
@@ -160,10 +160,10 @@ Total: 1</pre>
         openjdk-8-jre-headless and our application, this is how large the image would have been:</p>
 
     <div class="blog-post-image">
-        <img src="/assets/posts/dropwizard-aws/ubuntu.png" alt="Ubuntu vs Boxfuse">
+        <img src="/assets/posts/dropwizard-aws/ubuntu.png" alt="Ubuntu vs CloudCaptain">
     </div>
 
-    <p><strong>The Boxfuse unikernel image is just 4% of the equivalent Ubuntu one.</strong>
+    <p><strong>The CloudCaptain unikernel image is just 4% of the equivalent Ubuntu one.</strong>
         And that's just the size. When you factor
         in creation time, security attack surface and reproducibility we are in two different leagues.</p>
 
@@ -184,8 +184,8 @@ Payload started in 00:08.525s -> http://127.0.0.1:8888</pre>
 
 <div class="row">
     <div class="col-md-9">
-    <pre class="console">&gt; curl http://localhost:8888?name=Boxfuse
-{"hello":"Hello, Boxfuse!"}</pre>
+    <pre class="console">&gt; curl http://localhost:8888?name=CloudCaptain
+{"hello":"Hello, CloudCaptain!"}</pre>
 
     <pre class="console">&gt; curl http://localhost:50001/healthcheck
 {"deadlocks":{"healthy":true},"template":{"healthy":true}}</pre>
@@ -229,15 +229,15 @@ Remapping Elastic IP 52.28.23.63 to i-53be0c92 ...
 Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
 Deployment completed successfully. axelfontaine/dwunikernel:1.0 is up and running at http://dwunikernel-axelfontaine.boxfuse.io:8081</pre>
 
-    <p>Boxfuse automatically created a <strong>new Elastic IP address</strong> and a <strong>new domain</strong>.
-        It pushed the image to the secure Boxfuse vault, registered an AMI, created a security group and launched an instance.
+    <p>CloudCaptain automatically created a <strong>new Elastic IP address</strong> and a <strong>new domain</strong>.
+        It pushed the image to the secure CloudCaptain vault, registered an AMI, created a security group and launched an instance.
     Then finally it mapped the Elastic IP onto the instance.</p>
 
     <p>Let's check if the instance came up:</p>
     <div class="row">
         <div class="col-md-9">
-    <pre class="console">&gt; curl http://dwunikernel-axelfontaine.boxfuse.io?name=BoxfuseAndAWS
-{"hello":"Hello, BoxfuseAndAWS!"}</pre>
+    <pre class="console">&gt; curl http://dwunikernel-axelfontaine.boxfuse.io?name=CloudCaptainAndAWS
+{"hello":"Hello, CloudCaptainAndAWS!"}</pre>
 
     <pre class="console">&gt; curl http://dwunikernel-axelfontaine.boxfuse.io:8081/healthcheck
 {"deadlocks":{"healthy":true},"template":{"healthy":true}}</pre>
@@ -256,9 +256,9 @@ Deployment completed successfully. axelfontaine/dwunikernel:1.0 is up and runnin
     <p>Congratulations! In just a few minutes and 3 easy steps you created a <strong>brand new unikernel image of the example Dropwizard application</strong>.
     This image is minimal, secure and portable. You ran it unchanged on both VirtualBox and AWS.</p>
 
-    <p>And best of all, all of this is completely free by <strong>combining the AWS and the Boxfuse free tiers</strong>.</p>
+    <p>And best of all, all of this is completely free by <strong>combining the AWS and the CloudCaptain free tiers</strong>.</p>
 
     <p>Now go ahead, dive deeper and read the <a href="/docs/payloads/dropwizard">documentation</a>.</p>
 
-    <p><a href="/blog/dropwizard-aws-maven"><strong>Continue to part 2</strong></a>, where we will <a href="/blog/dropwizard-aws-maven"><strong>integrate Boxfuse directly into the Maven build.</strong></a></p>
+    <p><a href="/blog/dropwizard-aws-maven"><strong>Continue to part 2</strong></a>, where we will <a href="/blog/dropwizard-aws-maven"><strong>integrate CloudCaptain directly into the Maven build.</strong></a></p>
 </div>

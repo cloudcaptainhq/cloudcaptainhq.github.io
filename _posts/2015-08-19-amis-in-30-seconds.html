@@ -1,6 +1,6 @@
 ---
 layout: blog
-subtitle: "Boxfuse Convert: fully-provisioned AMIs in 30 seconds"
+subtitle: "CloudCaptain Convert: fully-provisioned AMIs in 30 seconds"
 permalink: /blog/amis-in-30-seconds.html
 ---
 <div>
@@ -18,18 +18,18 @@ permalink: /blog/amis-in-30-seconds.html
 
     <h2 class="blog-post-section">Integrating with Existing Workflows</h2>
 
-    <p><a href="/learn/how">Boxfuse</a> lets accomplish all this a single command, <a href="/docs/commandline/run"><strong>boxfuse run</strong></a>, that will
-    effectively fuse your application artifact into an image, convert Boxfuse image to an AWS AMI and launch the number of instances you desire based on the newly created AMI.
+    <p><a href="/learn/how">CloudCaptain</a> lets accomplish all this a single command, <a href="/docs/commandline/run"><strong>boxfuse run</strong></a>, that will
+    effectively fuse your application artifact into an image, convert CloudCaptain image to an AWS AMI and launch the number of instances you desire based on the newly created AMI.
     </p>
 
     <p><strong>Some of you however have already been practicing this for a long time</strong> with various combinations of open-source
-    and in-house tools. You have asked us to provide you with a <strong>gradual migration process</strong> to adopt Boxfuse one piece at a time.</p>
+    and in-house tools. You have asked us to provide you with a <strong>gradual migration process</strong> to adopt CloudCaptain one piece at a time.</p>
 
     <p>And that's why today we are introducing <a href="/docs/commandline/convert"><strong>boxfuse convert</strong></a> to allow
-    you to benefit from Boxfuse's incredibly fast AMI creation, while still relying on your current instance provisioning technology:</p>
+    you to benefit from CloudCaptain's incredibly fast AMI creation, while still relying on your current instance provisioning technology:</p>
 
     <div class="blog-post-image">
-        <img src="/assets/posts/amis-in-30-seconds/boxfuse-convert.png" alt="Boxfuse Convert">
+        <img src="/assets/posts/amis-in-30-seconds/boxfuse-convert.png" alt="CloudCaptain Convert">
     </div>
 
     <p>With <strong>boxfuse convert</strong> you can finally say goodbye to your old, slow and flaky AMI creation workflows.
@@ -60,39 +60,39 @@ AMI created in 00:19.777s -> ami-e66264fb</pre>
         though. Besides the fact that Packer effectively builds an image per platform (instead of using the same image on all platforms),
         it is also incredibly slow when it comes to building AMIs. For comparison, try building the same type of AMI (HVM+EBS in this case)
         using Packer and Ubuntu 14.04 LTS. And don't forget to go and grab a coffee, as it will take a while. Compared to Packer's
-    <a href="https://packer.io/docs/builders/amazon-ebs.html">EBS backed AMI builder</a>, <strong>Boxfuse is more than 10 times faster:</strong></p>
+    <a href="https://packer.io/docs/builders/amazon-ebs.html">EBS backed AMI builder</a>, <strong>CloudCaptain is more than 10 times faster:</strong></p>
 
     <div class="blog-post-image">
-        <img src="/assets/posts/amis-in-30-seconds/boxfuse-vs-packer.png" alt="Boxfuse vs Packer: time">
+        <img src="/assets/posts/amis-in-30-seconds/boxfuse-vs-packer.png" alt="CloudCaptain vs Packer: time">
     </div>
 
-    <p>And that's not all. <strong>Boxfuse's AMIs are also more than 10 times smaller</strong>:</p>
+    <p>And that's not all. <strong>CloudCaptain's AMIs are also more than 10 times smaller</strong>:</p>
 
     <div class="blog-post-image">
-        <img src="/assets/posts/amis-in-30-seconds/boxfuse-vs-packer-size.png" alt="Boxfuse vs Packer: size">
+        <img src="/assets/posts/amis-in-30-seconds/boxfuse-vs-packer-size.png" alt="CloudCaptain vs Packer: size">
     </div>
 
-    <p>(In fact Boxfuse AMIs are even much smaller than that, but AWS's smallest EBS snapshot size is a full 1 GB)</p>
+    <p>(In fact CloudCaptain AMIs are even much smaller than that, but AWS's smallest EBS snapshot size is a full 1 GB)</p>
 
     <p>And finally consider the <strong>effort required</strong> to write and maintain your Packer .json descriptors
         (don't forget to pin the version of every single package to avoid the issues of
     <a href="/blog/no-ssh">deferred provisioning</a>) to create fully-provisioned hardened images that are ready
         to boot without manual tuning and with <a href="/blog/no-ssh">no SSH</a>.</p>
 
-    <p>Now look at <strong>Boxfuse Convert's one-liner</strong> again and see for yourself just how easy things can be.</p>
+    <p>Now look at <strong>CloudCaptain Convert's one-liner</strong> again and see for yourself just how easy things can be.</p>
 
-    <h2 class="blog-post-section">How does Boxfuse do it?</h2>
+    <h2 class="blog-post-section">How does CloudCaptain do it?</h2>
 
-    <p><a href="https://boxfuse.com"><strong>Boxfuse</strong></a> intelligently analyses your application and
+    <p><a href="https://boxfuse.com"><strong>CloudCaptain</strong></a> intelligently analyses your application and
         <strong>generates minimal images in seconds</strong>. There is <a href="/learn/how">no general purpose operating system and
-        no tedious provisioning</a>. Boxfuse images are lean, secure and efficient. You
+        no tedious provisioning</a>. CloudCaptain images are lean, secure and efficient. You
         can run them on VirtualBox for development and deploy them unchanged and with <strong>zero downtime on
             AWS</strong> for test and production.</p>
 
     <p>So if you haven't already,
         <a href="https://console.boxfuse.com"><strong>sign up for your
-            Boxfuse account</strong></a> now. All you need is a GitHub account
-        and you'll be up and running in no time. The <a href="/pricing">Boxfuse free plan</a> gives you
+            CloudCaptain account</strong></a> now. All you need is a GitHub account
+        and you'll be up and running in no time. The <a href="/pricing">CloudCaptain free plan</a> gives you
         100 AMI builds per month. And if you wish to take things further it also aligns
         perfectly with the AWS free tier, so you can <strong>deploy your application to EC2 completely free</strong>.</p>
 </div>

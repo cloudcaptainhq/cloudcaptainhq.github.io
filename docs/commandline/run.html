@@ -24,7 +24,7 @@ Waiting for Payload to start on Instance vb-ec717c5e ...
 Payload started in 00:08.786s -> http://127.0.0.1:8888</pre>
 
 <p><strong>Note:</strong>
-    When neither a payload (jar/war/zip/tgz file) nor an image is specified, Boxfuse will automatically search for a
+    When neither a payload (jar/war/zip/tgz file) nor an image is specified, CloudCaptain will automatically search for a
     compatible payload to fuse within the current directory. If the command is executed at the root of a Maven, Gradle or SBT project,
     the output directory of that project will be automatically scanned as well.
 </p>
@@ -108,19 +108,19 @@ Payload started in 00:08.786s -> http://127.0.0.1:8888</pre>
         <td>domain</td>
         <td>auto</td>
         <td><p><i>AWS only</i></p>
-            The custom domain to use for this application in the specified environment. <code>auto</code> to let Boxfuse automatically create a new <code>boxfuse.io</code> subdomain for you.</td>
+            The custom domain to use for this application in the specified environment. <code>auto</code> to let CloudCaptain automatically create a new <code>boxfuse.io</code> subdomain for you.</td>
     </tr>
     <tr id="elasticip">
         <td>-elasticip=...</td>
         <td>elasticip</td>
         <td>auto</td>
-        <td><p><i><code>single-instance</code> apps on AWS only</i></p>The <a href="/docs/aws#elasticips">AWS Elastic IP</a> to use when deploying this application in the specified environment. <code>auto</code> to let Boxfuse automatically create a new Elastic IP for you.</td>
+        <td><p><i><code>single-instance</code> apps on AWS only</i></p>The <a href="/docs/aws#elasticips">AWS Elastic IP</a> to use when deploying this application in the specified environment. <code>auto</code> to let CloudCaptain automatically create a new Elastic IP for you.</td>
     </tr>
     <tr id="elb">
         <td>-elb=...</td>
         <td>elb</td>
         <td>auto</td>
-        <td><p><i><code>load-balanced</code> apps on AWS only</i></p>The name of the <a href="/docs/aws#elbs">AWS ELB</a> to use when deploying this application in the specified environment. <code>auto</code> to let Boxfuse automatically create a new ELB for you.</td>
+        <td><p><i><code>load-balanced</code> apps on AWS only</i></p>The name of the <a href="/docs/aws#elbs">AWS ELB</a> to use when deploying this application in the specified environment. <code>auto</code> to let CloudCaptain automatically create a new ELB for you.</td>
     </tr>
     <tr id="env">
         <td>-env=...</td>
@@ -214,7 +214,7 @@ Payload started in 00:08.786s -> http://127.0.0.1:8888</pre>
         <td>-live</td>
         <td>live</td>
         <td>false</td>
-        <td><p><i>When fusing new images only</i></p>Enable <a href="/docs/live">live reloading</a> of changes in dev for super fast round-trips. Note that images with live reloading cannot be pushed to the Boxfuse Vault.</td>
+        <td><p><i>When fusing new images only</i></p>Enable <a href="/docs/live">live reloading</a> of changes in dev for super fast round-trips. Note that images with live reloading cannot be pushed to the CloudCaptain Vault.</td>
     </tr>
     <tr id="logs.auto">
         <td>-logs.auto</td>
@@ -256,12 +256,12 @@ Payload started in 00:08.786s -> http://127.0.0.1:8888</pre>
                 </tr>
                 <tr>
                     <td><code>image</code></td>
-                    <td>Only show logs for instances of this Boxfuse image</td>
+                    <td>Only show logs for instances of this CloudCaptain image</td>
                     <td>myuser/myapp:123</td>
                 </tr>
                 <tr>
                     <td><code>app</code></td>
-                    <td>Only show logs for instances of this Boxfuse app</td>
+                    <td>Only show logs for instances of this CloudCaptain app</td>
                     <td>myuser/myapp</td>
                 </tr>
                 <tr>
@@ -462,7 +462,7 @@ Payload started in 00:08.786s -> http://127.0.0.1:8888</pre>
         <td>portsmap.<em>NAME</em></td>
         <td><em>same as matching image port</em></td>
         <td><p><i>VirtualBox only</i></p>
-            <p>The local ports to map to the app inside the instance. By default Boxfuse will attempt to open the same
+            <p>The local ports to map to the app inside the instance. By default CloudCaptain will attempt to open the same
                 port
                 locally as has been opened in the VirtualBox VM. On Linux &amp; Mac privileged ports (&lt;1024) will be
                 opened at 10000
@@ -477,8 +477,8 @@ Payload started in 00:08.786s -> http://127.0.0.1:8888</pre>
                 <tr>
                     <td><code>http=80</code></td>
                     <td>
-                        <code>http=80</code> (Windows &amp; Mac/Linux when Boxfuse is running as root)<br>
-                        <code>http=10080</code> (Mac/Linux when Boxfuse is running as a regular user)
+                        <code>http=80</code> (Windows &amp; Mac/Linux when CloudCaptain is running as root)<br>
+                        <code>http=10080</code> (Mac/Linux when CloudCaptain is running as a regular user)
                     </td>
                 </tr>
                 <tr>
@@ -516,13 +516,13 @@ Payload started in 00:08.786s -> http://127.0.0.1:8888</pre>
         <td>-tags.<em>key</em>=<em>value</em></td>
         <td>tags.<em>key</em></td>
         <td></td>
-        <td><p><i>AWS only</i></p>The custom <a href="/docs/aws#tags">tags</a> to apply to AWS resources in addition to the default Boxfuse ones.</td>
+        <td><p><i>AWS only</i></p>The custom <a href="/docs/aws#tags">tags</a> to apply to AWS resources in addition to the default CloudCaptain ones.</td>
     </tr>
     <tr id="targetgroup">
         <td>-targetgroup=</td>
         <td>targetgroup</td>
         <td>auto</td>
-        <td><p><i><code>load-balanced-https</code> apps on AWS only</i></p>The name of the <a href="/docs/aws#target-groups">AWS Target Group</a> to use when deploying this application in the specified environment. <code>auto</code> to let Boxfuse automatically create a new ALB and Target Group for you.</td>
+        <td><p><i><code>load-balanced-https</code> apps on AWS only</i></p>The name of the <a href="/docs/aws#target-groups">AWS Target Group</a> to use when deploying this application in the specified environment. <code>auto</code> to let CloudCaptain automatically create a new ALB and Target Group for you.</td>
     </tr>
     <tr id="tmp">
         <td>-tmp=...</td>

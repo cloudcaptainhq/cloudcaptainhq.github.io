@@ -29,7 +29,7 @@ permalink: /blog/dropwizard-aws-maven.html
     <h2 class="blog-post-section">Step 1: Automatically fusing the unikernel image</h2>
 
     <p>Instead of manually having to type some commands, we now <strong>automatically fuse our Dropwizard app into a
-    unikernel image using the Boxfuse Maven plugin as part every build</strong>. The image effectively supplants the jar
+    unikernel image using the CloudCaptain Maven plugin as part every build</strong>. The image effectively supplants the jar
         file as the final product of our build.</p>
 
     <p>It however shares all the essential qualities of the jar file:</p>
@@ -46,7 +46,7 @@ permalink: /blog/dropwizard-aws-maven.html
         <img src="/assets/posts/dropwizard-aws-maven/maven-phases-step1.png" alt="Maven phases - step 1">
     </div>
 
-    <p>For this we first need to add the <strong>Boxfuse Maven repository</strong> to our <code>pom.xml</code>:</p>
+    <p>For this we first need to add the <strong>CloudCaptain Maven repository</strong> to our <code>pom.xml</code>:</p>
     <pre class="prettyprint">&lt;pluginRepositories&gt;
     &lt;pluginRepository&gt;
         &lt;id&gt;central&lt;/id&gt;
@@ -58,7 +58,7 @@ permalink: /blog/dropwizard-aws-maven.html
     &lt;/pluginRepository&gt;
 &lt;/pluginRepositories&gt;</pre>
 
-    <p>We now add the <a href="/docs/maven"><strong>Boxfuse Maven plugin</strong></a> after the shade plugin and define
+    <p>We now add the <a href="/docs/maven"><strong>CloudCaptain Maven plugin</strong></a> after the shade plugin and define
         one execution in the <em>package</em> phase to fuse the image:</p>
 
     <pre class="prettyprint">&lt;!-- must be placed after the shade plugin to guarantee the correct execution order --&gt;
@@ -81,7 +81,7 @@ permalink: /blog/dropwizard-aws-maven.html
     &lt;/executions&gt;
 &lt;/plugin&gt;</pre>
 
-    <p>Don't forget to replace the Boxfuse user and secret with the ones specified on your <a href="https://console.boxfuse.com/#/downloads">download page</a> of the Boxfuse Console.</p>
+    <p>Don't forget to replace the CloudCaptain user and secret with the ones specified on your <a href="https://console.boxfuse.com/#/downloads">download page</a> of the CloudCaptain Console.</p>
 
     <p>Executing the build now gives us this:</p>
 
@@ -150,7 +150,7 @@ public class HelloWorldResourceTest {
         It is then being used to connect to the running instance, where the response
     of the request is then converted from a json string into a map object and compared against our expectations.</p>
 
-    <p>Next add additional executions of the Boxfuse Maven plugin to the <code>pom.xml</code> to automatically run and kill the instance:</p>
+    <p>Next add additional executions of the CloudCaptain Maven plugin to the <code>pom.xml</code> to automatically run and kill the instance:</p>
 
     <pre class="prettyprint">&lt;execution&gt;
     &lt;id&gt;run-on-virtualbox&lt;/id&gt;
@@ -206,7 +206,7 @@ public class HelloWorldResourceTest {
 &lt;/plugin&gt;</pre>
 
     <p>As you can see we pass in the variable <code>${boxfuse.instances.0.url}</code> as the value of the <code>instanceUrl</code>
-    System property we referred to in out test. After executing <em>run</em>, <strong>Boxfuse will automatically set the
+    System property we referred to in out test. After executing <em>run</em>, <strong>CloudCaptain will automatically set the
         <code>${boxfuse.instances.0.url}</code> to the correct url of the instance</strong> that was just started. We then use
     that url in our test to connect to the Dropwizard application.</p>
 
@@ -251,7 +251,7 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
     <h2 class="blog-post-section">Step 3: Deploying the tested image to AWS</h2>
 
     <p>After we have successfully tested our image, we are now sufficiently confident to <strong>automatically push it out
-    to our production environment on AWS</strong>. For that we need one final addition to the list of executions of the Boxfuse Maven plugin
+    to our production environment on AWS</strong>. For that we need one final addition to the list of executions of the CloudCaptain Maven plugin
     in the <code>pom.xml</code>:</p>
 
     <pre class="prettyprint">&lt;execution&gt;
@@ -265,7 +265,7 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
     &lt;/configuration&gt;
 &lt;/execution&gt;</pre>
 
-    <p>And also disable the deploy plugin as we have not configured a remote repository (and our images land in the <strong>Boxfuse Vault</strong>):</p>
+    <p>And also disable the deploy plugin as we have not configured a remote repository (and our images land in the <strong>CloudCaptain Vault</strong>):</p>
 
 <pre class="prettyprint">&lt;plugin&gt;
     &lt;artifactId&gt;maven-deploy-plugin&lt;/artifactId&gt;
@@ -297,7 +297,7 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 [INFO] Destroying Security Group sg-fc548d95 ...
 [INFO] Deployment completed successfully. axelfontaine/dwunikernel:1.0 is up and running at http://dwunikernel-axelfontaine.boxfuse.io:8081</pre>
 
-    <p>And there we have it. We have successfully <strong>pushed the image to the Boxfuse Vault</strong>,
+    <p>And there we have it. We have successfully <strong>pushed the image to the CloudCaptain Vault</strong>,
         started a <strong>new instance on AWS</strong> and remapped the
     Elastic IP for a smooth <strong>Zero Downtime transition</strong>.
         No additional work is required. We now have this as part of every single build.</p>

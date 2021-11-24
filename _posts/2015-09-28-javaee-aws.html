@@ -4,11 +4,11 @@ subtitle: "Deploy Java EE Apps effortlessly on AWS"
 permalink: /blog/javaee-aws.html
 ---
 <div>
-    <p>At <a href="https://boxfuse.com">Boxfuse</a> we love solutions that just work. And that's why, when it comes to
+    <p>At <a href="https://boxfuse.com">CloudCaptain</a> we love solutions that just work. And that's why, when it comes to
         Java EE, we've grown very fond of <strong><a href="http://tomee.apache.org">Apache TomEE</a></strong>. Unlike traditional heavy
         and complex application servers, TomEE combines the swiftness of Tomcat with the benefits of standard Java EE.</p>
 
-    <p>Today we are happy to announce that we have added TomEE to Boxfuse's selection of payloads that can be deployed
+    <p>Today we are happy to announce that we have added TomEE to CloudCaptain's selection of payloads that can be deployed
         effortlessly to VirtualBox and AWS. Just like <a href="/docs/payloads/dropwizard">Dropwizard</a>,
         <a href="/docs/payloads/springboot">Spring Boot</a>, <a href="/docs/payloads/tomcat">Tomcat</a> and
         <a href="/docs/payloads/jar">(executable) jar files</a>, you can now fuse <a href="/docs/payloads/tomee">TomEE applications</a> into
@@ -35,12 +35,12 @@ permalink: /blog/javaee-aws.html
 
     <h2 class="blog-post-section">Prerequisites</h2>
 
-    <p>Before we get started ensure you have <a href="https://console.boxfuse.com">created a Boxfuse account</a> (it's free, just log in with your GitHub id).
-        Make sure to associate it with your <a href="http://aws.amazon.com/">AWS account</a> in the <a href="https://console.boxfuse.com">Boxfuse console</a> to deploy on EC2.</p>
+    <p>Before we get started ensure you have <a href="https://console.boxfuse.com">created a CloudCaptain account</a> (it's free, just log in with your GitHub id).
+        Make sure to associate it with your <a href="http://aws.amazon.com/">AWS account</a> in the <a href="https://console.boxfuse.com">CloudCaptain console</a> to deploy on EC2.</p>
     <p>You will also need Git, Java, Maven and VirtualBox installed on your machine.</p>
 
     <h2 class="blog-post-section">Creating a TomEE Java EE app</h2>
-    <p>Start by cloning the <a href="https://github.com/boxfuse/boxfuse-samples">Boxfuse Samples</a> repository:</p>
+    <p>Start by cloning the <a href="https://github.com/boxfuse/boxfuse-samples">CloudCaptain Samples</a> repository:</p>
 
     <pre class="console">&gt; git clone https://github.com/boxfuse/boxfuse-samples.git</pre>
 
@@ -58,16 +58,16 @@ tomee&gt; mvn package</pre>
 
     <h2 class="blog-post-section">Deploying it to AWS EC2</h2>
 
-    <p>Now that you have built the application, let's deploy it to AWS. Boxfuse will start by <a href="/learn/how">analysing it</a>
+    <p>Now that you have built the application, let's deploy it to AWS. CloudCaptain will start by <a href="/learn/how">analysing it</a>
     and determining its type. Doing so it will find the <code>WEB-INF/resources.xml</code> file. This tells it that it is a Java EE that requires TomEE instead of Tomcat.</p>
 
-    <p>Boxfuse will then <strong>create a Micro-OS on-the-fly</strong> designed to do one thing and one thing only: run this version of your application.</p>
+    <p>CloudCaptain will then <strong>create a Micro-OS on-the-fly</strong> designed to do one thing and one thing only: run this version of your application.</p>
 
     <p>It does that by combining your application with TomEE, a JVM, the C library, the Linux kernel and a bootloader into an tiny image.
     <strong>Everything is fully configured and ready to run out of the box</strong>:</p>
 
     <div class="blog-post-image center">
-        <img src="/assets/posts/javaee-aws/tomee-aws-instance.png" alt="TomEE War file -> Boxfuse Image -> AWS Instance">
+        <img src="/assets/posts/javaee-aws/tomee-aws-instance.png" alt="TomEE War file -> CloudCaptain Image -> AWS Instance">
     </div>
 
     <p>To launch your application on AWS as well as <strong>provision and configure all necessary infrastructure</strong>, all you need to do is:</p>
@@ -98,12 +98,12 @@ Deployment completed successfully. axelfontaine/tomee:1.0 is up and running at h
         <img src="/assets/posts/javaee-aws/tomee-screenshot.png" alt="TomEE app running on AWS screenshot">
     </div>
 
-    <p>You can deploy new versions at any time and Boxfuse will automatically perform <strong>blue/green zero downtime updates</strong> for you.</p>
+    <p>You can deploy new versions at any time and CloudCaptain will automatically perform <strong>blue/green zero downtime updates</strong> for you.</p>
 
     <h2 class="blog-post-section">Summary</h2>
 
     <p>In this post you saw how <strong><a href="http://tomee.apache.org">Apache TomEE</a></strong> makes Java EE fast and lightweight.
-    We took this to the next level by using <strong><a href="https://boxfuse.com">Boxfuse</a></strong> to deploy a Java EE application
+    We took this to the next level by using <strong><a href="https://boxfuse.com">CloudCaptain</a></strong> to deploy a Java EE application
         to AWS using a single command. There was no tedious configuration and the entire process took less than two minutes,
         including automatically provisioning all the necessary infrastructure on EC2.</p>
 
@@ -115,8 +115,8 @@ Deployment completed successfully. axelfontaine/tomee:1.0 is up and running at h
 
     <p>Have fun! And if you haven't already,
         <a href="https://console.boxfuse.com"><strong>sign up for your
-        Boxfuse account</strong></a> now. All you need is a GitHub user
-        and you'll be up and running in no time. The <a href="/pricing">Boxfuse free plan</a> aligns
+        CloudCaptain account</strong></a> now. All you need is a GitHub user
+        and you'll be up and running in no time. The <a href="/pricing">CloudCaptain free plan</a> aligns
         perfectly with the AWS free tier, so you can deploy
         your TomEE Java EE application to EC2 <strong>completely free</strong>.</p>
 </div>

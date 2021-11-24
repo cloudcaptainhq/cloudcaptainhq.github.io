@@ -3,7 +3,7 @@ layout: blog
 subtitle: "Oracle JRE and Kernel Tuning"
 permalink: /blog/oracle-jre.html
 ---
-<p>Boxfuse's goal is to make you productive by making deployments of your Node.js and JVM-based applications truly effortless.
+<p>CloudCaptain's goal is to make you productive by making deployments of your Node.js and JVM-based applications truly effortless.
     And that's why we worked tirelessly to make it possible to deploy most applications out-of-the-box by issuing just a single
     <code>boxfuse run</code> command that uses convention-over-configuration with sensible defaults.</p>
 
@@ -17,15 +17,15 @@ permalink: /blog/oracle-jre.html
 
 <h2>Custom JREs</h2>
 
-<p>By default Boxfuse uses OpenJDK for JVM-based applications, with the possibility to opt for either the OpenJDK 7 or 8 headless JREs.
+<p>By default CloudCaptain uses OpenJDK for JVM-based applications, with the possibility to opt for either the OpenJDK 7 or 8 headless JREs.
 This is a great open-source choice for the vast majority of the applications, both from a technical as well as from a legal perspective.</p>
 
 <p>Some users however require commercial support or features only available with the Oracle JRE. Due to Oracle licensing restrictions
-we unfortunately cannot offer it as a component from the Boxfuse Inventory as the Oracle JRE license explicitly prohibits
+we unfortunately cannot offer it as a component from the CloudCaptain Inventory as the Oracle JRE license explicitly prohibits
     standalone redistribution of the Oracle JRE.</p>
 
-<p>However, starting today Boxfuse now supports custom JREs. You can now bundle any <strong>Linux x64 Java Runtime Environment</strong> of your choice, including the Oracle JRE,
-directly with your application. Boxfuse will then automatically use that JRE instead of the default OpenJDK one.</p>
+<p>However, starting today CloudCaptain now supports custom JREs. You can now bundle any <strong>Linux x64 Java Runtime Environment</strong> of your choice, including the Oracle JRE,
+directly with your application. CloudCaptain will then automatically use that JRE instead of the default OpenJDK one.</p>
 
 <h3>Using the Oracle JRE</h3>
 
@@ -56,7 +56,7 @@ directly with your application. Boxfuse will then automatically use that JRE ins
 
 <pre class="console"><span>my-spring-boot-app&gt;</span> mvn package</pre>
 
-<p>4. Fuse a Boxfuse image:</p>
+<p>4. Fuse a CloudCaptain image:</p>
 
 <pre class="console"><span>my-spring-boot-app&gt;</span> boxfuse fuse</pre>
 
@@ -79,17 +79,17 @@ net.ipv4.tcp_keepalive_time = 7200
 net.ipv4.tcp_limit_output_bytes = 131072
 </pre>
 
-<p>Boxfuse will then automatically apply these settings on instance startup.</p>
+<p>CloudCaptain will then automatically apply these settings on instance startup.</p>
 
 <h2>Conclusion</h2>
 
-<p>Boxfuse is all about making you productive by making deployment of your apps truly effortless.
-    With custom JREs and kernel tuning Boxfuse now gives advanced users additional ways to customize their images.</p>
+<p>CloudCaptain is all about making you productive by making deployment of your apps truly effortless.
+    With custom JREs and kernel tuning CloudCaptain now gives advanced users additional ways to customize their images.</p>
 
 <p>Custom JREs now also allow you to easily run your applications using the Oracle JRE instead of OpenJDK and kernel
     tuning lets expert users to perform low-level tuning of the Linux kernel inside their images.</p>
 
-<p>Existing Boxfuse users can simply update with</p>
+<p>Existing CloudCaptain users can simply update with</p>
 
 <pre class="console"><span>&gt;</span> boxfuse -u</pre>
 
@@ -97,5 +97,5 @@ net.ipv4.tcp_limit_output_bytes = 131072
 
 <p>So if you haven't already,
     <a href="https://console.boxfuse.com"><strong>sign up for your
-        Boxfuse account</strong></a> now (simply log in with your GitHub id, it's free) to start deploying
+        CloudCaptain account</strong></a> now (simply log in with your GitHub id, it's free) to start deploying
     your JVM and Node.js applications effortlessly on AWS in minutes.</p>

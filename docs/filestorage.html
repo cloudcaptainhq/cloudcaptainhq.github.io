@@ -6,7 +6,7 @@ subtitle: 'File Storage'
 <div id="files">
     <img src="/assets/img/filestorage.png">
 
-    <p>Boxfuse instances are strictly ephemeral. Not only are they completely destroyed once the are terminated, but
+    <p>CloudCaptain instances are strictly ephemeral. Not only are they completely destroyed once the are terminated, but
     their file system also lives exclusively in RAM.</p>
 
     <h2>Persistent files</h2>
@@ -35,11 +35,11 @@ Runtime.getRuntime().exec("mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048
 
     <p>If your application needs to temporarily store files it can afford to lose should the instance die, then the
         <strong><code>/tmp</code> directory</strong> in your instance is the perfect place for this. It is a separate <strong>fully encrypted filesystem</strong> that
-        resides on disk (unlike the other directories in your Boxfuse instance which reside in RAM).</p>
+        resides on disk (unlike the other directories in your CloudCaptain instance which reside in RAM).</p>
 
-    <p>With the <code>-tmp=...</code> parameter Boxfuse can automatically provision between 0 and 16384 GB of space, with 1 GB being the default.</p>
+    <p>With the <code>-tmp=...</code> parameter CloudCaptain can automatically provision between 0 and 16384 GB of space, with 1 GB being the default.</p>
 
-    <p>Every application (and its JVM) are automatically configured by Boxfuse to use the <code>/tmp</code> directory for
+    <p>Every application (and its JVM) are automatically configured by CloudCaptain to use the <code>/tmp</code> directory for
     creating temporary files. There is no manual configuration necessary on your part.</p>
 
     <p><strong>Tip:</strong> Check out our <a href="/blog/tmp">blog post</a> about temporary files support for more info and examples.</p>

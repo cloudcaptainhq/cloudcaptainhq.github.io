@@ -4,20 +4,20 @@ subtitle: "Hello Gradle!"
 permalink: /blog/gradle-plugin.html
 ---
 <div>
-    <p>Here are Boxfuse we pride ourselves for providing you with the <a href="/blog/welcome">easiest solution
+    <p>Here are CloudCaptain we pride ourselves for providing you with the <a href="/blog/welcome">easiest solution
         to produce minimal and secure images for your JVM-apps</a> that can then be
         deployed unchanged on VirtualBox and AWS.</p>
 
     <p>As shown in our three part article on <a href="/blog/dropwizard-aws">creating a Continuous Deployment
     pipeline for Dropwizard-based unikernels from GitHub to AWS</a>, we relied
-    on Travis CI and the Boxfuse Maven plugin to fuse and run the images.</p>
+    on Travis CI and the CloudCaptain Maven plugin to fuse and run the images.</p>
 
     <p>We always strongly believed in direct build tool integration. That's
         also the reason why we've had Maven support from the get go. However
         these days a large number of you favor <a href="https://gradle.org">Gradle</a> and its small and
         readable build files to build your projects. Today we are happy to
-        announce the <strong>release of the Boxfuse Gradle plugin</strong>. You can now
-        use all Boxfuse commands directly from within your Gradle build.
+        announce the <strong>release of the CloudCaptain Gradle plugin</strong>. You can now
+        use all CloudCaptain commands directly from within your Gradle build.
     </p>
 
     <div class="blog-post-image center">
@@ -26,9 +26,9 @@ permalink: /blog/gradle-plugin.html
 
     <h2 class="blog-post-section">How does it work?</h2>
 
-    <p>You can use the <a href="/docs/gradle">Boxfuse Gradle plugin</a> in a number of ways.
-    The easiest is to simply include the Boxfuse plugin in <code>build.gradle</code> and
-    add some basic configuration to the Boxfuse extension:</p>
+    <p>You can use the <a href="/docs/gradle">CloudCaptain Gradle plugin</a> in a number of ways.
+    The easiest is to simply include the CloudCaptain plugin in <code>build.gradle</code> and
+    add some basic configuration to the CloudCaptain extension:</p>
 
     <pre class="prettyprint">buildscript {
     repositories {
@@ -47,26 +47,26 @@ boxfuse {
     <strong>secret='<em>your-boxfuse-client-secret</em>'</strong>
 }</pre>
 
-    <p>You can now execute all Boxfuse commands as Gradle tasks directly from the command-line:</p>
+    <p>You can now execute all CloudCaptain commands as Gradle tasks directly from the command-line:</p>
 
     <pre class="console">&gt; gradle build boxfuseRun -info</pre>
 
     <p>As you can see there is no need to manually specify the payload
-        as Boxfuse will automatically default to use the project artifact.
+        as CloudCaptain will automatically default to use the project artifact.
     It also automatically uses the project name and version for the image.</p>
 
-    <p class="alert alert-info"><strong>Tip:</strong> If you do not want to store your Boxfuse credentials directly
+    <p class="alert alert-info"><strong>Tip:</strong> If you do not want to store your CloudCaptain credentials directly
     in your build file, you can also simply store them in the
     <code>BOXFUSE_USER</code> and <code>BOXFUSE_SECRET</code>
     environment variables and they will be picked up automatically.</p>
 
     <h2 class="blog-post-section">Build integration</h2>
 
-    <p>Where Boxfuse really shines, is when you integrate it directly into
+    <p>Where CloudCaptain really shines, is when you integrate it directly into
     your build. You can then:</p>
     <ul>
         <li>fuse your artifact into a new image</li>
-    <li>launch an instance of that image on VirtualBox or your Boxfuse test
+    <li>launch an instance of that image on VirtualBox or your CloudCaptain test
     environment on EC2</li>
         <li>execute your integration tests against it</li>
     <li>shut it down</li>
@@ -75,7 +75,7 @@ boxfuse {
         </ul>
 
     <p>How can you achieve all this
-    with Boxfuse and Gradle? All you need is this simple configuration:</p>
+    with CloudCaptain and Gradle? All you need is this simple configuration:</p>
 
     <pre class="prettyprint">buildscript {
     repositories {
@@ -107,7 +107,7 @@ test.dependsOn(testConfig)
 test.finalizedBy(boxfuseKillTest)
 
 //Deploy with zero-downtime on prod environment
-extensions.create('boxfuseProd', com.boxfuse.client.gradle.BoxfuseExtension)
+extensions.create('boxfuseProd', com.boxfuse.client.gradle.CloudCaptainExtension)
 boxfuseProd {
     env='prod'
 }
@@ -123,14 +123,14 @@ check.dependsOn(boxfuseRunProd)</pre>
 
     <pre class="console">&gt; gradle build -info</pre>
 
-    <p>And there you have it! Boxfuse will fuse an image,
+    <p>And there you have it! CloudCaptain will fuse an image,
         run and kill instances in multiple environments
         and more, all while integrated directly in your Gradle build.
     </p>
 
     <p>As you can see, you can pass <code>boxfuse.instancesResult[0].url</code>
     as a system property to your tests, so they know where the instance under test is running.
-    <a href="/docs/gradle/run#dynamic-properties">Boxfuse dynamically sets this and others properties</a> after it launches an instance to
+    <a href="/docs/gradle/run#dynamic-properties">CloudCaptain dynamically sets this and others properties</a> after it launches an instance to
     make it easy for you to interact with your new instance.</p>
 
     <p class="alert alert-info"><strong>Tip:</strong> We extended our
@@ -141,16 +141,16 @@ check.dependsOn(boxfuseRunProd)</pre>
 
     <h2 class="blog-post-section">Summary</h2>
 
-    <p>In this post we looked at the <a href="/docs/gradle">Boxfuse Gradle plugin</a> and how
+    <p>In this post we looked at the <a href="/docs/gradle">CloudCaptain Gradle plugin</a> and how
     it makes it a breeze to fuse images and run instances directly from
     your Gradle build.</p>
 
-    <p>You can find more information in the <a href="/docs/gradle">docs for the Boxfuse Gradle plugin</a>.</p>
+    <p>You can find more information in the <a href="/docs/gradle">docs for the CloudCaptain Gradle plugin</a>.</p>
 
     <p>Have fun! And if you haven't already,
         <a href="https://console.boxfuse.com"><strong>sign up for your
-        Boxfuse account</strong></a> today. All you need is a GitHub user
-        and you'll be up and running in no time. The <a href="/pricing">Boxfuse free plan</a> aligns
+        CloudCaptain account</strong></a> today. All you need is a GitHub user
+        and you'll be up and running in no time. The <a href="/pricing">CloudCaptain free plan</a> aligns
         perfectly with the AWS free tier, so you can deploy
         your application to the cloud completely free.</p>
 </div>
