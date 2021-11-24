@@ -5,7 +5,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://boxfuse.com</loc>
+    <loc>https://cloudcaptainhq.com</loc>
     <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -13,7 +13,7 @@
 
   {% for post in site.posts %}
   <url>
-    <loc>https://boxfuse.com{{ post.permalink | split: '.html' }}</loc>
+    <loc>https://cloudcaptainhq.com{{ post.permalink | split: '.html' }}</loc>
     <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.2</priority>
@@ -22,7 +22,7 @@
 
   {% for page in site.pages %}
   <url>
-    <loc>https://boxfuse.com{{ page.url | split: '.html' }}</loc>
+    <loc>https://cloudcaptainhq.com{{ page.url | split: '.html' }}</loc>
     <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

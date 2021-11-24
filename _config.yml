@@ -1,6 +1,6 @@
 safe: true
 future: true
-exclude: [.gitattributes, .gitignore, README.md, CNAME, .idea]
+exclude: [.gitattributes, .gitignore, .idea, README.md, CNAME]
 boxfuseVersion: 1.33.0.1460
 highlighter: rouge
 url: https://cloudcaptainhq.com
