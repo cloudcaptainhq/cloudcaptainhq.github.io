@@ -4,17 +4,17 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title>CloudCaptain</title>
-  <link href="https://cloudcaptainhq.com/blog/"/>
+  <link href="https://cloudcaptain.sh/blog/"/>
   <link type="application/atom+xml" rel="self" href="/blog/atom.xml"/>
   <updated>{{ site.time | date_to_xmlschema }}</updated>
-  <id>https://cloudcaptainhq.com/blog/</id>
+  <id>https://cloudcaptain.sh/blog/</id>
   <author>
     <name>CloudCaptain</name>
   </author>
 
   {% for post in site.posts %}
   <entry>
-    <id>https://cloudcaptainhq.com{{ post.permalink | split: '.html' }}</id>
+    <id>https://cloudcaptain.sh{{ post.permalink | split: '.html' }}</id>
     <link type="text/html" rel="alternate" href="{{ post.permalink | split: '.html' }}"/>
     <title>{{ post.subtitle | xml_escape }}{% if post.parttitle %} - {{ post.parttitle | xml_escape }}{% endif %}</title>
     <published>{{ post.date | date_to_xmlschema }}</published>
