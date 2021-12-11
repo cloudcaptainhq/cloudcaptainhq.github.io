@@ -41,10 +41,14 @@ title2: Blog
             <div class="blog-post-section">Recent posts</div>
             <div id="menu">
                 <ul class="nav nav-pills nav-stacked">
+                    {% capture date_cutoff_old_posts %}{{ '2018-01-01' | date: '%s' | plus: 0 }}{% endcapture %}
                     {% for post in site.posts %}
-                    <li
-                    {% if page.permalink == post.permalink %} class="active" {% endif %}>
-                    <a href="{{ post.permalink | split: '.html' }}"><span class="date">{{ post.date | date: "%Y-%m-%d" }}</span><br/>{{ post.subtitle | xml_escape }} {% if post.parttitle %} <br/> <span class="blog-sidebar-subtitle">{{ post.parttitle }}</span>{% endif %}</a></li>
+                        {% capture date_post %}{{ post.date | date: "%s" | plus: 0 }}{% endcapture %}
+                        {% if date_post >= date_cutoff_old_posts %}
+                            <li
+                            {% if page.permalink == post.permalink %} class="active" {% endif %}>
+                            <a href="{{ post.permalink | split: '.html' }}"><span class="date">{{ post.date | date: "%Y-%m-%d" }}</span><br/>{{ post.subtitle | xml_escape }} {% if post.parttitle %} <br/> <span class="blog-sidebar-subtitle">{{ post.parttitle }}</span>{% endif %}</a></li>
+                        {% endif %}
                     {% endfor %}
                 </ul>
             </div>
