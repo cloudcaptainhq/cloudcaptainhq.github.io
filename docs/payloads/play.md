@@ -5,7 +5,7 @@ subtitle: 'Play'
 ---
 ![Play](/assets/img/play.png)
 
-CloudCaptain supports **Play 2.3.x or newer** apps packaged as a **Play dist zip** using either **OpenJDK 7.x or 8.x**.
+CloudCaptain supports **Play 2.3.x and newer** apps packaged as a **Play dist zip** using **OpenJDK 7, 8, 11 or 17**.
 
 ## Get Started
 
@@ -13,7 +13,7 @@ If you haven't already, start by following **[Play &amp; CloudCaptain tutorial](
 
 ## Java Runtime Environment
 
-By default CloudCaptain uses the **latest OpenJDK 8.x version** (headless JRE).
+By default CloudCaptain uses the **latest OpenJDK 17 version** (headless JRE).
 
 ### OpenJDK version
 

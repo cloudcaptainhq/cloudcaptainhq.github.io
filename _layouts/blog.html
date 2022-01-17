@@ -41,7 +41,7 @@ title2: Blog
             <div class="blog-post-section">Recent posts</div>
             <div id="menu">
                 <ul class="nav nav-pills nav-stacked">
-                    {% capture date_cutoff_old_posts %}{{ '2018-01-01' | date: '%s' | plus: 0 }}{% endcapture %}
+                    {% capture date_cutoff_old_posts %}{{ '2022-01-01' | date: '%s' | plus: 0 }}{% endcapture %}
                     {% for post in site.posts %}
                         {% capture date_post %}{{ post.date | date: "%s" | plus: 0 }}{% endcapture %}
                         {% if date_post >= date_cutoff_old_posts %}

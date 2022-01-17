@@ -23,29 +23,6 @@ tab of the CloudCaptain Console.
 CloudCaptain fully supports the `ap-northeast-1`, `ap-south-1`, `ap-southeast-1`, `ap-southeast-2`, `ca-central-1`,
 `eu-central-1`, `eu-west-1`, `eu-west-2`, `sa-east-1`, `us-east-1`, `us-east-2`, `us-west-1` and `us-west-2` regions.
 
-We recommend **the regions in Australia, the EU and the US** (`ap-southeast-2`, `eu-central-1`, `eu-west-1`, `us-east-1`,
-`us-west-1` and `us-west-2`) as we have **optimized them for AMI creation speed** with new Amazon Machine Images created in
-under 60 seconds. This is 5x to 10x faster than any other tool in the industry.
-
-{: .table .table-striped}
-
-AWS Region | AMI Creation Time
----------- | -----------------
-ap-northeast-1 | Less than 5 minutes
-ap-northeast-2 | Less than 5 minutes
-ap-south-1 | Less than 5 minutes
-ap-southeast-1 | Less than 5 minutes
-**ap-southeast-2** | **Less than 60 seconds**
-ca-central-1 | Less than 5 minutes
-**eu-central-1** | **Less than 60 seconds**
-**eu-west-1** | **Less than 60 seconds**
-eu-west-2 | Less than 5 minutes
-sa-east-1 | Less than 5 minutes
-**us-east-1** | **Less than 60 seconds**
-us-east-2 | Less than 5 minutes
-**us-west-1** | **Less than 60 seconds**
-**us-west-2** | **Less than 60 seconds**
-
 As CloudCaptain expands its footprint, further regions will be optimized for fast deployment. The order will be based on 
 customer usage and demand. This does not affect the runtime speed of your instance, which is determined by the instance 
 type you selected.
@@ -67,7 +44,7 @@ create.
 
 ## Instance Types
 
-CloudCaptain supports all `t3`, `t2`, `m5`, `m4`, `m3`, `c5`, `c4`, `c3`, `r5`, `r4` and `r3` instance types in all available regions.
+CloudCaptain supports all `t3`, `t2`, `m6i`, `m5`, `m4`, `m3`, `c6i`, `c5`, `c4`, `c3`, `r6i`, `r5`, `r4` and `r3` instance types in all available regions.
 
 ## App Types
 
