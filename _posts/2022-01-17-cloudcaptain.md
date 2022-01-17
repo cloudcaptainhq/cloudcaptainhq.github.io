@@ -29,3 +29,5 @@ As you no doubt have noticed the old `boxfuse.com` domain has now been phased ou
 [cloudcaptain.sh](https://cloudcaptain.sh) where development will continue at an accelerated pace going forward!
 
 We have lots of innovation in store and we can't wait to share it with you!
+
+Watch this space or follow [@CloudCaptainSH](https://twitter.com/CloudCaptainSH) on Twitter to stay updated!
