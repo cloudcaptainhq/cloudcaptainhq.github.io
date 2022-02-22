@@ -40,5 +40,5 @@ All you need to do is upgrade your account and upgrade your client to version `1
 automatically benefit from the privacy and security advantages of Private Vault. Enjoy! 
 
 So if you haven't already,
-[**sign up for your CloudCaptain account**](https://console.boxfuse.com) now (simply log in with your GitHub id, it's free),
+[**sign up for your CloudCaptain account**](https://console.cloudcaptain.sh) now (simply log in with your GitHub id, it's free),
 start deploying your application effortlessly to AWS today and have it running in minutes.

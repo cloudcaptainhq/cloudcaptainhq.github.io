@@ -15,7 +15,7 @@ together with Auto Scaling Groups and optionally custom domains and TLS (SSL) ce
 
 ## How does it work?
 
-When you create a new `load-balanced-https` app using either the [CloudCaptain Console](https://console.boxfuse.com)
+When you create a new `load-balanced-https` app using either the [CloudCaptain Console](https://console.cloudcaptain.sh)
 
 ![create](/assets/posts/load-balanced-https/console.png){: .screenshot}
 
@@ -84,5 +84,5 @@ that one instead of the ALB and Target Group auto provisioning described above.
 Support for `load-balanced-https` apps is available today at no additional charge on all paid CloudCaptain plans. Enjoy!
 
 So if you haven't already,
-[**sign up for your CloudCaptain account**](https://console.boxfuse.com) now (simply log in with your GitHub id, it's free),
+[**sign up for your CloudCaptain account**](https://console.cloudcaptain.sh) now (simply log in with your GitHub id, it's free),
 start deploying your application effortlessly to AWS today and have it running in minutes.

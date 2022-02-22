@@ -34,5 +34,5 @@ encouraged to make the switch.
 Spring Boot 2 and t3 and r5 instance support is available today at no additional charge to all CloudCaptain customers. Enjoy!
 
 And if you haven't already,
-[**sign up for your CloudCaptain account**](https://console.boxfuse.com) now (simply log in with your GitHub id, it's free),
+[**sign up for your CloudCaptain account**](https://console.cloudcaptain.sh) now (simply log in with your GitHub id, it's free),
 start deploying your application effortlessly to AWS today and have it running in minutes.

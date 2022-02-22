@@ -58,10 +58,10 @@ permalink: /blog/databases.html
 
     <h2>Prerequisites</h2>
 
-    <p>Before we get started ensure you have <a href="https://console.boxfuse.com">created a CloudCaptain account</a> (it's
+    <p>Before we get started ensure you have <a href="https://console.cloudcaptain.sh">created a CloudCaptain account</a> (it's
         free, just log in with your GitHub id).
         Also make sure to associate it with your <a href="http://aws.amazon.com/">AWS account</a> in the <a
-                href="https://console.boxfuse.com">CloudCaptain console</a> to be able to deploy on EC2.</p>
+                href="https://console.cloudcaptain.sh">CloudCaptain console</a> to be able to deploy on EC2.</p>
     <p>You will also need a <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK</a>
         and <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a> installed on your machine.</p>
 
@@ -204,7 +204,7 @@ Payload started in 00:13.157s -> http://127.0.0.1:8080</pre>
     <p>Now let's deploy our microservice to AWS. As CloudCaptain works with your AWS account, it first needs the necessary
         permissions to do so.
         So if you haven't already done it, go to the CloudCaptain Console and <strong><a
-                href="https://console.boxfuse.com/#/awsAccount">connect your AWS account</a></strong> now.</p>
+                href="https://console.cloudcaptain.sh/#/awsAccount">connect your AWS account</a></strong> now.</p>
 
     <p>Every new CloudCaptain account comes with 3 environments: <code>dev</code>, <code>test</code> and <code>prod</code>.
         <code>dev</code> is your local VirtualBox environment and <code>test</code> and <code>prod</code> are on AWS.
@@ -275,7 +275,7 @@ Deployment completed successfully. myuser/database-demo:1.0 is up and running at
         achieve that we're going to make our database highly available by provisioning a <strong>continuously replicated
             geo-redundant hot standby spare instance</strong> that's ready take over in case the primary one fails.</p>
 
-    <p>To achieve this we'll simply scale our database in the <a href="https://console.boxfuse.com">CloudCaptain Console</a>:
+    <p>To achieve this we'll simply scale our database in the <a href="https://console.cloudcaptain.sh">CloudCaptain Console</a>:
     </p>
 
     <div class="blog-post-image">
@@ -302,7 +302,7 @@ Deployment completed successfully. myuser/database-demo:1.0 is up and running at
         All it takes is a few clicks in the CloudCaptain Console.</p>
 
     <p>So if you haven't already,
-        <a href="https://console.boxfuse.com"><strong>sign up for your
+        <a href="https://console.cloudcaptain.sh"><strong>sign up for your
             CloudCaptain account</strong></a> now (simply log in with your GitHub id, it's free) and start deploying
         your applications and their PostgreSQL databases effortlessly on AWS today.
     </p>

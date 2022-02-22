@@ -12,7 +12,7 @@ update it with zero downtime. Altogether this should take you about **5-10 minut
 
 Before you begin, ensure you have successfully:
 
-1. created a <strong><a href="https://console.boxfuse.com">CloudCaptain Account</a></strong> (simply log in with your GitHub account, it's free)
+1. created a <strong><a href="https://console.cloudcaptain.sh">CloudCaptain Account</a></strong> (simply log in with your GitHub account, it's free)
 2. downloaded and installed the latest <strong><a href="/getstarted/download">CloudCaptain Client</a></strong>
 3. downloaded and installed the latest <strong><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK</a></strong> with `JAVA_HOME` set up correctly
 4. downloaded and installed the latest version of <strong><a href="http://www.scala-sbt.org/">SBT</a></strong>
@@ -103,7 +103,7 @@ Total: 1</pre>
 ## Deploying your application to AWS
 
 Now let's deploy the image to AWS. As CloudCaptain works with your AWS account, it first needs the necessary permissions to do so.
-So if you haven't already done so, go to the CloudCaptain Console and **[connect your AWS account](https://console.boxfuse.com/#/awsAccount)** now.
+So if you haven't already done so, go to the CloudCaptain Console and **[connect your AWS account](https://console.cloudcaptain.sh/#/awsAccount)** now.
 
 Every new CloudCaptain account comes with 3 environments: `dev`, `test` and `prod`.
 `dev` is your local VirtualBox environment and `test` and `prod` are on AWS.
