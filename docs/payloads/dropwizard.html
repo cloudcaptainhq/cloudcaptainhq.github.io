@@ -212,8 +212,8 @@ trustStorePassword: my0th3rPwd</pre>
     <h3>Using an older CloudCaptain JRE</h3>
 
     <p>To enable JCE unlimited cryptography (for AES-256, RSA-4096, ...), download the policy zip from the Oracle website
-        for either <a href="http://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html">Java 7</a>
-        or <a href="http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html">Java 8</a>.</p>
+        for either <a href="https://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html">Java 7</a>
+        or <a href="https://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html">Java 8</a>.</p>
     <p>Extract both <code>local_policy.jar</code> and <code>US_export_policy.jar</code> and place them at the root of your Jar file.
         If you use Maven, this means both policy jar files should be put into the <code>src/main/resources</code> directory.
         CloudCaptain will then automatically configure the JRE to use these instead.

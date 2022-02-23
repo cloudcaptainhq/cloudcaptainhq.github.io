@@ -153,8 +153,8 @@ subtitle: 'TomEE'
     <h3>Using an older CloudCaptain JRE</h3>
 
     <p>To enable JCE unlimited cryptography (for AES-256, RSA-4096, ...), download the policy zip from the Oracle website
-        for either <a href="http://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html">Java 7</a>
-        or <a href="http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html">Java 8</a>.</p>
+        for either <a href="https://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html">Java 7</a>
+        or <a href="https://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html">Java 8</a>.</p>
     <p>Extract both <code>local_policy.jar</code> and <code>US_export_policy.jar</code> and place them under <code>/WEB-INF</code> inside your war file.
         If you use Maven or Gradle, this means both policy jar files should be put into the <code>src/main/webapp/WEB-INF</code> directory.
         CloudCaptain will then automatically configure the JRE to use these instead.
@@ -187,7 +187,7 @@ subtitle: 'TomEE'
         <code>BOXFUSE_DATABASE_USER</code> (database user) and <code>BOXFUSE_DATABASE_PASSWORD</code> (database password).</p>
 
     <p>To make this easy to use, CloudCaptain also automatically creates a <a
-            href="http://tomee.apache.org/datasource-config.html">TomEE JDBC
+            href="https://tomee.apache.org/datasource-config.html">TomEE JDBC
         DataSource</a> called <code>boxfuseDatabase</code> that you can then easily reference in your application.</p>
 
     <p>When using <code>persistence.xml</code>, integration looks like this:</p>

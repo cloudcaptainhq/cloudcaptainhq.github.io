@@ -248,8 +248,8 @@ server.ssl.trust-store-password=my0th3rPwd</pre>
 <h3>Using an older CloudCaptain JRE</h3>
 
 <p>To enable JCE unlimited cryptography (for AES-256, RSA-4096, ...), download the policy zip from the Oracle website
-    for either <a href="http://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html">Java 7</a>
-    or <a href="http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html">Java 8</a>.</p>
+    for either <a href="https://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html">Java 7</a>
+    or <a href="https://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html">Java 8</a>.</p>
 <p>Extract both <code>local_policy.jar</code> and <code>US_export_policy.jar</code> and place them at the root of your
     Jar file.
     If you use Maven or Gradle, this means both policy jar files should be put into the <code>src/main/resources</code>
@@ -324,10 +324,10 @@ server.ssl.trust-store-password=my0th3rPwd</pre>
 
 <h2 id="spring-boot-devtools">Spring Boot Dev Tools</h2>
 <p>CloudCaptain supports the <a
-        href="http://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-devtools.html">Spring Boot Dev
+        href="https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-devtools.html">Spring Boot Dev
     Tools</a>,
     including running as a <a
-            href="http://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-devtools.html#using-boot-devtools-remote">remote
+            href="https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-devtools.html#using-boot-devtools-remote">remote
         application</a> both on VirtualBox and on AWS.</p>
 
 <p>Simply include the <code>spring-boot-devtools</code> dependency either in your Maven <code>pom.xml</code>:</p>
@@ -363,11 +363,11 @@ server.ssl.trust-store-password=my0th3rPwd</pre>
 &gt; boxfuse run
 
 ...
-Payload started in 00:07.682s -> http://127.0.0.1:8080</pre>
+Payload started in 00:07.682s -> https://127.0.0.1:8080</pre>
 
 <p>All that is left is to go to your IDE project for your app and run
     <code>org.springframework.boot.devtools.RemoteSpringApplication</code> with the same classpath as your project
-    and one argument with the address where your app is running, for example <code>http://127.0.0.1:8080</code>.</p>
+    and one argument with the address where your app is running, for example <code>https://127.0.0.1:8080</code>.</p>
 
 <p>The RemoteSpringApplication now starts:</p>
 
@@ -382,7 +382,7 @@ Payload started in 00:07.682s -> http://127.0.0.1:8080</pre>
 2016-07-07 17:04:40.996  INFO 5280 --- [           main] o.s.b.devtools.RemoteSpringApplication   : Starting RemoteSpringApplication v1.3.6.RELEASE on axel-silencio with PID 5280 (C:\Users\myuser\.m2\repository\org\springframework\boot\spring-boot-devtools\1.3.6.RELEASE\spring-boot-devtools-1.3.6.RELEASE.jar started by myuser in C:\Workspaces\getstarted-springboot)
 2016-07-07 17:04:40.998  INFO 5280 --- [           main] o.s.b.devtools.RemoteSpringApplication   : No active profile set, falling back to default profiles: default
 2016-07-07 17:04:41.021  INFO 5280 --- [           main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@365c30cc: startup date [Thu Jul 07 17:04:41 CEST 2016]; root of context hierarchy
-2016-07-07 17:04:41.378  WARN 5280 --- [           main] o.s.b.d.r.c.RemoteClientConfiguration    : The connection to http://localhost:8080 is insecure. You should use a URL starting with 'https://'.
+2016-07-07 17:04:41.378  WARN 5280 --- [           main] o.s.b.d.r.c.RemoteClientConfiguration    : The connection to https://localhost:8080 is insecure. You should use a URL starting with 'https://'.
 2016-07-07 17:04:41.432  INFO 5280 --- [           main] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
 2016-07-07 17:04:41.456  INFO 5280 --- [           main] o.s.b.devtools.RemoteSpringApplication   : Started RemoteSpringApplication in 0.684 seconds (JVM running for 0.981)</pre>
 

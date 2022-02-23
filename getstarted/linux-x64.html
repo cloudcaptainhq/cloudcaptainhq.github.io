@@ -50,7 +50,7 @@ Launching Instance of myuser/nginx-static:1.5 on VirtualBox ...
 Forwarding http port localhost:80 -> vb-6df058de:80
 Instance launched in 00:03.020s -> vb-6df058de
 Waiting for Payload to start on vb-6df058de:80 (expecting HTTP 200 at / within 300s) ...
-Payload started in 00:00.509s -> http://127.0.0.1</pre>
+Payload started in 00:00.509s -> https://127.0.0.1</pre>
 
 <p>In just a few seconds CloudCaptain found your application, detected its type,
     generated an image for it and launched an instance of that image on VirtualBox.</p>
@@ -80,7 +80,7 @@ Running Instances on VirtualBox in the dev environment :
 +-------------+-------------------------+---------------------+------------------+---------------------+
 |  Instance   |          Image          |        Type         |       URL        |     Launched at     |
 +-------------+-------------------------+---------------------+------------------+---------------------+
-| vb-6df058de | myuser/nginx-static:1.5 | 4 CPU / 1024 MB RAM | http://127.0.0.1 | 2016-11-16 13:02:59 |
+| vb-6df058de | myuser/nginx-static:1.5 | 4 CPU / 1024 MB RAM | https://127.0.0.1 | 2016-11-16 13:02:59 |
 +-------------+-------------------------+---------------------+------------------+---------------------+
 Total: 1</pre>
 
@@ -109,11 +109,11 @@ Creating security group boxsg-myuser-prod-nginx-static-1.5 ...
 Launching t2.micro instance of myuser/nginx-static:1.5 (ami-d2dc19bd) in prod (eu-central-1) ...
 Instance launched in 00:24.478s -> i-8f39a332
 Creating Cloud Watch Alarm for Instance auto-recovery -> i-8f39a332-auto-recovery-alarm
-Waiting for AWS to boot Instance i-8f39a332 and Payload to start at http://54.93.62.223/ ...
-Payload started in 00:00.003s -> http://54.93.62.223/
+Waiting for AWS to boot Instance i-8f39a332 and Payload to start at https://54.93.62.223/ ...
+Payload started in 00:00.003s -> https://54.93.62.223/
 Associating Elastic IP 35.156.101.145 to i-8f39a332 ...
 Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
-<strong class="success">Successfully deployed myuser/nginx-static:1.5 in prod at http://nginxstatic-myuser.boxfuse.io/</strong></pre>
+<strong class="success">Successfully deployed myuser/nginx-static:1.5 in prod at https://nginxstatic-myuser.boxfuse.io/</strong></pre>
 
 <p>Notice that we have now specified an image, as we want to reuse our image unchanged instead fusing a new one.</p>
 

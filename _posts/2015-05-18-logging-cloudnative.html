@@ -134,7 +134,7 @@ permalink: /blog/logging-cloudnative.html
     <pre class="prettyprint">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;configuration&gt;
     &lt;appender name="loggly" class="ch.qos.logback.ext.loggly.LogglyAppender"&gt;
-        &lt;endpointUrl&gt;http://logs-01.loggly.com/inputs/<em>your-loggly-input-id</em>&lt;/endpointUrl&gt;
+        &lt;endpointUrl&gt;https://logs-01.loggly.com/inputs/<em>your-loggly-input-id</em>&lt;/endpointUrl&gt;
         &lt;pattern&gt;%d{ISO8601} %p %t %c{0}.%M - %m%n&lt;/pattern&gt;
     &lt;/appender&gt;
     &lt;appender name="loggly-async" class="ch.qos.logback.classic.AsyncAppender"&gt;

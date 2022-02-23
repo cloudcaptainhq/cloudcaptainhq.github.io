@@ -15,7 +15,7 @@ subtitle: 'Get Started with CloudCaptain & Grails'
         <li>created a <strong><a href="https://console.cloudcaptain.sh">CloudCaptain Account</a></strong> (simply log in with your GitHub account, it's free)</li>
         <li>downloaded and installed the latest <strong><a href="/getstarted/download">CloudCaptain Client</a></strong></li>
         <li>downloaded and installed the latest version of <strong><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a></strong></li>
-        <li>downloaded and installed the latest <strong><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK</a></strong> with <code>JAVA_HOME</code> set up correctly</li>
+        <li>downloaded and installed the latest <strong><a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK</a></strong> with <code>JAVA_HOME</code> set up correctly</li>
         <li>downloaded and installed the latest version of <strong><a href="https://grails.org/download.html">Grails</a></strong> with <code>GRAILS_HOME</code> set up correctly</li>
     </ol>
 
@@ -79,7 +79,7 @@ Launching Instance of myuser/getstarted-grails:0.1 on VirtualBox ...
 Forwarding http port localhost:8080 -> vb-9feb5d7c:8080
 Instance launched in 00:04.688s -> vb-9feb5d7c
 Waiting for Payload to start on Instance vb-9feb5d7c ...
-Payload started in 00:06.029s -> http://127.0.0.1:8080</pre>
+Payload started in 00:06.029s -> https://127.0.0.1:8080</pre>
 
     <p>CloudCaptain has automatically detected the Spring Boot Actuator and used the <code>/health</code> endpoint to check whether the instance came up correctly.</p>
 
@@ -109,7 +109,7 @@ Running Instances on VirtualBox in the dev environment :
 +-------------+------------------------------+---------------------+-----------------------+---------------------+
 |  Instance   |            Image             |        Type         |          URL          |     Launched at     |
 +-------------+------------------------------+---------------------+-----------------------+---------------------+
-| vb-9feb5d7c | myuser/getstarted-grails:0.1 | 4 CPU / 1024 MB RAM | http://127.0.0.1:8080 | 2015-12-21 17:47:56 |
+| vb-9feb5d7c | myuser/getstarted-grails:0.1 | 4 CPU / 1024 MB RAM | https://127.0.0.1:8080 | 2015-12-21 17:47:56 |
 +-------------+------------------------------+---------------------+-----------------------+---------------------+
 Total: 1</pre>
 
@@ -135,11 +135,11 @@ Mapping getstartedgrails-myuser.boxfuse.io to 52.29.77.147 ...
 Creating security group boxsg-myuser-prod-getstarted-grails-0.1 ...
 Launching t2.micro instance of myuser/getstarted-grails:0.1 (ami-fd5b4491) in prod (eu-central-1) ...
 Instance launched in 00:50.707s -> i-2c1daf90
-Waiting for AWS to boot Instance i-2c1daf90 and Payload to start at http://52.59.247.126:8080/health ...
-Payload started in 00:55.567s -> http://52.59.247.126:8080/health
+Waiting for AWS to boot Instance i-2c1daf90 and Payload to start at https://52.59.247.126:8080/health ...
+Payload started in 00:55.567s -> https://52.59.247.126:8080/health
 Remapping Elastic IP 52.29.77.147 to i-2c1daf90 ...
 Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
-Deployment completed successfully. myuser/getstarted-grails:0.1 is up and running at http://getstartedgrails-myuser.boxfuse.io:8080/</div></pre>
+Deployment completed successfully. myuser/getstarted-grails:0.1 is up and running at https://getstartedgrails-myuser.boxfuse.io:8080/</div></pre>
 
     <p>Notice that CloudCaptain has reused your image unchanged instead fusing a new one.</p>
 
@@ -179,13 +179,13 @@ AMI created in 00:18.013s in eu-central-1 -> ami-7b5a4517
 Creating security group boxsg-myuser-prod-getstarted-grails-0.2 ...
 Launching t2.micro instance of myuser/getstarted-grails:0.2 (ami-7b5a4517) in prod (eu-central-1) ...
 Instance launched in 00:41.174s -> i-b502b009
-Waiting for AWS to boot Instance i-b502b009 and Payload to start at http://52.59.254.138:8080/health ...
-Payload started in 01:27.645s -> http://52.59.254.138:8080/health
+Waiting for AWS to boot Instance i-b502b009 and Payload to start at https://52.59.254.138:8080/health ...
+Payload started in 01:27.645s -> https://52.59.254.138:8080/health
 Remapping Elastic IP 52.29.77.147 to i-b502b009 ...
 Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
 Terminating instance i-2c1daf90 ...
 Destroying Security Group sg-5981cb30 ...
-Deployment completed successfully. myuser/getstarted-grails:0.2 is up and running at http://getstartedgrails-myuser.boxfuse.io:8080/</div></pre>
+Deployment completed successfully. myuser/getstarted-grails:0.2 is up and running at https://getstartedgrails-myuser.boxfuse.io:8080/</div></pre>
 
     <p>And there it is:</p>
 

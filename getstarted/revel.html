@@ -44,7 +44,7 @@ subtitle: 'Get Started with CloudCaptain & Revel'
 
 <pre class="console"><span>&gt;</span> revel package github.com/myuser/getstarted-revel prod
 ~
-~ revel! http://revel.github.io
+~ revel! https://revel.github.io
 ~
 Your archive is ready: getstarted-revel.tar.gz</pre>
 
@@ -63,7 +63,7 @@ Launching Instance of myuser/getstarted-revel:1.0 on VirtualBox ...
 Forwarding http port localhost:9000 -> vb-530fc84d:9000
 Instance launched in 00:07.553s -> vb-530fc84d
 Waiting for Payload to start on vb-530fc84d:9000 (expecting HTTP 200 at / within 300s) ...
-Payload started in 00:00.008s -> http://127.0.0.1:9000</pre>
+Payload started in 00:00.008s -> https://127.0.0.1:9000</pre>
 
 <p>In just a few seconds CloudCaptain found your application, detected its type,
     generated an image for it and launched an instance of that image on VirtualBox.</p>
@@ -96,7 +96,7 @@ Running Instances on VirtualBox in the dev environment :
 +-------------+-----------------------------+---------------------+-----------------------+---------------------+
 |  Instance   |            Image            |        Type         |          URL          |     Launched at     |
 +-------------+-----------------------------+---------------------+-----------------------+---------------------+
-| vb-530fc84d | myuser/getstarted-revel:1.0 | 4 CPU / 1024 MB RAM | http://127.0.0.1:9000 | 2016-08-09 14:26:01 |
+| vb-530fc84d | myuser/getstarted-revel:1.0 | 4 CPU / 1024 MB RAM | https://127.0.0.1:9000 | 2016-08-09 14:26:01 |
 +-------------+-----------------------------+---------------------+-----------------------+---------------------+
 Total: 1</pre>
 
@@ -124,11 +124,11 @@ Creating security group boxsg-myuser-prod-getstarted-revel-1.0 ...
 Launching t2.micro instance of myuser/getstarted-revel:1.0 (ami-93e81efc) in prod (eu-central-1) ...
 Instance launched in 00:18.382s -> i-58cb4ce5
 Creating Cloud Watch Alarm for Instance auto-recovery -> i-58cb4ce5-auto-recovery-alarm
-Waiting for AWS to boot Instance i-58cb4ce5 and Payload to start at http://54.93.175.48:9000/ ...
-Payload started in 00:31.024s -> http://54.93.175.48:9000/
+Waiting for AWS to boot Instance i-58cb4ce5 and Payload to start at https://54.93.175.48:9000/ ...
+Payload started in 00:31.024s -> https://54.93.175.48:9000/
 Remapping Elastic IP 52.59.65.17 to i-58cb4ce5 ...
 Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
-Deployment completed successfully. myuser/getstarted-revel:1.0 is up and running at http://getstartedrevel-myuser.boxfuse.io:9000/</pre>
+Deployment completed successfully. myuser/getstarted-revel:1.0 is up and running at https://getstartedrevel-myuser.boxfuse.io:9000/</pre>
 
 <p>Notice that we have now specified an image, as we want to reuse our image unchanged instead fusing a new one.</p>
 
@@ -167,14 +167,14 @@ Creating security group boxsg-myuser-prod-getstarted-revel-2.0 ...
 Launching t2.micro instance of myuser/getstarted-revel:2.0 (ami-77d52318) in prod (eu-central-1) ...
 Instance launched in 00:21.719s -> i-77cc4bca
 Creating Cloud Watch Alarm for Instance auto-recovery -> i-77cc4bca-auto-recovery-alarm
-Waiting for AWS to boot Instance i-77cc4bca and Payload to start at http://54.93.63.29:9000/ ...
-Payload started in 00:31.024s -> http://54.93.63.29:9000/
+Waiting for AWS to boot Instance i-77cc4bca and Payload to start at https://54.93.63.29:9000/ ...
+Payload started in 00:31.024s -> https://54.93.63.29:9000/
 Remapping Elastic IP 52.59.65.17 to i-77cc4bca ...
 Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
 Destroying Cloud Watch Alarm i-58cb4ce5-auto-recovery-alarm ...
 Terminating instance i-58cb4ce5 ...
 Destroying Security Group sg-c256d6aa (boxsg-myuser-prod-getstarted-revel-1.0) ...
-Deployment completed successfully. myuser/getstarted-revel:2.0 is up and running at http://getstartedrevel-myuser.boxfuse.io:9000/</pre>
+Deployment completed successfully. myuser/getstarted-revel:2.0 is up and running at https://getstartedrevel-myuser.boxfuse.io:9000/</pre>
 
 <p>And there it is:</p>
 

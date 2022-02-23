@@ -10,7 +10,7 @@ permalink: /blog/dropwizard-aws-travisci.html
     </div>
 
     <p>In <strong><a href="/blog/dropwizard-aws">part 1 of this series</a></strong> we looked at how to fuse a
-        <strong><a href="http://www.dropwizard.io/">Dropwizard</a></strong> application into a <strong>secure unikernel image</strong>.
+        <strong><a href="https://www.dropwizard.io/">Dropwizard</a></strong> application into a <strong>secure unikernel image</strong>.
         We then <strong>tested it locally on VirtualBox</strong> and finally we <strong>deployed it unchanged to AWS</strong>.</p>
 
     <p>In <strong><a href="/blog/dropwizard-aws-maven">part 2</a></strong> we <strong>automated the workflow using Maven</strong>.
@@ -128,15 +128,15 @@ permalink: /blog/dropwizard-aws-travisci.html
 &lt;/plugin&gt;</pre>
 
     <p>We also want to give each unikernel we build a <strong>unique version</strong>. For this Travis CI makes a
-        number of interesting <a href="http://docs.travis-ci.com/user/ci-environment/#Environment-variables">environment variables</a>
+        number of interesting <a href="https://docs.travis-ci.com/user/ci-environment/#Environment-variables">environment variables</a>
         available to every build. In this case we will use the <code>TRAVIS_BUILD_NUMBER</code> environment variable
         so the version of each unikernel
     image can be nicely traced back to the build that created it. On your project, you will probably want to use the
-    full <a href="http://axelfontaine.com/blog/final-nail.html">Maven Releases on Steroids</a> process to also tag the source control repository.</p>
+    full <a href="https://axelfontaine.com/blog/final-nail.html">Maven Releases on Steroids</a> process to also tag the source control repository.</p>
 
     <p>To make this possible we will give our project a generic version (0-SNAPSHOT) and replace it dynamically at the
     start of every build with the Travis CI build number using the <code>set</code> goal of the
-        <a href="http://mojo.codehaus.org/versions-maven-plugin/set-mojo.html">Maven Versions plugin</a>.</p>
+        <a href="https://mojo.codehaus.org/versions-maven-plugin/set-mojo.html">Maven Versions plugin</a>.</p>
 
     <p>So let's first put a generic version in our <code>pom.xml</code>:</p>
 

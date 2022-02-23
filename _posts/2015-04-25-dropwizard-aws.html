@@ -12,7 +12,7 @@ permalink: /blog/dropwizard-aws.html
     <p>Here at CloudCaptain <a href="/blog/welcome">we strongly believe in keeping things simple</a>. We love
         <strong>lightweight solutions</strong> that <strong>do away with cargo cult</strong> and <strong>just work.</strong></p>
 
-    <p>It turns out that when creating REST microservices <strong><a href="http://www.dropwizard.io/">Dropwizard</a></strong> is a perfect match for this.</p>
+    <p>It turns out that when creating REST microservices <strong><a href="https://www.dropwizard.io/">Dropwizard</a></strong> is a perfect match for this.</p>
 
     <p>In this post we are going to look at how to fuse a Dropwizard application into a <strong>secure unikernel image</strong>.
         We will then <strong>test it locally on VirtualBox</strong>
@@ -27,7 +27,7 @@ permalink: /blog/dropwizard-aws.html
     <p>Before we get started, you will need a couple of things.</p>
 
     <p>First of all you will need an <strong>AWS Account</strong>.
-        Go ahead and <a href="http://aws.amazon.com/">register for a free AWS account</a> now if you haven't got one already.
+        Go ahead and <a href="https://aws.amazon.com/">register for a free AWS account</a> now if you haven't got one already.
         Their free tier is great and will give you a free t2.micro (1 vCPU, 1 GB RAM) instance, a few GBs of S3 storage and much more for a whole year.
     </p>
 
@@ -178,16 +178,16 @@ Forwarding admin-http port localhost:50001 -> vb-033da2a4:8081
 Forwarding http port localhost:8888 -> vb-033da2a4:80
 Instance launched in 00:04.176s -> vb-033da2a4
 Waiting for Payload to start on Instance vb-033da2a4 ...
-Payload started in 00:08.525s -> http://127.0.0.1:8888</pre>
+Payload started in 00:08.525s -> https://127.0.0.1:8888</pre>
 
     <p>Now let's check everything is up:</p>
 
 <div class="row">
     <div class="col-md-9">
-    <pre class="console">&gt; curl http://localhost:8888?name=CloudCaptain
+    <pre class="console">&gt; curl https://localhost:8888?name=CloudCaptain
 {"hello":"Hello, CloudCaptain!"}</pre>
 
-    <pre class="console">&gt; curl http://localhost:50001/healthcheck
+    <pre class="console">&gt; curl https://localhost:50001/healthcheck
 {"deadlocks":{"healthy":true},"template":{"healthy":true}}</pre>
     </div>
     <div class="col-md-3">
@@ -205,7 +205,7 @@ Running Instances on VirtualBox :
 +-------------+------------------------------+---------------------+-----------------------+---------------------+
 |  Instance   |             Image            |        Type         |          URL          |     Launched at     |
 +-------------+------------------------------+---------------------+-----------------------+---------------------+
-| vb-033da2a4 | axelfontaine/dwunikernel:1.0 | 4 CPU / 1024 MB RAM | http://127.0.0.1:8888 | 2015-04-25 23:42:20 |
+| vb-033da2a4 | axelfontaine/dwunikernel:1.0 | 4 CPU / 1024 MB RAM | https://127.0.0.1:8888 | 2015-04-25 23:42:20 |
 +-------------+------------------------------+---------------------+-----------------------+---------------------+
 Total: 1</pre>
 
@@ -224,10 +224,10 @@ AMI created in 00:31.067s -> ami-da744bc7
 Creating security group boxfuse-sg_axelfontaine/dwunikernel:1.0 ...
 Launching t2.micro instance of axelfontaine/dwunikernel:1.0 (ami-da744bc7) in eu-central-1 ...
 Instance launched in 00:28.320s -> i-53be0c92
-Waiting for Payload to start on Instance i-53be0c92 at http://52.28.14.76:8081/healthcheck ...
+Waiting for Payload to start on Instance i-53be0c92 at https://52.28.14.76:8081/healthcheck ...
 Remapping Elastic IP 52.28.23.63 to i-53be0c92 ...
 Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
-Deployment completed successfully. axelfontaine/dwunikernel:1.0 is up and running at http://dwunikernel-axelfontaine.boxfuse.io:8081</pre>
+Deployment completed successfully. axelfontaine/dwunikernel:1.0 is up and running at https://dwunikernel-axelfontaine.boxfuse.io:8081</pre>
 
     <p>CloudCaptain automatically created a <strong>new Elastic IP address</strong> and a <strong>new domain</strong>.
         It pushed the image to the secure CloudCaptain vault, registered an AMI, created a security group and launched an instance.
@@ -236,10 +236,10 @@ Deployment completed successfully. axelfontaine/dwunikernel:1.0 is up and runnin
     <p>Let's check if the instance came up:</p>
     <div class="row">
         <div class="col-md-9">
-    <pre class="console">&gt; curl http://dwunikernel-axelfontaine.boxfuse.io?name=CloudCaptainAndAWS
+    <pre class="console">&gt; curl https://dwunikernel-axelfontaine.boxfuse.io?name=CloudCaptainAndAWS
 {"hello":"Hello, CloudCaptainAndAWS!"}</pre>
 
-    <pre class="console">&gt; curl http://dwunikernel-axelfontaine.boxfuse.io:8081/healthcheck
+    <pre class="console">&gt; curl https://dwunikernel-axelfontaine.boxfuse.io:8081/healthcheck
 {"deadlocks":{"healthy":true},"template":{"healthy":true}}</pre>
         </div>
         <div class="col-md-3">

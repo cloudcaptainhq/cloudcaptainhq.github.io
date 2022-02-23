@@ -14,8 +14,8 @@ Before you begin, ensure you have successfully:
 
 1. created a <strong><a href="https://console.cloudcaptain.sh">CloudCaptain Account</a></strong> (simply log in with your GitHub account, it's free)
 2. downloaded and installed the latest <strong><a href="/getstarted/download">CloudCaptain Client</a></strong>
-3. downloaded and installed the latest <strong><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK</a></strong> with `JAVA_HOME` set up correctly
-4. downloaded and installed the latest version of <strong><a href="http://www.scala-sbt.org/">SBT</a></strong>
+3. downloaded and installed the latest <strong><a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK</a></strong> with `JAVA_HOME` set up correctly
+4. downloaded and installed the latest version of <strong><a href="https://www.scala-sbt.org/">SBT</a></strong>
 5. downloaded and installed the latest version of <strong><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a></strong>
 
 ## Creating the Play application
@@ -49,7 +49,7 @@ Now it's time to fuse your application into a CloudCaptain image and launch an i
 This command will run for a few seconds. During this time, CloudCaptain will find your application, detect its type,
 generating an image for it and launch it on VirtualBox. When it completes you should see a message like this:
 
-<pre class="console"><strong class="success">Successfully started payload in 00:09.407s -> http://127.0.0.1:9000</strong></pre>
+<pre class="console"><strong class="success">Successfully started payload in 00:09.407s -> https://127.0.0.1:9000</strong></pre>
 
 Now open your browser and navigate to this address to see your new application up and running within the VirtualBox VM:
 
@@ -75,7 +75,7 @@ Running Instances on VirtualBox in the dev environment :
 +-------------+----------------------------+---------------------+-----------------------+---------------------+
 |  Instance   |           Image            |        Type         |          URL          |     Launched at     |
 +-------------+----------------------------+---------------------+-----------------------+---------------------+
-| vb-8e800f05 | myuser/getstarted-play:1.0 | 2 CPU / 1024 MB RAM | http://127.0.0.1:9000 | 2017-07-13 13:24:40 |
+| vb-8e800f05 | myuser/getstarted-play:1.0 | 2 CPU / 1024 MB RAM | https://127.0.0.1:9000 | 2017-07-13 13:24:40 |
 +-------------+----------------------------+---------------------+-----------------------+---------------------+
 Total: 1</pre>
 
@@ -93,7 +93,7 @@ Total: 1</pre>
                     course). Without the overhead of all the usual setup and
                     configuration.
                 </blockquote>
-                <p>from <a href="http://blog.takipi.com/how-we-used-slack-scala-and-play-to-automate-our-lunch-order/">"How We Used Slack, Scala and Play to Automate Our Lunch
+                <p>from <a href="https://blog.takipi.com/how-we-used-slack-scala-and-play-to-automate-our-lunch-order/">"How We Used Slack, Scala and Play to Automate Our Lunch
                     Order"</a><br> by <strong><a href="https://twitter.com/tzofias">Tzofia Shiftan</a></strong>, Full-stack team lead, Takipi</p>
             </div>
         </div>
@@ -123,11 +123,11 @@ Creating security group boxsg-myuser-prod-getstarted-play-1.0 ...
 Launching t2.micro instance of myuser/getstarted-play:1.0 (ami-8b3794e4) in prod (eu-central-1) ...
 Instance launched in 00:18.803s -> i-0cb10e26f54c87971
 Creating Cloud Watch Alarm for Instance auto-recovery -> i-0cb10e26f54c87971-auto-recovery-alarm
-Waiting for AWS to boot Instance i-0cb10e26f54c87971 and Payload to start at http://35.158.117.251:9000/ ...
-Payload started in 00:09.544s -> http://35.158.117.251:9000/
+Waiting for AWS to boot Instance i-0cb10e26f54c87971 and Payload to start at https://35.158.117.251:9000/ ...
+Payload started in 00:09.544s -> https://35.158.117.251:9000/
 Associating Elastic IP 52.58.243.45 with i-0cb10e26f54c87971 ...
 Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
-<strong class="success">Successfully running myuser/getstarted-play:1.0 in prod at http://getstartedplay-myuser.boxfuse.io:9000/</strong></pre>
+<strong class="success">Successfully running myuser/getstarted-play:1.0 in prod at https://getstartedplay-myuser.boxfuse.io:9000/</strong></pre>
 
 Notice that we have now specified an image, as we want to reuse our image unchanged instead fusing a new one.
 
@@ -174,14 +174,14 @@ Creating security group boxsg-myuser-prod-getstarted-play-1.1 ...
 Launching t2.micro instance of myuser/getstarted-play:1.1 (ami-b73093d8) in prod (eu-central-1) ...
 Instance launched in 00:28.872s -> i-0a2461d56ca5060a3
 Creating Cloud Watch Alarm for Instance auto-recovery -> i-0a2461d56ca5060a3-auto-recovery-alarm
-Waiting for AWS to boot Instance i-0a2461d56ca5060a3 and Payload to start at http://35.158.133.205:9000/ ...
-Payload started in 00:12.630s -> http://35.158.133.205:9000/
+Waiting for AWS to boot Instance i-0a2461d56ca5060a3 and Payload to start at https://35.158.133.205:9000/ ...
+Payload started in 00:12.630s -> https://35.158.133.205:9000/
 Reassociating Elastic IP 52.58.243.45 from i-0cb10e26f54c87971 to i-0a2461d56ca5060a3 ...
 Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
 Destroying Cloud Watch Alarm i-0cb10e26f54c87971-auto-recovery-alarm ...
 Terminating instance i-0cb10e26f54c87971 ...
 Destroying Security Group sg-7646171d (boxsg-myuser-prod-getstarted-play-1.0) ...
-<strong class="success">Successfully running myuser/getstarted-play:1.1 in prod at http://getstartedplay-myuser.boxfuse.io:9000/</strong></pre>
+<strong class="success">Successfully running myuser/getstarted-play:1.1 in prod at https://getstartedplay-myuser.boxfuse.io:9000/</strong></pre>
 
 And there it is:
 

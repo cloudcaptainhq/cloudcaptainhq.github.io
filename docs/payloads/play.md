@@ -237,8 +237,8 @@ you have to add the following to your Play configuration:
 ### Using an older CloudCaptain JRE
 
 To enable JCE unlimited cryptography (for AES-256, RSA-4096, ...), download the policy zip from the Oracle website
-for either [Java 7](http://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html)
-or [Java 8](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html).
+for either [Java 7](https://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html)
+or [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html).
 
 Extract both `local_policy.jar` and `US_export_policy.jar` and place them inside the Zip file under `/conf`.
 If you use SBT, this means both policy jar files should be put into the `conf` directory.

@@ -44,8 +44,8 @@ permalink: /blog/playframework-aws.html
     <h2>Prerequisites</h2>
 
     <p>Before we get started ensure you have <a href="https://console.cloudcaptain.sh">created a CloudCaptain account</a> (it's free, just log in with your GitHub id).
-        Make sure to associate it with your <a href="http://aws.amazon.com/">AWS account</a> in the <a href="https://console.cloudcaptain.sh">CloudCaptain console</a> to deploy on EC2.</p>
-    <p>You will also need a <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK</a>,
+        Make sure to associate it with your <a href="https://aws.amazon.com/">AWS account</a> in the <a href="https://console.cloudcaptain.sh">CloudCaptain console</a> to deploy on EC2.</p>
+    <p>You will also need a <a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK</a>,
         the <a href="https://www.typesafe.com/activator/download">Typesafe Activator</a>
         and <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a> installed on your machine.</p>
 
@@ -85,7 +85,7 @@ permalink: /blog/playframework-aws.html
         your application itself with a JRE and a Linux kernel from the CloudCaptain Component Inventory. It will then
         launch an instance of your new image on VirtualBox. When it completes you should see a message like this:</p>
 
-    <pre class="console">Payload started in 00:06.688s -> http://127.0.0.1:10080</pre>
+    <pre class="console">Payload started in 00:06.688s -> https://127.0.0.1:10080</pre>
 
     <p>Now open your browser and navigate to this address to see your new application up and running within the new VirtualBox VM:</p>
 
@@ -111,7 +111,7 @@ Running Instances on VirtualBox in the dev environment :
 +-------------+------------------+---------------------+------------------------+---------------------+
 |  Instance   |      Image       |        Type         |           URL          |     Launched at     |
 +-------------+------------------+---------------------+------------------------+---------------------+
-| vb-b18d6746 | myuser/hello:1.0 | 4 CPU / 1024 MB RAM | http://127.0.0.1:10080 | 2015-11-12 14:57:56 |
+| vb-b18d6746 | myuser/hello:1.0 | 4 CPU / 1024 MB RAM | https://127.0.0.1:10080 | 2015-11-12 14:57:56 |
 +-------------+------------------+---------------------+------------------------+---------------------+
 Total: 1</pre>
 
@@ -136,11 +136,11 @@ Mapping hello-myuser.boxfuse.io to 52.28.107.167 ...
 Creating security group boxsg-myuser-prod-hello-1.0 ...
 Launching t2.micro instance of myuser/hello:1.0 (ami-ed988b81) in prod (eu-central-1) ...
 Instance launched in 00:26.922s -> i-5de042e1
-Waiting for AWS to boot Instance i-5de042e1 and Payload to start at http://52.28.121.55/ ...
-Payload started in 00:51.516s -> http://52.28.121.55/
+Waiting for AWS to boot Instance i-5de042e1 and Payload to start at https://52.28.121.55/ ...
+Payload started in 00:51.516s -> https://52.28.121.55/
 Remapping Elastic IP 52.28.107.167 to i-5de042e1 ...
 Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
-Deployment completed successfully. myuser/hello:1.0 is up and running at http://hello-myuser.boxfuse.io/</pre>
+Deployment completed successfully. myuser/hello:1.0 is up and running at https://hello-myuser.boxfuse.io/</pre>
 
     <p>Notice that CloudCaptain has reused your image unchanged instead fusing a new one.</p>
 
@@ -209,13 +209,13 @@ AMI created in 00:34.152s in eu-central-1 -> ami-8b988be7
 Creating security group boxsg-myuser-prod-hello-1.1 ...
 Launching t2.micro instance of myuser/hello:1.1 (ami-8b988be7) in prod (eu-central-1) ...
 Instance launched in 00:35.372s -> i-ebea4857
-Waiting for AWS to boot Instance i-ebea4857 and Payload to start at http://52.29.129.239/ ...
-Payload started in 01:05.316s -> http://52.29.129.239/
+Waiting for AWS to boot Instance i-ebea4857 and Payload to start at https://52.29.129.239/ ...
+Payload started in 01:05.316s -> https://52.29.129.239/
 Remapping Elastic IP 52.28.107.167 to i-ebea4857 ...
 Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
 Terminating instance i-5de042e1 ...
 Destroying Security Group sg-48ea9921 ...
-Deployment completed successfully. myuser/hello:1.1 is up and running at http://hello-myuser.boxfuse.io/</pre>
+Deployment completed successfully. myuser/hello:1.1 is up and running at https://hello-myuser.boxfuse.io/</pre>
 
     <p>And there it is:</p>
 

@@ -25,7 +25,7 @@ As part of this, please join us in saying goodbye to Boxfuse and welcoming Cloud
 
 ![CloudCaptain](/assets/img/logo/cloudcaptain-h.svg)
 
-As you no doubt have noticed the old `boxfuse.com` domain has now been phased out and replaced by our brand new
+As you no doubt have noticed the old `cloudcaptain.sh` domain has now been phased out and replaced by our brand new
 [cloudcaptain.sh](https://cloudcaptain.sh) where development will continue at an accelerated pace going forward!
 
 We have lots of innovation in store and we can't wait to share it with you!

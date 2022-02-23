@@ -62,7 +62,7 @@ int main(int argc, char **argv)
 
 <p>Now let's create a simple Spring Boot app to expose this:</p>
 
-<pre class="console"><span>$ </span>curl 'http://start.spring.io/starter.zip?type=maven-project&bootVersion=1.4.3.RELEASE&baseDir=remote-cowsay&groupId=com.boxfuse.demo&artifactId=remote-cowsay&version=1.0&name=remote-cowsay&description=Remote+cowsay&packageName=com.boxfuse.demo&packaging=jar&javaVersion=1.8&language=java&autocomplete=&generate-project=&style=web' -o remote-cowsay.zip && unzip remote-cowsay.zip</pre>
+<pre class="console"><span>$ </span>curl 'https://start.spring.io/starter.zip?type=maven-project&bootVersion=1.4.3.RELEASE&baseDir=remote-cowsay&groupId=com.boxfuse.demo&artifactId=remote-cowsay&version=1.0&name=remote-cowsay&description=Remote+cowsay&packageName=com.boxfuse.demo&packaging=jar&javaVersion=1.8&language=java&autocomplete=&generate-project=&style=web' -o remote-cowsay.zip && unzip remote-cowsay.zip</pre>
 
 <p>Next add our freshly compiled <code>cowsay.elf64</code> Linux x64 binary to our project under the <code>src/main/resources/native/bin</code>
     directory to ensure it will be added to the <code>PATH</code> at runtime:</p>
@@ -133,11 +133,11 @@ Launching Instance of axelfontaine/remote-cowsay:1.0 on VirtualBox ...
 Forwarding http port localhost:8080 -> vb-f3f3a0a4:8080
 Instance launched in 00:04.597s -> vb-f3f3a0a4
 Waiting for payload to start on vb-f3f3a0a4:8080 (expecting HTTP 200 at / within 300s) ...
-<strong class="success">Successfully started payload in 00:12.134s -> http://127.0.0.1:8080</strong></pre>
+<strong class="success">Successfully started payload in 00:12.134s -> https://127.0.0.1:8080</strong></pre>
 
 <p>Last but not least, let's see it in action!</p>
 
-<pre class="console"><span>$ </span>curl http://localhost:8080?t=Moooooohh
+<pre class="console"><span>$ </span>curl https://localhost:8080?t=Moooooohh
 / Moooooohh \
   \ ^__^
     (oo)\_______

@@ -15,7 +15,7 @@ permalink: /blog/databases.html
     </p>
 
     <p>While this provides a great help for tackling the complexity of the compute tier, many of our users who build
-        microservices that follow the <a href="http://microservices.io/patterns/data/database-per-service.html">database
+        microservices that follow the <a href="https://microservices.io/patterns/data/database-per-service.html">database
             per service</a>
         pattern have been asking for built-in support for relational databases.</p>
 
@@ -60,9 +60,9 @@ permalink: /blog/databases.html
 
     <p>Before we get started ensure you have <a href="https://console.cloudcaptain.sh">created a CloudCaptain account</a> (it's
         free, just log in with your GitHub id).
-        Also make sure to associate it with your <a href="http://aws.amazon.com/">AWS account</a> in the <a
+        Also make sure to associate it with your <a href="https://aws.amazon.com/">AWS account</a> in the <a
                 href="https://console.cloudcaptain.sh">CloudCaptain console</a> to be able to deploy on EC2.</p>
-    <p>You will also need a <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK</a>
+    <p>You will also need a <a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK</a>
         and <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a> installed on your machine.</p>
 
     <h2>Step 0: Creating the Spring Boot microservice</h2>
@@ -96,7 +96,7 @@ permalink: /blog/databases.html
 
     <pre class="prettyprint">&ltversion&gt;1.0&lt;/version&gt;</pre>
 
-    <p>Next, add <a href="http://flywaydb.org">Flyway</a> as a dependency to <code>pom.xml</code> so we can create the
+    <p>Next, add <a href="https://flywaydb.org">Flyway</a> as a dependency to <code>pom.xml</code> so we can create the
         database schema we'll need:</p>
 
     <pre class="prettyprint">&lt;dependency&gt;
@@ -166,7 +166,7 @@ Launching Instance of myuser/database-demo:1.0 on VirtualBox ...
 Forwarding http port localhost:8080 -> vb-db91551d:8080
 Instance launched in 00:03.426s -> vb-db91551d
 Waiting for Payload to start on Instance vb-db91551d ...
-Payload started in 00:13.157s -> http://127.0.0.1:8080</pre>
+Payload started in 00:13.157s -> https://127.0.0.1:8080</pre>
 
     <h3>What just happened here?</h3>
 
@@ -189,7 +189,7 @@ Payload started in 00:13.157s -> http://127.0.0.1:8080</pre>
 
     <h3>Seeing it in action</h3>
 
-    <p>To see our controller in action, simply point your browser to http://127.0.0.1:8080 or type:</p>
+    <p>To see our controller in action, simply point your browser to https://127.0.0.1:8080 or type:</p>
 
     <pre class="console"><span>&gt;</span> boxfuse open</pre>
 
@@ -230,11 +230,11 @@ Mapping databasedemo-myuser.boxfuse.io to 52.29.173.190 ...
 Creating security group boxsg-myuser-prod-database-demo-1.0 ...
 Launching t2.micro instance of myuser/database-demo:1.0 (ami-9d1d05f1) in prod (eu-central-1) ...
 Instance launched in 00:49.422s -> i-d671f06a
-Waiting for AWS to boot Instance i-d671f06a and Payload to start at http://54.93.73.84:8080/ ...
-Payload started in 00:55.276s -> http://54.93.73.84:8080/
+Waiting for AWS to boot Instance i-d671f06a and Payload to start at https://54.93.73.84:8080/ ...
+Payload started in 00:55.276s -> https://54.93.73.84:8080/
 Remapping Elastic IP 52.29.173.190 to i-d671f06a ...
 Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
-Deployment completed successfully. myuser/database-demo:1.0 is up and running at http://databasedemo-myuser.boxfuse.io:8080/</pre>
+Deployment completed successfully. myuser/database-demo:1.0 is up and running at https://databasedemo-myuser.boxfuse.io:8080/</pre>
 
     <h3>What just happened here?</h3>
 

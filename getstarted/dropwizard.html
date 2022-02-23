@@ -15,8 +15,8 @@ subtitle: 'Get Started with CloudCaptain & Dropwizard'
         <li>created a <strong><a href="https://console.cloudcaptain.sh">CloudCaptain Account</a></strong> (simply log in with your GitHub account, it's free)</li>
         <li>downloaded and installed the latest <strong><a href="/getstarted/download">CloudCaptain Client</a></strong></li>
         <li>downloaded and installed the latest version of <strong><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a></strong></li>
-        <li>downloaded and installed the latest <strong><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK</a></strong> with <code>JAVA_HOME</code> set up correctly</li>
-        <li>downloaded and installed the latest version of <strong><a href="http://maven.apache.org/download.cgi">Maven</a></strong></li>
+        <li>downloaded and installed the latest <strong><a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK</a></strong> with <code>JAVA_HOME</code> set up correctly</li>
+        <li>downloaded and installed the latest version of <strong><a href="https://maven.apache.org/download.cgi">Maven</a></strong></li>
     </ol>
 
     <h2>Creating the Dropwizard application</h2>
@@ -147,7 +147,7 @@ Forwarding admin-http port localhost:8081 -> vb-239113a0:8081
 Forwarding http port localhost:80 -> vb-239113a0:80
 Instance launched in 00:03.663s -> vb-239113a0
 Waiting for Payload to start on Instance vb-239113a0 ...
-Payload started in 00:06.688s -> http://127.0.0.1:10080</pre>
+Payload started in 00:06.688s -> https://127.0.0.1:10080</pre>
 
     <p>CloudCaptain has automatically detected the Dropwizard configuration and used the <code>:8081/healthcheck</code> endpoint to check whether the instance came up correctly.</p>
 
@@ -177,7 +177,7 @@ Running Instances on VirtualBox in the dev environment :
 +-------------+------------------+---------------------+------------------+---------------------+
 |  Instance   |      Image       |        Type         |       URL        |     Launched at     |
 +-------------+------------------+---------------------+------------------+---------------------+
-| vb-239113a0 | myuser/hello:1.0 | 4 CPU / 1024 MB RAM | http://127.0.0.1 | 2015-11-26 22:37:16 |
+| vb-239113a0 | myuser/hello:1.0 | 4 CPU / 1024 MB RAM | https://127.0.0.1 | 2015-11-26 22:37:16 |
 +-------------+------------------+---------------------+------------------+---------------------+
 Total: 1</pre>
 
@@ -203,11 +203,11 @@ Mapping hello-myuser.boxfuse.io to 52.29.49.4 ...
 Creating security group boxsg-myuser-prod-hello-1.0 ...
 Launching t2.micro instance of myuser/hello:1.0 (ami-8d776ae1) in prod (eu-central-1) ...
 Instance launched in 00:35.621s -> i-549833e8
-Waiting for AWS to boot Instance i-549833e8 and Payload to start at http://52.28.52.131:8081/healthcheck ...
-Payload started in 00:52.041s -> http://52.28.52.131:8081/healthcheck
+Waiting for AWS to boot Instance i-549833e8 and Payload to start at https://52.28.52.131:8081/healthcheck ...
+Payload started in 00:52.041s -> https://52.28.52.131:8081/healthcheck
 Remapping Elastic IP 52.29.49.4 to i-549833e8 ...
 Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
-Deployment completed successfully. myuser/hello:1.0 is up and running at http://hello-myuser.boxfuse.io/</pre>
+Deployment completed successfully. myuser/hello:1.0 is up and running at https://hello-myuser.boxfuse.io/</pre>
 
     <p>Notice that CloudCaptain has reused your image unchanged instead fusing a new one.</p>
 
@@ -246,13 +246,13 @@ AMI created in 00:50.998s in eu-central-1 -> ami-7074691c
 Creating security group boxsg-myuser-prod-hello-1.1 ...
 Launching t2.micro instance of myuser/hello:1.1 (ami-7074691c) in prod (eu-central-1) ...
 Instance launched in 00:20.545s -> i-ff9f3443
-Waiting for AWS to boot Instance i-ff9f3443 and Payload to start at http://52.29.102.135:8081/healthcheck ...
-Payload started in 00:56.214s -> http://52.29.102.135:8081/healthcheck
+Waiting for AWS to boot Instance i-ff9f3443 and Payload to start at https://52.29.102.135:8081/healthcheck ...
+Payload started in 00:56.214s -> https://52.29.102.135:8081/healthcheck
 Remapping Elastic IP 52.29.49.4 to i-ff9f3443 ...
 Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
 Terminating instance i-549833e8 ...
 Destroying Security Group sg-37aaef5e ...
-Deployment completed successfully. myuser/hello:1.1 is up and running at http://hello-myuser.boxfuse.io/</pre>
+Deployment completed successfully. myuser/hello:1.1 is up and running at https://hello-myuser.boxfuse.io/</pre>
 
     <p>And there it is:</p>
 

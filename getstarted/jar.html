@@ -19,10 +19,10 @@ subtitle: 'Get Started with CloudCaptain & Executable Jar'
     <li>downloaded and installed the latest version of <strong><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a></strong>
     </li>
     <li>downloaded and installed the latest <strong><a
-            href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK</a></strong> with <code>JAVA_HOME</code>
+            href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK</a></strong> with <code>JAVA_HOME</code>
         set up correctly
     </li>
-    <li>downloaded and installed the latest version of <strong><a href="http://maven.apache.org/download.cgi">Maven</a></strong></li>
+    <li>downloaded and installed the latest version of <strong><a href="https://maven.apache.org/download.cgi">Maven</a></strong></li>
 </ol>
 
 <h2>Creating the Executable Jar application</h2>
@@ -103,7 +103,7 @@ Launching Instance of myuser/getstarted-executablejar:1.0 on VirtualBox ...
 Forwarding http port localhost:8000 -> vb-918fe0af:8000
 Instance launched in 00:04.160s -> vb-918fe0af
 Waiting for Payload to start on vb-918fe0af:8000 (expecting HTTP 200 at / within 300s) ...
-<strong class="success">Successfully started payload in 00:06.655s -> http://127.0.0.1:8000</strong></pre>
+<strong class="success">Successfully started payload in 00:06.655s -> https://127.0.0.1:8000</strong></pre>
 
 <p>Open a browser at this address to see your new application up and running within the VirtualBox VM by simply
     executing:</p>
@@ -132,7 +132,7 @@ Running Instances on VirtualBox in the dev environment :
 +-------------+-------------------------------------+---------------------+-----------------------+---------------------+
 |  Instance   |               Image                 |        Type         |          URL          |     Launched at     |
 +-------------+-------------------------------------+---------------------+-----------------------+---------------------+
-| vb-918fe0af | myuser/getstarted-executablejar:1.0 | 2 CPU / 1024 MB RAM | http://127.0.0.1:8000 | 2016-11-25 12:33:42 |
+| vb-918fe0af | myuser/getstarted-executablejar:1.0 | 2 CPU / 1024 MB RAM | https://127.0.0.1:8000 | 2016-11-25 12:33:42 |
 +-------------+-------------------------------------+---------------------+-----------------------+---------------------+
 Total: 1</pre>
 
@@ -161,11 +161,11 @@ Creating security group boxsg-myuser-prod-getstarted-executablejar-1.0 ...
 Launching t2.micro instance of myuser/getstarted-executablejar:1.0 (ami-014b8f6e) in prod (eu-central-1) ...
 Instance launched in 00:19.085s -> i-fdabcc40
 Creating Cloud Watch Alarm for Instance auto-recovery -> i-fdabcc40-auto-recovery-alarm
-Waiting for AWS to boot Instance i-fdabcc40 and Payload to start at http://54.93.94.108:8000/ ...
-Payload started in 00:10.046s -> http://54.93.94.108:8000/
+Waiting for AWS to boot Instance i-fdabcc40 and Payload to start at https://54.93.94.108:8000/ ...
+Payload started in 00:10.046s -> https://54.93.94.108:8000/
 Associating Elastic IP 35.156.118.52 to i-fdabcc40 ...
 Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
-<strong class="success">Successfully deployed myuser/getstarted-executablejar:1.0 in prod at http://getstartedexecutablejar-myuser.boxfuse.io:8000/</strong></pre>
+<strong class="success">Successfully deployed myuser/getstarted-executablejar:1.0 in prod at https://getstartedexecutablejar-myuser.boxfuse.io:8000/</strong></pre>
 
 <p>Notice that CloudCaptain has reused your image unchanged instead fusing a new one.</p>
 
@@ -206,14 +206,14 @@ Creating security group boxsg-myuser-prod-getstarted-executablejar-1.1 ...
 Launching t2.micro instance of myuser/getstarted-executablejar:1.1 (ami-3167a35e) in prod (eu-central-1) ...
 Instance launched in 00:14.913s -> i-d083e46d
 Creating Cloud Watch Alarm for Instance auto-recovery -> i-d083e46d-auto-recovery-alarm
-Waiting for AWS to boot Instance i-d083e46d and Payload to start at http://54.93.32.88:8000/ ...
-Payload started in 00:09.081s -> http://54.93.32.88:8000/
+Waiting for AWS to boot Instance i-d083e46d and Payload to start at https://54.93.32.88:8000/ ...
+Payload started in 00:09.081s -> https://54.93.32.88:8000/
 Reassociating Elastic IP 35.156.124.198 from i-fdabcc40 to i-d083e46d ...
 Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
 Destroying Cloud Watch Alarm i-fdabcc40-auto-recovery-alarm ...
 Terminating instance i-fdabcc40 ...
 Destroying Security Group sg-ffa38697 (boxsg-myuser-prod-getstarted-executablejar-1.0) ...
-<strong class="success">Successfully deployed myuser/getstarted-executablejar:1.1 in prod at http://getstartedexecutablejar-myuser.boxfuse.io:8000/</strong></pre>
+<strong class="success">Successfully deployed myuser/getstarted-executablejar:1.1 in prod at https://getstartedexecutablejar-myuser.boxfuse.io:8000/</strong></pre>
 
 <p>And there it is:</p>
 

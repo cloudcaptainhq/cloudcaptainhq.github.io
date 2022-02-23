@@ -4,7 +4,7 @@ subtitle: "Live Reloading of Spring Boot Apps on AWS with DevTools"
 permalink: /blog/spring-boot-devtools-aws.html
 ---
 <p>In this post we're going to take a look at one of Spring Boot's best kept secrets: the
-    <a href="http://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-devtools.html"><strong>Spring Boot DevTools</strong></a>.</p>
+    <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-devtools.html"><strong>Spring Boot DevTools</strong></a>.</p>
 
 <p>As great as it is to test things out on your local machine, there are also clear benefits to being able to both develop and debug your
     application in an environment that is as similar as possible to its production environment. And that's where the
@@ -128,11 +128,11 @@ Creating security group boxsg-myuser-devtools-demo-0.0.1 ...
 Launching t2.micro instance of myuser/devtools-demo:0.0.1 (ami-ed936782) in prod (eu-central-1) ...
 Instance launched in 00:24.954s -> i-ed279f50
 Creating Cloud Watch Alarm for Instance auto-recovery -> i-ed279f50-auto-recovery-alarm
-Waiting for AWS to boot Instance i-ed279f50 and Payload to start at http://52.59.240.195:8080/ ...
-Payload started in 00:46.229s -> http://52.59.240.195:8080/
+Waiting for AWS to boot Instance i-ed279f50 and Payload to start at https://52.59.240.195:8080/ ...
+Payload started in 00:46.229s -> https://52.59.240.195:8080/
 Remapping Elastic IP 52.59.61.93 to i-ed279f50 ...
 Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
-Deployment completed successfully. myuser/devtools-demo:0.0.1 is up and running at http://devtoolsdemo-myuser.boxfuse.io:8080/</pre>
+Deployment completed successfully. myuser/devtools-demo:0.0.1 is up and running at https://devtoolsdemo-myuser.boxfuse.io:8080/</pre>
 
 <p>Make sure your application is up and running correctly on AWS:</p>
 
@@ -174,7 +174,7 @@ for our <code>devtools-demo</code> project. And now instead of running our appli
 2016-07-21 17:35:42.861  INFO 4828 --- [           main] o.s.b.devtools.RemoteSpringApplication   : Starting RemoteSpringApplication v1.4.0.RC1 on axel-silencio with PID 4828
 2016-07-21 17:35:42.861  INFO 4828 --- [           main] o.s.b.devtools.RemoteSpringApplication   : No active profile set, falling back to default profiles: default
 2016-07-21 17:35:42.893  INFO 4828 --- [           main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519: startup date [Thu Jul 21 17:35:42 CEST 2016]; root of context hierarchy
-2016-07-21 17:35:43.209  WARN 4828 --- [           main] o.s.b.d.r.c.RemoteClientConfiguration    : The connection to http://devtoolsdemo-myuser.boxfuse.io:8080 is insecure. You should use a URL starting with 'https://'.
+2016-07-21 17:35:43.209  WARN 4828 --- [           main] o.s.b.d.r.c.RemoteClientConfiguration    : The connection to https://devtoolsdemo-myuser.boxfuse.io:8080 is insecure. You should use a URL starting with 'https://'.
 2016-07-21 17:35:43.262  INFO 4828 --- [           main] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
 2016-07-21 17:35:43.278  INFO 4828 --- [           main] o.s.b.devtools.RemoteSpringApplication   : Started RemoteSpringApplication in 0.755 seconds (JVM running for 1.058)</pre>
 
@@ -202,7 +202,7 @@ public String currentTime() {
 
 <img src="/assets/posts/spring-boot-devtools-aws/livereload.png" title="Live Reload" alt="Live Reload">
 
-<p>We're going to do this using <a href="http://livereload.com/">LiveReload</a>. There are two parts to this: a browser
+<p>We're going to do this using <a href="https://livereload.com/">LiveReload</a>. There are two parts to this: a browser
     extension that reloads the current page and a server that notifies it when it should do so.</p>
 
 <p>As some of you may have noticed from the output when you started the <code>RemoteApplication</code>, the Spring Boot DevTools actually
@@ -210,7 +210,7 @@ automatically start a LiveReload server by default:</p>
 
 <pre class="console" style="font-size: 85%">2016-07-21 17:35:43.262  INFO 4828 --- [           main] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729</pre>
 
-<p>This means that all we actually need now is to download and install the <a href="http://livereload.com/extensions/"><strong>LiveReload browser extension</strong></a>.</p>
+<p>This means that all we actually need now is to download and install the <a href="https://livereload.com/extensions/"><strong>LiveReload browser extension</strong></a>.</p>
 
 <p>Once you have done that, activate the extension with a click:</p>
 
@@ -231,10 +231,10 @@ public String currentTime() {
 <h2>Summary</h2>
 
 <p>It is great to be able to iterate quickly in a production-like environment. We saw how easy it is to do so using one of Spring Boot's best kept secrets: the
-    <a href="http://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-devtools.html"><strong>Spring Boot DevTools</strong></a>.</p>
+    <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-devtools.html"><strong>Spring Boot DevTools</strong></a>.</p>
 
 <p>They bring the productivity of local development directly to remote deployments running on AWS or the environment of your choice.
-    And if you add the <a href="http://livereload.com/extensions/"><strong>LiveReload browser extension</strong></a> you won't even need to refresh to see the changes!</p>
+    And if you add the <a href="https://livereload.com/extensions/"><strong>LiveReload browser extension</strong></a> you won't even need to refresh to see the changes!</p>
 
 <p><strong>So go ahead, set the DevTools up, have fun and start Live Reloading your Spring Boot apps on AWS in minutes!</strong></p>
 

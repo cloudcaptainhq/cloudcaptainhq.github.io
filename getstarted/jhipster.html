@@ -19,7 +19,7 @@ subtitle: 'Get Started with CloudCaptain & JHipster'
     <li>downloaded and installed the latest version of <strong><a href="https://jhipster.github.io/installation/">JHipster</a></strong> (including Git, Node.js, Yeoman, Bower, Gulp and JHipster itself)</li>
     <li>downloaded and installed the latest version of <strong><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a></strong></li>
     <li>downloaded and installed the latest <strong><a
-            href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK</a></strong> with <code>JAVA_HOME</code>
+            href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK</a></strong> with <code>JAVA_HOME</code>
         set up correctly
     </li>
 </ol>
@@ -68,7 +68,7 @@ Launching Instance of myuser/jhipster:1.0 on VirtualBox ...
 Forwarding http port localhost:8080 -> vb-2dc97023:8080
 Instance launched in 00:04.490s -> vb-2dc97023
 Waiting for Payload to start on vb-2dc97023:8080 (expecting HTTP 200 at / within 300s) ...
-Payload started in 00:10.041s -> http://127.0.0.1:8080</pre>
+Payload started in 00:10.041s -> https://127.0.0.1:8080</pre>
 
 <p>CloudCaptain has automatically detected the PostgreSQL dependency and used the <code>8080</code> port to check
     whether the instance came up correctly.</p>
@@ -100,7 +100,7 @@ Running Instances on VirtualBox in the dev environment :
 +-------------+---------------------+---------------------+-----------------------+---------------------+
 |  Instance   |        Image        |        Type         |          URL          |     Launched at     |
 +-------------+---------------------+---------------------+-----------------------+---------------------+
-| vb-2dc97023 | myuser/jhipster:1.0 | 4 CPU / 1024 MB RAM | http://127.0.0.1:8080 | 2016-08-17 23:30:47 |
+| vb-2dc97023 | myuser/jhipster:1.0 | 4 CPU / 1024 MB RAM | https://127.0.0.1:8080 | 2016-08-17 23:30:47 |
 +-------------+---------------------+---------------------+-----------------------+---------------------+
 Total: 1</pre>
 
@@ -135,11 +135,11 @@ Creating security group boxsg-myuser-prod-jhipster-1.0 ...
 Launching t2.micro instance of myuser/jhipster:1.0 (ami-35fa0b5a) in prod (eu-central-1) ...
 Instance launched in 00:20.687s -> i-95d15028
 Creating Cloud Watch Alarm for Instance auto-recovery -> i-95d15028-auto-recovery-alarm
-Waiting for AWS to boot Instance i-95d15028 and Payload to start at http://54.93.63.207:8080/ ...
-Payload started in 01:29.685s -> http://54.93.63.207:8080/
+Waiting for AWS to boot Instance i-95d15028 and Payload to start at https://54.93.63.207:8080/ ...
+Payload started in 01:29.685s -> https://54.93.63.207:8080/
 Remapping Elastic IP 52.29.78.197 to i-95d15028 ...
 Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
-Deployment completed successfully. myuser/jhipster:1.0 is up and running at http://jhipster-myuser.boxfuse.io:8080/</div></pre>
+Deployment completed successfully. myuser/jhipster:1.0 is up and running at https://jhipster-myuser.boxfuse.io:8080/</div></pre>
 
 <p>Notice that CloudCaptain has reused your image unchanged instead fusing a new one.</p>
 
@@ -187,14 +187,14 @@ Creating security group boxsg-myuser-prod-jhipster-2.0 ...
 Launching t2.micro instance of myuser/jhipster:2.0 (ami-22fa0b4d) in prod (eu-central-1) ...
 Instance launched in 00:24.858s -> i-cdd15070
 Creating Cloud Watch Alarm for Instance auto-recovery -> i-cdd15070-auto-recovery-alarm
-Waiting for AWS to boot Instance i-cdd15070 and Payload to start at http://52.59.241.106:8080/ ...
-Payload started in 01:16.406s -> http://52.59.241.106:8080/
+Waiting for AWS to boot Instance i-cdd15070 and Payload to start at https://52.59.241.106:8080/ ...
+Payload started in 01:16.406s -> https://52.59.241.106:8080/
 Remapping Elastic IP 52.29.78.197 to i-cdd15070 ...
 Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
 Destroying Cloud Watch Alarm i-95d15028-auto-recovery-alarm ...
 Terminating instance i-95d15028 ...
 Destroying Security Group sg-0ed95166 (boxsg-myuser-prod-jhipster-1.0) ...
-Deployment completed successfully. myuser/jhipster:2.0 is up and running at http://jhipster-myuser.boxfuse.io:8080/</pre>
+Deployment completed successfully. myuser/jhipster:2.0 is up and running at https://jhipster-myuser.boxfuse.io:8080/</pre>
 
 <p>And there it is:</p>
 

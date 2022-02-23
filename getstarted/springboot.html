@@ -15,7 +15,7 @@ subtitle: 'Get Started with CloudCaptain & Spring Boot'
         <li>created a <strong><a href="https://console.cloudcaptain.sh">CloudCaptain Account</a></strong> (simply log in with your GitHub account, it's free)</li>
         <li>downloaded and installed the latest <strong><a href="/getstarted/download">CloudCaptain Client</a></strong></li>
         <li>downloaded and installed the latest version of <strong><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a></strong></li>
-        <li>downloaded and installed the latest <strong><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK</a></strong> with <code>JAVA_HOME</code> set up correctly</li>
+        <li>downloaded and installed the latest <strong><a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK</a></strong> with <code>JAVA_HOME</code> set up correctly</li>
     </ol>
 
     <h2>Creating the Spring Boot application</h2>
@@ -107,7 +107,7 @@ Launching Instance of myuser/getstarted-springboot:1.0 on VirtualBox ...
 Forwarding http port localhost:10080 -> vb-b18d6746:80
 Instance launched in 00:03.331s -> vb-b18d6746
 Waiting for Payload to start on Instance vb-b18d6746 ...
-Payload started in 00:06.688s -> http://127.0.0.1:10080</pre>
+Payload started in 00:06.688s -> https://127.0.0.1:10080</pre>
 
     <p>CloudCaptain has automatically detected the Spring Boot Actuator and used the <code>/health</code> endpoint to check whether the instance came up correctly.</p>
 
@@ -137,7 +137,7 @@ Running Instances on VirtualBox in the dev environment :
 +-------------+----------------------------------+---------------------+------------------------+---------------------+
 |  Instance   |              Image               |        Type         |           URL          |     Launched at     |
 +-------------+----------------------------------+---------------------+------------------------+---------------------+
-| vb-b18d6746 | myuser/getstarted-springboot:1.0 | 4 CPU / 1024 MB RAM | http://127.0.0.1:10080 | 2015-11-12 14:57:56 |
+| vb-b18d6746 | myuser/getstarted-springboot:1.0 | 4 CPU / 1024 MB RAM | https://127.0.0.1:10080 | 2015-11-12 14:57:56 |
 +-------------+----------------------------------+---------------------+------------------------+---------------------+
 Total: 1</pre>
 
@@ -162,11 +162,11 @@ Mapping getstartedspringboot-myuser.boxfuse.io to 52.28.107.167 ...
 Creating security group boxsg-myuser-prod-getstarted-springboot-1.0 ...
 Launching t2.micro instance of myuser/getstarted-springboot:1.0 (ami-ed988b81) in prod (eu-central-1) ...
 Instance launched in 00:26.922s -> i-5de042e1
-Waiting for AWS to boot Instance i-5de042e1 and Payload to start at http://52.28.121.55/health ...
-Payload started in 00:51.516s -> http://52.28.121.55/health
+Waiting for AWS to boot Instance i-5de042e1 and Payload to start at https://52.28.121.55/health ...
+Payload started in 00:51.516s -> https://52.28.121.55/health
 Remapping Elastic IP 52.28.107.167 to i-5de042e1 ...
 Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
-Deployment completed successfully. myuser/getstarted-springboot:1.0 is up and running at http://getstartedspringboot-myuser.boxfuse.io/</div></pre>
+Deployment completed successfully. myuser/getstarted-springboot:1.0 is up and running at https://getstartedspringboot-myuser.boxfuse.io/</div></pre>
 
     <p>Notice that CloudCaptain has reused your image unchanged instead fusing a new one.</p>
 
@@ -205,13 +205,13 @@ AMI created in 00:41.700s in eu-central-1 -> ami-48afbc24
 Creating security group boxsg-myuser-prod-getstarted-springboot-1.1 ...
 Launching t2.micro instance of myuser/getstarted-springboot:1.1 (ami-48afbc24) in prod (eu-central-1) ...
 Instance launched in 00:27.066s -> i-f40fad48
-Waiting for AWS to boot Instance i-f40fad48 and Payload to start at http://52.29.60.117/health ...
-Payload started in 00:55.363s -> http://52.29.60.117/health
+Waiting for AWS to boot Instance i-f40fad48 and Payload to start at https://52.29.60.117/health ...
+Payload started in 00:55.363s -> https://52.29.60.117/health
 Remapping Elastic IP 52.29.96.95 to i-f40fad48 ...
 Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
 Terminating instance i-5de042e1 ...
 Destroying Security Group sg-032a576a ...
-Deployment completed successfully. myuser/getstarted-springboot:1.1 is up and running at http://getstartedspringboot-myuser.boxfuse.io/</div></pre>
+Deployment completed successfully. myuser/getstarted-springboot:1.1 is up and running at https://getstartedspringboot-myuser.boxfuse.io/</div></pre>
 
     <p>And there it is:</p>
 

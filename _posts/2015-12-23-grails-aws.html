@@ -50,8 +50,8 @@ permalink: /blog/grails-aws.html
     <h2>Prerequisites</h2>
 
     <p>Before we get started ensure you have <a href="https://console.cloudcaptain.sh">created a CloudCaptain account</a> (it's free, just log in with your GitHub id).
-        Also make sure to associate it with your <a href="http://aws.amazon.com/">AWS account</a> in the <a href="https://console.cloudcaptain.sh">CloudCaptain console</a> to be able to deploy on EC2.</p>
-    <p>You will also need a <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK</a>,
+        Also make sure to associate it with your <a href="https://aws.amazon.com/">AWS account</a> in the <a href="https://console.cloudcaptain.sh">CloudCaptain console</a> to be able to deploy on EC2.</p>
+    <p>You will also need a <a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK</a>,
         <a href="https://grails.org/download.html">Grails</a>
         and <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a> installed on your machine.</p>
 
@@ -128,7 +128,7 @@ Running Instances on VirtualBox in the dev environment :
 +-------------+------------------------------+---------------------+-----------------------+---------------------+
 |  Instance   |            Image             |        Type         |          URL          |     Launched at     |
 +-------------+------------------------------+---------------------+-----------------------+---------------------+
-| vb-9feb5d7c | myuser/getstarted-grails:0.1 | 4 CPU / 1024 MB RAM | http://127.0.0.1:8080 | 2015-12-21 17:47:56 |
+| vb-9feb5d7c | myuser/getstarted-grails:0.1 | 4 CPU / 1024 MB RAM | https://127.0.0.1:8080 | 2015-12-21 17:47:56 |
 +-------------+------------------------------+---------------------+-----------------------+---------------------+
 Total: 1</pre>
 
@@ -154,11 +154,11 @@ Mapping getstartedgrails-myuser.boxfuse.io to 52.29.77.147 ...
 Creating security group boxsg-myuser-prod-getstarted-grails-0.1 ...
 Launching t2.micro instance of myuser/getstarted-grails:0.1 (ami-fd5b4491) in prod (eu-central-1) ...
 Instance launched in 00:50.707s -> i-2c1daf90
-Waiting for AWS to boot Instance i-2c1daf90 and Payload to start at http://52.59.247.126:8080/health ...
-Payload started in 00:55.567s -> http://52.59.247.126:8080/health
+Waiting for AWS to boot Instance i-2c1daf90 and Payload to start at https://52.59.247.126:8080/health ...
+Payload started in 00:55.567s -> https://52.59.247.126:8080/health
 Remapping Elastic IP 52.29.77.147 to i-2c1daf90 ...
 Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
-Deployment completed successfully. myuser/getstarted-grails:0.1 is up and running at http://getstartedgrails-myuser.boxfuse.io:8080/</pre>
+Deployment completed successfully. myuser/getstarted-grails:0.1 is up and running at https://getstartedgrails-myuser.boxfuse.io:8080/</pre>
 
     <p>With that one command CloudCaptain has automatically pushed your existing image to the CloudCaptain Vault, the CloudCaptain secure only image repository,
         as well as <strong>provisioned,
@@ -202,13 +202,13 @@ AMI created in 00:18.013s in eu-central-1 -> ami-7b5a4517
 Creating security group boxsg-myuser-prod-getstarted-grails-0.2 ...
 Launching t2.micro instance of myuser/getstarted-grails:0.2 (ami-7b5a4517) in prod (eu-central-1) ...
 Instance launched in 00:41.174s -> i-b502b009
-Waiting for AWS to boot Instance i-b502b009 and Payload to start at http://52.59.254.138:8080/health ...
-Payload started in 01:27.645s -> http://52.59.254.138:8080/health
+Waiting for AWS to boot Instance i-b502b009 and Payload to start at https://52.59.254.138:8080/health ...
+Payload started in 01:27.645s -> https://52.59.254.138:8080/health
 Remapping Elastic IP 52.29.77.147 to i-b502b009 ...
 Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
 Terminating instance i-2c1daf90 ...
 Destroying Security Group sg-5981cb30 ...
-Deployment completed successfully. myuser/getstarted-grails:0.2 is up and running at http://getstartedgrails-myuser.boxfuse.io:8080/</pre>
+Deployment completed successfully. myuser/getstarted-grails:0.2 is up and running at https://getstartedgrails-myuser.boxfuse.io:8080/</pre>
 
     <p>And there it is:</p>
 

@@ -10,7 +10,7 @@ permalink: /blog/dropwizard-aws-maven.html
     </div>
 
     <p>In <strong><a href="/blog/dropwizard-aws">part 1 of this series</a></strong> we looked at how to fuse a
-        <strong><a href="http://www.dropwizard.io/">Dropwizard</a></strong> application into a <strong>secure unikernel image</strong>.
+        <strong><a href="https://www.dropwizard.io/">Dropwizard</a></strong> application into a <strong>secure unikernel image</strong>.
         We then <strong>tested it locally on VirtualBox</strong>
         and finally we <strong>deployed it unchanged to AWS</strong>.</p>
 
@@ -54,7 +54,7 @@ permalink: /blog/dropwizard-aws-maven.html
     &lt;/pluginRepository&gt;
     &lt;pluginRepository&gt;
         &lt;id&gt;boxfuse-repo&lt;/id&gt;
-        &lt;url&gt;https://files.boxfuse.com&lt;/url&gt;
+        &lt;url&gt;https://files.cloudcaptain.sh&lt;/url&gt;
     &lt;/pluginRepository&gt;
 &lt;/pluginRepositories&gt;</pre>
 
@@ -220,7 +220,7 @@ public class HelloWorldResourceTest {
 [INFO] Forwarding http port localhost:8888 -> vb-fc55a898:80
 [INFO] Instance launched in 00:03.851s -> vb-fc55a898
 [INFO] Waiting for Payload to start on Instance vb-fc55a898 ...
-[INFO] Payload started in 00:07.025s -> http://127.0.0.1:8888
+[INFO] Payload started in 00:07.025s -> https://127.0.0.1:8888
 [INFO]
 [INFO] --- maven-failsafe-plugin:2.18.1:integration-test (integration-test) @ dwunikernel ---
 [INFO] Failsafe report directory: C:\Workspaces\dwunikernel\target\failsafe-reports
@@ -290,12 +290,12 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 [INFO] Creating security group boxfuse-sg_axelfontaine/dwunikernel:1.0 ...
 [INFO] Launching t2.micro instance of axelfontaine/dwunikernel:1.0 (ami-842d1299) in eu-central-1 ...
 [INFO] Instance launched in 00:22.192s -> i-0cd66acd
-[INFO] Waiting for Payload to start on Instance i-0cd66acd at http://52.28.79.74:8081/healthcheck ...
+[INFO] Waiting for Payload to start on Instance i-0cd66acd at https://52.28.79.74:8081/healthcheck ...
 [INFO] Remapping Elastic IP 52.28.20.51 to i-0cd66acd ...
 [INFO] Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
 [INFO] Terminating instance i-2ed66aef ...
 [INFO] Destroying Security Group sg-fc548d95 ...
-[INFO] Deployment completed successfully. axelfontaine/dwunikernel:1.0 is up and running at http://dwunikernel-axelfontaine.boxfuse.io:8081</pre>
+[INFO] Deployment completed successfully. axelfontaine/dwunikernel:1.0 is up and running at https://dwunikernel-axelfontaine.boxfuse.io:8081</pre>
 
     <p>And there we have it. We have successfully <strong>pushed the image to the CloudCaptain Vault</strong>,
         started a <strong>new instance on AWS</strong> and remapped the

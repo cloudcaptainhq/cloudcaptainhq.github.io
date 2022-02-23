@@ -7,20 +7,20 @@ permalink: /blog/spring-boot-ec2.html
     <p>Lately the JVM-world has finally started embracing solutions that just work.
         Gone are the days where you had to manually wire together many components and write large amounts of XML configuration
         just to make things work. Today it is all about being productive from the get go. And to us this is really music to our ears.
-        Our products (<a href="http://flywaydb.org">Flyway</a> &amp; <a href="https://cloudcaptain.sh">CloudCaptain</a>) have always adhered to this exact design principle from the start.
+        Our products (<a href="https://flywaydb.org">Flyway</a> &amp; <a href="https://cloudcaptain.sh">CloudCaptain</a>) have always adhered to this exact design principle from the start.
         And so regardless of whether
     you easily want to migrate your
-        relational databases or fuse your applications into bootable apps, <a href="http://flywaydb.org">Flyway</a> &amp; <a href="https://cloudcaptain.sh">CloudCaptain</a>
+        relational databases or fuse your applications into bootable apps, <a href="https://flywaydb.org">Flyway</a> &amp; <a href="https://cloudcaptain.sh">CloudCaptain</a>
         work very had to make you successful. Rapidly and reliably.</p>
 
     <p>Pivotal has now gone the same way and tied their entire portfolio of Spring frameworks and libraries
-    into a fantastic framework called <a href="http://projects.spring.io/spring-boot/">Spring Boot</a>. It is a turn-key solution to the Spring ecosystem.</p>
+    into a fantastic framework called <a href="https://projects.spring.io/spring-boot/">Spring Boot</a>. It is a turn-key solution to the Spring ecosystem.</p>
 
-    <p>At its core, <a href="http://projects.spring.io/spring-boot/">Spring Boot</a> combines your
+    <p>At its core, <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> combines your
     application with an embedded container and all its other libraries into a single executable jar that can easily
     be deployed onto any system. It adds lots of auto-configuration and integration options to make your
         application production-ready from day one. In fact Spring Boot even offers
-        <a href="http://docs.spring.io/spring-boot/docs/current/reference/html/howto-database-initialization.html#howto-execute-flyway-database-migrations-on-startup">out of the box integration for
+        <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/howto-database-initialization.html#howto-execute-flyway-database-migrations-on-startup">out of the box integration for
         Flyway</a> so adopting industry best practices like database migrations has never been easier.</p>
 
     <div class="blog-post-image center">
@@ -33,7 +33,7 @@ permalink: /blog/spring-boot-ec2.html
     <h2 class="blog-post-section">Prerequisites</h2>
 
     <p>Before we get started ensure you have <a href="https://console.cloudcaptain.sh">created a CloudCaptain account</a> (it's free, just log in with your GitHub id).
-        Make sure to associate it with your <a href="http://aws.amazon.com/">AWS account</a> in the <a href="https://console.cloudcaptain.sh">CloudCaptain console</a> to deploy on EC2.</p>
+        Make sure to associate it with your <a href="https://aws.amazon.com/">AWS account</a> in the <a href="https://console.cloudcaptain.sh">CloudCaptain console</a> to deploy on EC2.</p>
     <p>You will also need Java, Maven and VirtualBox installed on your machine.</p>
 
     <h2 class="blog-post-section">Creating a Spring Boot app</h2>
@@ -41,9 +41,9 @@ permalink: /blog/spring-boot-ec2.html
     <p>Creating a new Spring Boot app is incredibly easy. The Spring Boot website provides a simple service at
         <a href="https://start.spring.io">start.spring.io</a> to create
     application skeletons directly via http. To create the application for this post, you can
-        either <a href="https://start.spring.io/starter.zip?baseDir=springbootec2&groupId=boxfusedemo&artifactId=springbootec2&version=1.0&name=springbootec2&description=Demo+project+for+Spring+Boot+on+EC2+blog+post+at+https%3A%2F%2Fboxfuse.com%2Fblog%2Fspring-boot-ec2.html&packageName=springbootec2&type=maven-project&packaging=jar&javaVersion=1.8&language=java&bootVersion=1.2.4.RELEASE&style=web&style=actuator&generate-project=">click to generate the application</a> and extract it or type this one-liner:</p>
+        either <a href="https://start.spring.io/starter.zip?baseDir=springbootec2&groupId=boxfusedemo&artifactId=springbootec2&version=1.0&name=springbootec2&description=Demo+project+for+Spring+Boot+on+EC2+blog+post+at+https%3A%2F%2Fcloudcaptain.sh%2Fblog%2Fspring-boot-ec2.html&packageName=springbootec2&type=maven-project&packaging=jar&javaVersion=1.8&language=java&bootVersion=1.2.4.RELEASE&style=web&style=actuator&generate-project=">click to generate the application</a> and extract it or type this one-liner:</p>
 
-    <pre class="console">&gt; curl "https://start.spring.io/starter.zip?baseDir=springbootec2&groupId=boxfusedemo&artifactId=springbootec2&version=1.0&name=springbootec2&description=Demo+project+for+Spring+Boot+on+EC2+blog+post+at+https%3A%2F%2Fboxfuse.com%2Fblog%2Fspring-boot-ec2.html&packageName=springbootec2&type=maven-project&packaging=jar&javaVersion=1.8&language=java&bootVersion=1.2.4.RELEASE&style=web&style=actuator&generate-project=" > springbootec2.zip &amp;&amp; unzip springbootec2.zip</pre>
+    <pre class="console">&gt; curl "https://start.spring.io/starter.zip?baseDir=springbootec2&groupId=boxfusedemo&artifactId=springbootec2&version=1.0&name=springbootec2&description=Demo+project+for+Spring+Boot+on+EC2+blog+post+at+https%3A%2F%2Fcloudcaptain.sh%2Fblog%2Fspring-boot-ec2.html&packageName=springbootec2&type=maven-project&packaging=jar&javaVersion=1.8&language=java&bootVersion=1.2.4.RELEASE&style=web&style=actuator&generate-project=" > springbootec2.zip &amp;&amp; unzip springbootec2.zip</pre>
 
     <p>Now change to the newly created directory and you'll find the following structure:</p>
 
@@ -87,7 +87,7 @@ public class HelloController {
 
     <pre class="console">&gt; java -jar target/springbootec2-1.0.jar</pre>
 
-    <p>You should now be able to see it in action at <a href="http://localhost:8080/hello?name=world" target="_blank">http://localhost:8080/hello?name=world</a>:</p>
+    <p>You should now be able to see it in action at <a href="https://localhost:8080/hello?name=world" target="_blank">https://localhost:8080/hello?name=world</a>:</p>
 
     <div class="blog-post-image">
         <img src="/assets/posts/spring-boot-ec2/helloworld.png" alt="Hello World">
@@ -146,7 +146,7 @@ Waiting for Payload to start on Instance vb-9b5be89b ...
 vb-9b5be89b => <em>instance boot messages omitted</em>
 vb-9b5be89b => <em>...</em>
 vb-9b5be89b => <em>...</em>
-Payload started in 00:07.490s -> http://127.0.0.1:8888</pre>
+Payload started in 00:07.490s -> https://127.0.0.1:8888</pre>
 
     <p>Your VirtualBox instance is now up and running as you can see in your browser:</p>
 
@@ -178,10 +178,10 @@ AMI created in 00:31.553s -> ami-f88ab3e5
 Creating security group boxfuse-sg_axelfontaine/springbootec2:1.0 ...
 Launching t2.micro instance of axelfontaine/springbootec2:1.0 (ami-f88ab3e5) in eu-central-1 ...
 Instance launched in 00:21.765s -> i-0ae46fcb
-Waiting for Payload to start on Instance i-0ae46fcb at http://52.28.132.192/health ...
+Waiting for Payload to start on Instance i-0ae46fcb at https://52.28.132.192/health ...
 Remapping Elastic IP 52.28.128.122 to i-0ae46fcb ...
 Waiting 15s for AWS to complete Elastic IP Zero Downtime transition ...
-Deployment completed successfully. axelfontaine/springbootec2:1.0 is up and running at http://springbootec2-axelfontaine.boxfuse.io</pre>
+Deployment completed successfully. axelfontaine/springbootec2:1.0 is up and running at https://springbootec2-axelfontaine.boxfuse.io</pre>
 
     <p>And there you have it:</p>
 
@@ -210,7 +210,7 @@ Deployment completed successfully. axelfontaine/springbootec2:1.0 is up and runn
 
     <h2 class="blog-post-section">Summary</h2>
 
-    <p>In this post you saw why <a href="http://projects.spring.io/spring-boot/">Spring Boot</a> is a great way to be productive from the get go with Spring. We saw that by embedding
+    <p>In this post you saw why <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> is a great way to be productive from the get go with Spring. We saw that by embedding
     the application server and all other libraries directly into an executable jar, you gain greater consistency between environments.
     We then took this idea to its natural conclusion and used <a href="https://cloudcaptain.sh">CloudCaptain</a> to fuse the Spring Boot executable in a Bootable App that
     bundles all direct dependencies of the application all the way down to the OS kernel. The image was created in seconds and measured just a few MBs.
