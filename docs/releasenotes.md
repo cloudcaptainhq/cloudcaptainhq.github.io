@@ -4,6 +4,11 @@ menu: releasenotes
 subtitle: 'Release Notes for the CloudCaptain Client'
 ---
 
+Version 1.35.3 (2023-02-01)
+---------------------------
+- #228 Error on NewRelic keys for EU servers
+- #281 Error on valid NewRelic keys
+
 Version 1.35.2 (2022-01-12)
 ---------------------------
 - Renamed Boxfuse to CloudCaptain in copyright message
