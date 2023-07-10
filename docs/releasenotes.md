@@ -4,6 +4,10 @@ menu: releasenotes
 subtitle: 'Release Notes for the CloudCaptain Client'
 ---
 
+Version 1.35.4 (2023-07-10)
+---------------------------
+- Added support for m6in, r6in, c6in instances
+
 Version 1.35.3 (2023-02-01)
 ---------------------------
 - #228 Error on NewRelic keys for EU servers

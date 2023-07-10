@@ -44,7 +44,7 @@ create.
 
 ## Instance Types
 
-CloudCaptain supports all `t3`, `t2`, `m6i`, `m5`, `m4`, `m3`, `c6i`, `c5`, `c4`, `c3`, `r6i`, `r5`, `r4` and `r3` instance types in all available regions.
+CloudCaptain supports all `t3`, `t2`, `m6i`, `m6in`, `m5`, `m4`, `m3`, `c6i`, `c6in`, `c5`, `c4`, `c3`, `r6i`, `r6in`, `r5`, `r4` and `r3` instance types in all available regions.
 
 ## App Types
 
