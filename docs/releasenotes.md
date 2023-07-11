@@ -4,6 +4,10 @@ menu: releasenotes
 subtitle: 'Release Notes for the CloudCaptain Client'
 ---
 
+Version 1.35.5 (2023-07-11)
+---------------------------
+- Support for larger payloads up to 1 GB
+
 Version 1.35.4 (2023-07-10)
 ---------------------------
 - Added support for m6in, r6in, c6in instances
