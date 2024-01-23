@@ -4,6 +4,11 @@ menu: releasenotes
 subtitle: 'Release Notes for the CloudCaptain Client'
 ---
 
+Version 1.36.0 (2024-01-23)
+---------------------------
+- Support for Play 3.0 payloads
+- Updated cacerts to 2024.01.20
+
 Version 1.35.5 (2023-07-11)
 ---------------------------
 - Support for larger payloads up to 1 GB
