@@ -4,6 +4,10 @@ menu: releasenotes
 subtitle: 'Release Notes for the CloudCaptain Client'
 ---
 
+Version 1.36.1 (2024-02-01)
+---------------------------
+- #296 Automatically disable progress bar on GitHub Actions and BitBucket
+
 Version 1.36.0 (2024-01-23)
 ---------------------------
 - Support for Play 3.0 payloads
