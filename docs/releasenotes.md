@@ -4,6 +4,10 @@ menu: releasenotes
 subtitle: 'Release Notes for the CloudCaptain Client'
 ---
 
+Version 1.36.2 (2024-05-07)
+---------------------------
+- OpenJDK 21 support
+
 Version 1.36.1 (2024-02-01)
 ---------------------------
 - #296 Automatically disable progress bar on GitHub Actions and BitBucket
