@@ -5,7 +5,7 @@ subtitle: 'Play'
 ---
 ![Play](/assets/img/play.png)
 
-CloudCaptain supports **Play 2.3.x and newer** apps packaged as a **Play dist zip** using **OpenJDK 7, 8, 11 or 17**.
+CloudCaptain supports **Play 2.3.x and newer** apps packaged as a **Play dist zip** using **OpenJDK 7, 8, 11, 17 or 21**.
 
 ## Get Started
 
