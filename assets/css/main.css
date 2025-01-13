@@ -1289,3 +1289,10 @@ img.screenshot {
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+#banner {
+	background-color: #333333;
+	color: white;
+	padding-top: 16px;
+	padding-bottom: 16px;
+}

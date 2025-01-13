@@ -1,6 +1,6 @@
 safe: true
 future: true
-exclude: [.gitattributes, .gitignore, .idea, README.md, CNAME]
+exclude: [.gitattributes, .gitignore, .idea, .run, README.md, CNAME, docker-compose.yml, Dockerfile]
 boxfuseVersion: 1.33.0.1460
 highlighter: rouge
 url: https://cloudcaptain.sh

@@ -1,0 +1,7 @@
+services:
+  jekyll:
+    image: jekyll
+    ports:
+      - "4001:4000"
+    volumes:
+      - .:/jekyll
